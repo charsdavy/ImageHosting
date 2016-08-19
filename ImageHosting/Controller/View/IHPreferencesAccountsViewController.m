@@ -7,8 +7,14 @@
 //
 
 #import "IHPreferencesAccountsViewController.h"
+#import "IHAccountManager.h"
+#import "IHAccount.h"
 
 @interface IHPreferencesAccountsViewController ()
+
+@property (weak) IBOutlet NSTextField *akTextField;
+@property (weak) IBOutlet NSSecureTextField *skTextField;
+@property (weak) IBOutlet NSTextField *bucketNameTextField;
 
 @end
 
@@ -17,6 +23,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
+    [self fillCurrentAccount];
+}
+
+- (void)fillCurrentAccount
+{
+    IHAccount *currentAccount = [[IHAccountManager sharedManager] currentAccount];
+    if (currentAccount) {
+        _akTextField.stringValue = currentAccount.ak;
+        _skTextField.stringValue = currentAccount.sk;
+        _bucketNameTextField.stringValue = currentAccount.bucketName;
+    }
+}
+
+- (IBAction)clickedSubmit:(id)sender {
+    IHAccount *account = [[IHAccount alloc] init];
+    account.accountType = IHAccountTypeQiniu;
+    account.ak = _akTextField.stringValue;
+    account.sk = _skTextField.stringValue;
+    account.bucketName = _bucketNameTextField.stringValue;
+    
+    BOOL success = [[IHAccountManager sharedManager] archiveAccount:account];
+    
+    NSLog(@"%s ak:%@, sk:%@, bucket name:%@, success:%@", __FUNCTION__, _akTextField.stringValue, _skTextField.stringValue, _bucketNameTextField.stringValue, success == YES ? @"YES" : @"NO");
 }
 
 @end

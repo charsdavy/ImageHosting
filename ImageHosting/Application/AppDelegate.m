@@ -30,7 +30,7 @@
 {
     if (!_statusItem) {
         _statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-        [_statusItem setImage:[NSImage imageNamed:@"cloud"]];
+        [_statusItem setImage:[NSImage imageNamed:@"logo"]];
         [_statusItem setHighlightMode:YES];
     }
     return _statusItem;
