@@ -7,13 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4BB4B27B1D63164E0059CF02 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4B27A1D63164E0059CF02 /* AppDelegate.m */; };
 		4BB4B27E1D63164E0059CF02 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4B27D1D63164E0059CF02 /* main.m */; };
-		4BB4B2811D63164E0059CF02 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4B2801D63164E0059CF02 /* ViewController.m */; };
 		4BB4B2831D63164E0059CF02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BB4B2821D63164E0059CF02 /* Assets.xcassets */; };
 		4BB4B2861D63164E0059CF02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BB4B2841D63164E0059CF02 /* Main.storyboard */; };
 		4BB4B2911D63164E0059CF02 /* ImageHostingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4B2901D63164E0059CF02 /* ImageHostingTests.m */; };
 		4BB4B29C1D63164E0059CF02 /* ImageHostingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4B29B1D63164E0059CF02 /* ImageHostingUITests.m */; };
+		4BBACC5E1D66F3B500746AD6 /* IHPreferencesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BBACC561D66F3B500746AD6 /* IHPreferencesWindowController.xib */; };
+		4BBACC5F1D66F3B500746AD6 /* IHPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBACC581D66F3B500746AD6 /* IHPreferencesWindowController.m */; };
+		4BBACC601D66F3B500746AD6 /* IHUploadWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BBACC591D66F3B500746AD6 /* IHUploadWindowController.xib */; };
+		4BBACC611D66F3B500746AD6 /* IHUploadWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBACC5B1D66F3B500746AD6 /* IHUploadWindowController.m */; };
+		4BBACC621D66F3B500746AD6 /* IHWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBACC5D1D66F3B500746AD6 /* IHWindowController.m */; };
+		4BBACC651D66F3D800746AD6 /* IHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBACC641D66F3D800746AD6 /* IHViewController.m */; };
+		4BBACC681D66F4BB00746AD6 /* IHPerferencesGeneralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBACC671D66F4BB00746AD6 /* IHPerferencesGeneralViewController.m */; };
+		4BBACC6A1D66F4CF00746AD6 /* IHPerferencesGeneralViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BBACC691D66F4CF00746AD6 /* IHPerferencesGeneralViewController.xib */; };
+		4BBACC6E1D66FBF800746AD6 /* IHPreferencesAccountsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBACC6C1D66FBF800746AD6 /* IHPreferencesAccountsViewController.m */; };
+		4BBACC6F1D66FBF800746AD6 /* IHPreferencesAccountsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BBACC6D1D66FBF800746AD6 /* IHPreferencesAccountsViewController.xib */; };
+		4BBACC7A1D6708D600746AD6 /* IHAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBACC791D6708D600746AD6 /* IHAccount.m */; };
+		4BDBE1D81D65A75200B9BB0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BDBE1D21D65A75200B9BB0E /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,11 +45,7 @@
 
 /* Begin PBXFileReference section */
 		4BB4B2761D63164E0059CF02 /* ImageHosting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageHosting.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4BB4B2791D63164E0059CF02 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		4BB4B27A1D63164E0059CF02 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4BB4B27D1D63164E0059CF02 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4BB4B27F1D63164E0059CF02 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4BB4B2801D63164E0059CF02 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4BB4B2821D63164E0059CF02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BB4B2851D63164E0059CF02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4BB4B2871D63164E0059CF02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,7 +55,27 @@
 		4BB4B2971D63164E0059CF02 /* ImageHostingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageHostingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BB4B29B1D63164E0059CF02 /* ImageHostingUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageHostingUITests.m; sourceTree = "<group>"; };
 		4BB4B29D1D63164E0059CF02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BBACC561D66F3B500746AD6 /* IHPreferencesWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IHPreferencesWindowController.xib; sourceTree = "<group>"; };
+		4BBACC571D66F3B500746AD6 /* IHPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPreferencesWindowController.h; sourceTree = "<group>"; };
+		4BBACC581D66F3B500746AD6 /* IHPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPreferencesWindowController.m; sourceTree = "<group>"; };
+		4BBACC591D66F3B500746AD6 /* IHUploadWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IHUploadWindowController.xib; sourceTree = "<group>"; };
+		4BBACC5A1D66F3B500746AD6 /* IHUploadWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHUploadWindowController.h; sourceTree = "<group>"; };
+		4BBACC5B1D66F3B500746AD6 /* IHUploadWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHUploadWindowController.m; sourceTree = "<group>"; };
+		4BBACC5C1D66F3B500746AD6 /* IHWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHWindowController.h; sourceTree = "<group>"; };
+		4BBACC5D1D66F3B500746AD6 /* IHWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHWindowController.m; sourceTree = "<group>"; };
+		4BBACC631D66F3D800746AD6 /* IHViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHViewController.h; sourceTree = "<group>"; };
+		4BBACC641D66F3D800746AD6 /* IHViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHViewController.m; sourceTree = "<group>"; };
+		4BBACC661D66F4BB00746AD6 /* IHPerferencesGeneralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPerferencesGeneralViewController.h; sourceTree = "<group>"; };
+		4BBACC671D66F4BB00746AD6 /* IHPerferencesGeneralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPerferencesGeneralViewController.m; sourceTree = "<group>"; };
+		4BBACC691D66F4CF00746AD6 /* IHPerferencesGeneralViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IHPerferencesGeneralViewController.xib; sourceTree = "<group>"; };
+		4BBACC6B1D66FBF800746AD6 /* IHPreferencesAccountsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPreferencesAccountsViewController.h; sourceTree = "<group>"; };
+		4BBACC6C1D66FBF800746AD6 /* IHPreferencesAccountsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPreferencesAccountsViewController.m; sourceTree = "<group>"; };
+		4BBACC6D1D66FBF800746AD6 /* IHPreferencesAccountsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IHPreferencesAccountsViewController.xib; sourceTree = "<group>"; };
+		4BBACC781D6708D600746AD6 /* IHAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHAccount.h; sourceTree = "<group>"; };
+		4BBACC791D6708D600746AD6 /* IHAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHAccount.m; sourceTree = "<group>"; };
 		4BC12FCD1D64781C0008CEE0 /* ImageHosting.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ImageHosting.entitlements; sourceTree = "<group>"; };
+		4BDBE1D11D65A75200B9BB0E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4BDBE1D21D65A75200B9BB0E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,10 +126,11 @@
 		4BB4B2781D63164E0059CF02 /* ImageHosting */ = {
 			isa = PBXGroup;
 			children = (
-				4BB4B2791D63164E0059CF02 /* AppDelegate.h */,
-				4BB4B27A1D63164E0059CF02 /* AppDelegate.m */,
-				4BB4B27F1D63164E0059CF02 /* ViewController.h */,
-				4BB4B2801D63164E0059CF02 /* ViewController.m */,
+				4BDBE1D01D65A75200B9BB0E /* Application */,
+				4BDBE1D31D65A75200B9BB0E /* Controller */,
+				4BDBE1D61D65A75200B9BB0E /* Model */,
+				4BDBE1D71D65A75200B9BB0E /* View */,
+				4BDBE1DA1D65A7E300B9BB0E /* External */,
 				4BB4B27C1D63164E0059CF02 /* Supporting Files */,
 			);
 			path = ImageHosting;
@@ -137,6 +164,77 @@
 				4BB4B29D1D63164E0059CF02 /* Info.plist */,
 			);
 			path = ImageHostingUITests;
+			sourceTree = "<group>";
+		};
+		4BBACC541D66F3B500746AD6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4BBACC631D66F3D800746AD6 /* IHViewController.h */,
+				4BBACC641D66F3D800746AD6 /* IHViewController.m */,
+				4BBACC661D66F4BB00746AD6 /* IHPerferencesGeneralViewController.h */,
+				4BBACC671D66F4BB00746AD6 /* IHPerferencesGeneralViewController.m */,
+				4BBACC691D66F4CF00746AD6 /* IHPerferencesGeneralViewController.xib */,
+				4BBACC6B1D66FBF800746AD6 /* IHPreferencesAccountsViewController.h */,
+				4BBACC6C1D66FBF800746AD6 /* IHPreferencesAccountsViewController.m */,
+				4BBACC6D1D66FBF800746AD6 /* IHPreferencesAccountsViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4BBACC551D66F3B500746AD6 /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				4BBACC561D66F3B500746AD6 /* IHPreferencesWindowController.xib */,
+				4BBACC571D66F3B500746AD6 /* IHPreferencesWindowController.h */,
+				4BBACC581D66F3B500746AD6 /* IHPreferencesWindowController.m */,
+				4BBACC591D66F3B500746AD6 /* IHUploadWindowController.xib */,
+				4BBACC5A1D66F3B500746AD6 /* IHUploadWindowController.h */,
+				4BBACC5B1D66F3B500746AD6 /* IHUploadWindowController.m */,
+				4BBACC5C1D66F3B500746AD6 /* IHWindowController.h */,
+				4BBACC5D1D66F3B500746AD6 /* IHWindowController.m */,
+			);
+			path = Window;
+			sourceTree = "<group>";
+		};
+		4BDBE1D01D65A75200B9BB0E /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				4BDBE1D11D65A75200B9BB0E /* AppDelegate.h */,
+				4BDBE1D21D65A75200B9BB0E /* AppDelegate.m */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		4BDBE1D31D65A75200B9BB0E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4BBACC541D66F3B500746AD6 /* View */,
+				4BBACC551D66F3B500746AD6 /* Window */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4BDBE1D61D65A75200B9BB0E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4BBACC781D6708D600746AD6 /* IHAccount.h */,
+				4BBACC791D6708D600746AD6 /* IHAccount.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4BDBE1D71D65A75200B9BB0E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4BDBE1DA1D65A7E300B9BB0E /* External */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = External;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,7 +346,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BB4B2831D63164E0059CF02 /* Assets.xcassets in Resources */,
+				4BBACC5E1D66F3B500746AD6 /* IHPreferencesWindowController.xib in Resources */,
+				4BBACC6F1D66FBF800746AD6 /* IHPreferencesAccountsViewController.xib in Resources */,
 				4BB4B2861D63164E0059CF02 /* Main.storyboard in Resources */,
+				4BBACC601D66F3B500746AD6 /* IHUploadWindowController.xib in Resources */,
+				4BBACC6A1D66F4CF00746AD6 /* IHPerferencesGeneralViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,9 +375,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BB4B2811D63164E0059CF02 /* ViewController.m in Sources */,
+				4BDBE1D81D65A75200B9BB0E /* AppDelegate.m in Sources */,
+				4BBACC5F1D66F3B500746AD6 /* IHPreferencesWindowController.m in Sources */,
+				4BBACC6E1D66FBF800746AD6 /* IHPreferencesAccountsViewController.m in Sources */,
+				4BBACC7A1D6708D600746AD6 /* IHAccount.m in Sources */,
+				4BBACC621D66F3B500746AD6 /* IHWindowController.m in Sources */,
+				4BBACC611D66F3B500746AD6 /* IHUploadWindowController.m in Sources */,
 				4BB4B27E1D63164E0059CF02 /* main.m in Sources */,
-				4BB4B27B1D63164E0059CF02 /* AppDelegate.m in Sources */,
+				4BBACC681D66F4BB00746AD6 /* IHPerferencesGeneralViewController.m in Sources */,
+				4BBACC651D66F3D800746AD6 /* IHViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

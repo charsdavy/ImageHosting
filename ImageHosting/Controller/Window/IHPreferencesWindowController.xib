@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="IHPreferencesWindowController">
+            <connections>
+                <outlet property="window" destination="QvC-M9-y7g" id="uOn-yL-Wa4"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Preferences" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+            <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <view key="contentView" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <autoresizingMask key="autoresizingMask"/>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="8AF1AB0D-553B-41CA-8598-AC7B8A27AD08" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="czg-hK-swu">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="qff-8T-h1A"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="Wpp-Uj-HlC"/>
+                    <toolbarItem implicitItemIdentifier="23FD67EA-2784-4516-A1B1-84444C2D230F" explicitItemIdentifier="IHPerferencesGeneralViewController" label="General" paletteLabel="General" tag="-1" image="NSPreferencesGeneral" selectable="YES" id="B7U-Of-TIp">
+                        <connections>
+                            <action selector="showPreferencesFor:" target="-2" id="AWT-BD-MGD"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="245D2CC4-2325-49D8-AD52-88E6E3B4F93A" explicitItemIdentifier="IHPreferencesAccountsViewController" label="Acounts" paletteLabel="Acounts" tag="-1" image="NSUserAccounts" selectable="YES" id="kb9-8A-m96">
+                        <nil key="toolTip"/>
+                        <connections>
+                            <action selector="showPreferencesFor:" target="-2" id="IcH-eg-ki6"/>
+                        </connections>
+                    </toolbarItem>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="B7U-Of-TIp"/>
+                    <toolbarItem reference="kb9-8A-m96"/>
+                    <toolbarItem reference="Wpp-Uj-HlC"/>
+                </defaultToolbarItems>
+            </toolbar>
+            <connections>
+                <outlet property="delegate" destination="-2" id="f57-Pg-llP"/>
+            </connections>
+        </window>
+    </objects>
+    <resources>
+        <image name="NSPreferencesGeneral" width="32" height="32"/>
+        <image name="NSUserAccounts" width="32" height="32"/>
+    </resources>
+</document>

@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  IHViewController.h
 //  ImageHosting
 //
-//  Created by chars on 16/8/16.
+//  Created by chars on 16/8/19.
 //  Copyright © 2016年 chars. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
 
-@interface ViewController : NSViewController
-
+@interface IHViewController : NSViewController
 
 @end
-
