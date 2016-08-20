@@ -15,11 +15,12 @@ typedef NS_ENUM(NSUInteger, IHAccountType) {
 
 @interface IHAccount : NSObject
 
-@property (nonatomic, assign) IHAccountType accountType;
+@property (assign) IHAccountType accountType;
 
 /** 七牛云账号专用 */
-@property (nonatomic, copy) NSString *ak;
-@property (nonatomic, copy) NSString *sk;
-@property (nonatomic, copy) NSString *bucketName;
+@property (copy) NSString *ak;
+@property (copy) NSString *sk;
+@property (copy) NSString *bucketName;
+@property (copy) NSString *token;
 
 @end

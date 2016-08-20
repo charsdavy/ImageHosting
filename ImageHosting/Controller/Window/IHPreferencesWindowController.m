@@ -10,8 +10,8 @@
 
 @interface IHPreferencesWindowController ()
 
-@property (nonatomic, strong) NSArray *viewControllers;
-@property (nonatomic, strong) NSViewController *currentViewController;
+@property (strong) NSArray *viewControllers;
+@property (strong) NSViewController *currentViewController;
 
 @end
 

@@ -14,8 +14,8 @@
 
 @property (nonatomic, strong) NSStatusItem *statusItem;
 @property (nonatomic, strong) NSMenu *statusMenu;
-@property (nonatomic, strong) IHPreferencesWindowController *preferencesWindowController;
-@property (nonatomic, strong) IHUploadWindowController *uploadWindowController;
+@property (strong) IHPreferencesWindowController *preferencesWindowController;
+@property (strong) IHUploadWindowController *uploadWindowController;
 
 @end
 

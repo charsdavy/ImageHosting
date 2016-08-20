@@ -16,4 +16,8 @@
 
 - (NSString *)tokenForAcount:(IHAccount *)account;
 
+- (BOOL)saveTokenForLocalWithAccount:(IHAccount *)acount;
+
+- (NSString *)tokenForServerWithAccount:(IHAccount *)acount;
+
 @end

@@ -8,6 +8,15 @@
 
 #import "IHAccountManager.h"
 #import "IHAccount.h"
+#import "NSString+IHAddition.h"
+#import "const.h"
+#import "IHCache.h"
+
+@interface IHAccountManager ()
+
+@property (strong) IHCache *cache;
+
+@end
 
 @implementation IHAccountManager
 
@@ -46,28 +55,22 @@
 - (IHAccount *)currentAccount
 {
     IHAccount *currentAccount = [[IHAccount alloc] init];
-    NSString *path = [self pathOfPreferences];
-    NSArray *accounts = [NSArray arrayWithContentsOfFile:path];
-    NSDictionary *dict = [accounts lastObject];
-    
-    currentAccount.accountType = [dict[@"type"] integerValue];
-    currentAccount.ak = dict[@"ak"];
-    currentAccount.sk = dict[@"sk"];
-    currentAccount.bucketName = dict[@"bucket"];
-    
+    if (self.cache) {
+        currentAccount = [self.cache objectForKey:CURRENT_ACCOUNT_KEY];
+    } else {
+        NSString *path = [self pathOfPreferences];
+        NSArray *accounts = [NSArray arrayWithContentsOfFile:path];
+        NSDictionary *dict = [accounts lastObject];
+
+        currentAccount.accountType = [dict[TYPE_KEY] integerValue];
+        currentAccount.ak = dict[AK_KEY];
+        currentAccount.sk = dict[SK_KEY];
+        currentAccount.bucketName = dict[BUCKET_KEY];
+        currentAccount.token = dict[TOKEN_KEY];
+        [self.cache setObject:currentAccount forKey:CURRENT_ACCOUNT_KEY];
+    }
+
     return currentAccount;
-}
-
-- (NSString *)encryptString:(NSString *)string
-{
-    NSString *encrypt = nil;
-    return encrypt;
-}
-
-- (NSString *)decodeString:(NSString *)string
-{
-    NSString *decode = nil;
-    return decode;
 }
 
 - (BOOL)archiveAccount:(IHAccount *)account
@@ -76,36 +79,34 @@
     NSString *path = [self pathOfPreferences];
     BOOL success = NO;
     BOOL replace = NO;
-    
+
     if ([self isFileExistAtPath:path]) {
         archive = [NSMutableArray arrayWithContentsOfFile:path];
     }
-    
+
     for (NSMutableDictionary *cur in archive) {
-        if ([cur[@"type"] integerValue] == account.accountType) {
-            cur[@"ak"] = account.ak;
-            cur[@"sk"] = account.sk;
-            cur[@"bucket"] = account.bucketName;
+        if ([cur[TYPE_KEY] integerValue] == account.accountType) {
+            cur[AK_KEY] = account.ak;
+            cur[SK_KEY] = account.sk;
+            cur[BUCKET_KEY] = account.bucketName;
+            cur[TOKEN_KEY] = account.token;
             replace = YES;
         }
     }
-    
+
     if (!replace) {
         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-        [dict setObject:@(account.accountType) forKey:@"type"];
-        [dict setObject:account.ak forKey:@"ak"];
-        [dict setObject:account.sk forKey:@"sk"];
-        [dict setObject:account.bucketName forKey:@"bucket"];
+        [dict setObject:@(account.accountType) forKey:TYPE_KEY];
+        [dict setObject:account.ak forKey:AK_KEY];
+        [dict setObject:account.sk forKey:SK_KEY];
+        [dict setObject:account.bucketName forKey:BUCKET_KEY];
+        [dict setObject:account.token forKey:TOKEN_KEY];
         [archive addObject:dict];
     }
-    
+
     success = [archive writeToFile:path atomically:YES];
-    
-    if (success) {
-        return YES;
-    }
-    
-    return NO;
+
+    return success;
 }
 
 - (NSArray *)unarchive
@@ -115,13 +116,14 @@
     NSMutableArray *unarchive = [NSMutableArray array];
     for (NSDictionary *dict in accounts) {
         IHAccount *account = [[IHAccount alloc] init];
-        account.accountType = [dict[@"type"] integerValue];
-        account.ak = dict[@"ak"];
-        account.sk = dict[@"sk"];
-        account.bucketName = dict[@"bucket"];
+        account.accountType = [dict[TYPE_KEY] integerValue];
+        account.ak = dict[AK_KEY];
+        account.sk = dict[SK_KEY];
+        account.bucketName = dict[BUCKET_KEY];
+        account.token = dict[TOKEN_KEY];
         [unarchive addObject:account];
     }
-    
+
     return unarchive;
 }
 

@@ -79,6 +79,8 @@
 		D55772611D674E28001BA82D /* IHUploadWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55772561D674E28001BA82D /* IHUploadWindowController.xib */; };
 		D55772621D674E28001BA82D /* IHWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55772581D674E28001BA82D /* IHWindowController.m */; };
 		D55772671D675A33001BA82D /* IHQiniuTokenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D55772661D675A33001BA82D /* IHQiniuTokenManager.m */; };
+		D5863E6C1D67F46100B302DB /* NSString+IHAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = D5863E6B1D67F46100B302DB /* NSString+IHAddition.m */; };
+		D5863E711D67F5D200B302DB /* IHCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D5863E701D67F5D200B302DB /* IHCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -251,6 +253,11 @@
 		D55772581D674E28001BA82D /* IHWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHWindowController.m; sourceTree = "<group>"; };
 		D55772651D675A33001BA82D /* IHQiniuTokenManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHQiniuTokenManager.h; sourceTree = "<group>"; };
 		D55772661D675A33001BA82D /* IHQiniuTokenManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHQiniuTokenManager.m; sourceTree = "<group>"; };
+		D5863E6A1D67F46100B302DB /* NSString+IHAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IHAddition.h"; sourceTree = "<group>"; };
+		D5863E6B1D67F46100B302DB /* NSString+IHAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IHAddition.m"; sourceTree = "<group>"; };
+		D5863E6F1D67F5D200B302DB /* IHCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHCache.h; sourceTree = "<group>"; };
+		D5863E701D67F5D200B302DB /* IHCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHCache.m; sourceTree = "<group>"; };
+		D5863E721D68311400B302DB /* const.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = const.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +314,7 @@
 				D55772461D674E28001BA82D /* Controller */,
 				4BDBE1D61D65A75200B9BB0E /* Model */,
 				D55772251D673582001BA82D /* Util */,
+				D5863E691D67F43800B302DB /* Addition */,
 				4BDBE1DA1D65A7E300B9BB0E /* External */,
 				4BB4B27C1D63164E0059CF02 /* Supporting Files */,
 			);
@@ -572,6 +580,9 @@
 			children = (
 				4BBACC781D6708D600746AD6 /* IHAccount.h */,
 				4BBACC791D6708D600746AD6 /* IHAccount.m */,
+				D5863E6F1D67F5D200B302DB /* IHCache.h */,
+				D5863E701D67F5D200B302DB /* IHCache.m */,
+				D5863E721D68311400B302DB /* const.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -638,6 +649,15 @@
 			path = Window;
 			sourceTree = "<group>";
 		};
+		D5863E691D67F43800B302DB /* Addition */ = {
+			isa = PBXGroup;
+			children = (
+				D5863E6A1D67F46100B302DB /* NSString+IHAddition.h */,
+				D5863E6B1D67F46100B302DB /* NSString+IHAddition.m */,
+			);
+			path = Addition;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -700,6 +720,7 @@
 		4BB4B26E1D63164E0059CF02 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = IH;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = chars;
 				TargetAttributes = {
@@ -785,6 +806,7 @@
 				4BBACDA41D670D0D00746AD6 /* QNIP.m in Sources */,
 				4BBACCB41D670C1D00746AD6 /* QNPHAssetFile.m in Sources */,
 				4BBACD671D670CF800746AD6 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				D5863E711D67F5D200B302DB /* IHCache.m in Sources */,
 				4BBACCB21D670C1D00746AD6 /* QNEtag.m in Sources */,
 				4BBACDA21D670D0D00746AD6 /* QNGetAddrInfo.m in Sources */,
 				D55772591D674E28001BA82D /* IHPerferencesGeneralViewController.m in Sources */,
@@ -809,6 +831,7 @@
 				4BBACCBC1D670C1D00746AD6 /* QNConfiguration.m in Sources */,
 				4BBACD9E1D670D0D00746AD6 /* QNResolver.m in Sources */,
 				4BBACCB11D670C1D00746AD6 /* QNCrc32.m in Sources */,
+				D5863E6C1D67F46100B302DB /* NSString+IHAddition.m in Sources */,
 				4BBACD9F1D670D0D00746AD6 /* QNResolvUtil.m in Sources */,
 				4BBACD991D670D0D00746AD6 /* QNRecord.m in Sources */,
 				4BBACCBF1D670C1D00746AD6 /* QNUploadManager.m in Sources */,
