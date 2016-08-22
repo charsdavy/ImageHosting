@@ -60,7 +60,7 @@
 
 - (void)instructionMenuAction
 {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://charsdavy.github.io"]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://charsdavy.github.io/2016/08/22/ImageHosting-use-introduction/"]];
 }
 
 - (void)quitMenuAction

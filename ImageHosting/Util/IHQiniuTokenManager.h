@@ -14,10 +14,6 @@
 
 + (instancetype) sharedManager;
 
-- (NSString *)tokenForAcount:(IHAccount *)account;
-
-- (BOOL)saveTokenForLocalWithAccount:(IHAccount *)acount;
-
-- (NSString *)tokenForServerWithAccount:(IHAccount *)acount;
+- (NSString *)generateUploadTokenForAccount:(IHAccount *)account;
 
 @end

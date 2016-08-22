@@ -13,7 +13,6 @@
 #define SK_KEY              @"sk"
 #define BUCKET_KEY          @"bucket"
 #define TYPE_KEY            @"type"
-#define TOKEN_KEY           @"token"
 #define CURRENT_ACCOUNT_KEY @"current_account"
 
 #endif /* const_h */

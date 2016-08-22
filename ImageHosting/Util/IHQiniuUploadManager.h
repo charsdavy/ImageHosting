@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "QiniuSDK.h"
 
 @class IHAccount;
 
@@ -14,6 +15,6 @@
 
 + (instancetype) sharedManager;
 
-- (BOOL)uploadQiniuForAccount:(IHAccount *)account;
+- (void)uploadQiniuForAccount:(IHAccount *)account filePath:(NSString *)path complete:(QNUpCompletionHandler)complete;
 
 @end

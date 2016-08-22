@@ -27,12 +27,12 @@
     return sharedManager;
 }
 
-- (BOOL)uploadQiniuForAccount:(IHAccount *)account
+- (void)uploadQiniuForAccount:(IHAccount *)account filePath:(NSString *)path complete:(QNUpCompletionHandler)complete
 {
-    BOOL success = NO;
-    NSString *token = [[IHQiniuTokenManager sharedManager] tokenForAcount:account];
+    NSString *token = [[IHQiniuTokenManager sharedManager] generateUploadTokenForAccount:account];
+    QNUploadManager *manager = [[QNUploadManager alloc] init];
     
-    return success;
+    [manager putFile:path key:nil token:token complete:complete option:nil];
 }
 
 @end

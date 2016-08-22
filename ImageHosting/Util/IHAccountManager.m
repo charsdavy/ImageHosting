@@ -66,7 +66,6 @@
         currentAccount.ak = dict[AK_KEY];
         currentAccount.sk = dict[SK_KEY];
         currentAccount.bucketName = dict[BUCKET_KEY];
-        currentAccount.token = dict[TOKEN_KEY];
         [self.cache setObject:currentAccount forKey:CURRENT_ACCOUNT_KEY];
     }
 
@@ -89,7 +88,6 @@
             cur[AK_KEY] = account.ak;
             cur[SK_KEY] = account.sk;
             cur[BUCKET_KEY] = account.bucketName;
-            cur[TOKEN_KEY] = account.token;
             replace = YES;
         }
     }
@@ -100,7 +98,6 @@
         [dict setObject:account.ak forKey:AK_KEY];
         [dict setObject:account.sk forKey:SK_KEY];
         [dict setObject:account.bucketName forKey:BUCKET_KEY];
-        [dict setObject:account.token forKey:TOKEN_KEY];
         [archive addObject:dict];
     }
 
@@ -120,7 +117,6 @@
         account.ak = dict[AK_KEY];
         account.sk = dict[SK_KEY];
         account.bucketName = dict[BUCKET_KEY];
-        account.token = dict[TOKEN_KEY];
         [unarchive addObject:account];
     }
 

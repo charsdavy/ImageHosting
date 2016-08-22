@@ -29,7 +29,7 @@
 - (void)fillCurrentAccount
 {
     IHAccount *currentAccount = [[IHAccountManager sharedManager] currentAccount];
-    if (currentAccount) {
+    if (currentAccount && currentAccount.accountType != IHAccountTypeNone) {
         _akTextField.stringValue = currentAccount.ak;
         _skTextField.stringValue = currentAccount.sk;
         _bucketNameTextField.stringValue = currentAccount.bucketName;
@@ -44,8 +44,9 @@
     account.bucketName = _bucketNameTextField.stringValue;
     
     BOOL success = [[IHAccountManager sharedManager] archiveAccount:account];
-    
-    NSLog(@"%s ak:%@, sk:%@, bucket name:%@, success:%@", __FUNCTION__, _akTextField.stringValue, _skTextField.stringValue, _bucketNameTextField.stringValue, success == YES ? @"YES" : @"NO");
+    if (!success) {
+        NSLog(@"%s submit account faild!", __FUNCTION__);
+    }
 }
 
 @end

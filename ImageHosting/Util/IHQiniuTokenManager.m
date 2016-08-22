@@ -11,11 +11,14 @@
 #import "NSString+IHAddition.h"
 #import "IHCache.h"
 #import "const.h"
-#import "IHAccountManager.h"
+#import "GTMBase64.h"
+#include <CommonCrypto/CommonCrypto.h>
+#import "JSONKit.h"
 
 @interface IHQiniuTokenManager ()
 
 @property (strong) IHCache *cache;
+@property (assign) NSUInteger expires;
 
 @end
 
@@ -31,51 +34,42 @@
     return sharedManager;
 }
 
-- (NSString *)searchTokenForLocalWithAccount:(IHAccount *)account
+- (NSString *)generateUploadTokenForAccount:(IHAccount *)account
 {
-    NSString *token = nil;
-    NSArray *accounts = [[IHAccountManager sharedManager] unarchive];
-    for (NSDictionary *dict in accounts) {
-        if ([dict[AK_KEY] isEqualToString:account.ak] && [dict[SK_KEY] isEqualToString:account.sk]) {
-            token = dict[TOKEN_KEY];
-        }
-    }
-    return token;
-}
-
-- (NSString *)tokenForAcount:(IHAccount *)account
-{
-    NSString *token = nil;
+    const char *secretKeyStr = [account.sk UTF8String];
+    NSString *policy = [self marshal:account.bucketName];
+    NSData *policyData = [policy dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *encodedPolicy = [GTMBase64 stringByWebSafeEncodingData:policyData padded:TRUE];
+    const char *encodedPolicyStr = [encodedPolicy cStringUsingEncoding:NSUTF8StringEncoding];
     
-    if (self.cache) {
-        token = [self.cache objectForKey:TOKEN_KEY];
-    } else {
-        token = [self searchTokenForLocalWithAccount:account];
-        
-        if (!token) {
-            token = [self tokenForServerWithAccount:account];
-        }
-        
-        if (token) {
-            [self.cache setObject:token forKey:TOKEN_KEY];
-        }
-    }
+    char digestStr[CC_SHA1_DIGEST_LENGTH];
+    bzero(digestStr, 0);
+    
+    CCHmac(kCCHmacAlgSHA1, secretKeyStr, strlen(secretKeyStr), encodedPolicyStr, strlen(encodedPolicyStr), digestStr);
+    
+    NSString *encodedDigest = [GTMBase64 stringByWebSafeEncodingBytes:digestStr length:CC_SHA1_DIGEST_LENGTH padded:TRUE];
+    
+    NSString *token = [NSString stringWithFormat:@"%@:%@:%@",  account.ak, encodedDigest, encodedPolicy];
     
     return token;
 }
 
-- (BOOL)saveTokenForLocalWithAccount:(IHAccount *)acount
+- (NSString *)marshal:(NSString *)bucketName
 {
-    BOOL success = NO;
-    
-    return success;
-}
+    time_t deadline;
+    time(&deadline);//返回当前系统时间
 
-- (NSString *)tokenForServerWithAccount:(IHAccount *)acount
-{
-    NSString *token = nil;
+    deadline += (self.expires > 0) ? self.expires : 3600; // +3600秒,即默认token保存1小时.
     
-    return token;
+    NSNumber *deadlineNumber = [NSNumber numberWithLongLong:deadline];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setObject:bucketName forKey:@"scope"];
+    
+    [dict setObject:deadlineNumber forKey:@"deadline"];
+    
+    NSString *json = [dict JSONString];
+    
+    return json;
 }
 
 @end

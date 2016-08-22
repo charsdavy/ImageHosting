@@ -21,6 +21,5 @@ typedef NS_ENUM(NSUInteger, IHAccountType) {
 @property (copy) NSString *ak;
 @property (copy) NSString *sk;
 @property (copy) NSString *bucketName;
-@property (copy) NSString *token;
 
 @end

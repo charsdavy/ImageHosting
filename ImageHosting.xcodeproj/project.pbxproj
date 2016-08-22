@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B3F4F071D6AE63E00A0A6CE /* IHPreferencesDonateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F4F051D6AE63E00A0A6CE /* IHPreferencesDonateViewController.m */; };
+		4B3F4F081D6AE63E00A0A6CE /* IHPreferencesDonateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B3F4F061D6AE63E00A0A6CE /* IHPreferencesDonateViewController.xib */; };
+		4B3F4F171D6B0C1A00A0A6CE /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F4F101D6B0C1A00A0A6CE /* GTMBase64.m */; };
+		4B3F4F181D6B0C1A00A0A6CE /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4B3F4F121D6B0C1A00A0A6CE /* LICENSE */; };
+		4B3F4F1A1D6B0C1A00A0A6CE /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F4F161D6B0C1A00A0A6CE /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BB4B27E1D63164E0059CF02 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4B27D1D63164E0059CF02 /* main.m */; };
 		4BB4B2831D63164E0059CF02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BB4B2821D63164E0059CF02 /* Assets.xcassets */; };
 		4BB4B2861D63164E0059CF02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BB4B2841D63164E0059CF02 /* Main.storyboard */; };
@@ -102,6 +107,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B3F4F041D6AE63E00A0A6CE /* IHPreferencesDonateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPreferencesDonateViewController.h; sourceTree = "<group>"; };
+		4B3F4F051D6AE63E00A0A6CE /* IHPreferencesDonateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPreferencesDonateViewController.m; sourceTree = "<group>"; };
+		4B3F4F061D6AE63E00A0A6CE /* IHPreferencesDonateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IHPreferencesDonateViewController.xib; sourceTree = "<group>"; };
+		4B3F4F0F1D6B0C1A00A0A6CE /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		4B3F4F101D6B0C1A00A0A6CE /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		4B3F4F111D6B0C1A00A0A6CE /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		4B3F4F121D6B0C1A00A0A6CE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		4B3F4F131D6B0C1A00A0A6CE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4B3F4F151D6B0C1A00A0A6CE /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		4B3F4F161D6B0C1A00A0A6CE /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		4BB4B2761D63164E0059CF02 /* ImageHosting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageHosting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BB4B27D1D63164E0059CF02 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4BB4B2821D63164E0059CF02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -290,6 +305,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B3F4F0D1D6B0C1A00A0A6CE /* GTMBase64 */ = {
+			isa = PBXGroup;
+			children = (
+				4B3F4F0E1D6B0C1A00A0A6CE /* GTMBase64 */,
+				4B3F4F121D6B0C1A00A0A6CE /* LICENSE */,
+				4B3F4F131D6B0C1A00A0A6CE /* README.md */,
+			);
+			path = GTMBase64;
+			sourceTree = "<group>";
+		};
+		4B3F4F0E1D6B0C1A00A0A6CE /* GTMBase64 */ = {
+			isa = PBXGroup;
+			children = (
+				4B3F4F0F1D6B0C1A00A0A6CE /* GTMBase64.h */,
+				4B3F4F101D6B0C1A00A0A6CE /* GTMBase64.m */,
+				4B3F4F111D6B0C1A00A0A6CE /* GTMDefines.h */,
+			);
+			path = GTMBase64;
+			sourceTree = "<group>";
+		};
+		4B3F4F141D6B0C1A00A0A6CE /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				4B3F4F151D6B0C1A00A0A6CE /* JSONKit.h */,
+				4B3F4F161D6B0C1A00A0A6CE /* JSONKit.m */,
+			);
+			path = JSONKit;
+			sourceTree = "<group>";
+		};
 		4BB4B26D1D63164E0059CF02 = {
 			isa = PBXGroup;
 			children = (
@@ -593,6 +637,8 @@
 		4BDBE1DA1D65A7E300B9BB0E /* External */ = {
 			isa = PBXGroup;
 			children = (
+				4B3F4F0D1D6B0C1A00A0A6CE /* GTMBase64 */,
+				4B3F4F141D6B0C1A00A0A6CE /* JSONKit */,
 				4BBACDA51D670D6A00746AD6 /* AGAsyncTestHelper */,
 				4BBACD6E1D670D0D00746AD6 /* HappyDNS */,
 				4BBACD501D670CF800746AD6 /* UIKit+AFNetworking */,
@@ -633,6 +679,9 @@
 				D557724B1D674E28001BA82D /* IHPreferencesAccountsViewController.h */,
 				D557724C1D674E28001BA82D /* IHPreferencesAccountsViewController.m */,
 				D557724D1D674E28001BA82D /* IHPreferencesAccountsViewController.xib */,
+				4B3F4F041D6AE63E00A0A6CE /* IHPreferencesDonateViewController.h */,
+				4B3F4F051D6AE63E00A0A6CE /* IHPreferencesDonateViewController.m */,
+				4B3F4F061D6AE63E00A0A6CE /* IHPreferencesDonateViewController.xib */,
 				D557724E1D674E28001BA82D /* IHViewController.h */,
 				D557724F1D674E28001BA82D /* IHViewController.m */,
 			);
@@ -772,7 +821,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B3F4F081D6AE63E00A0A6CE /* IHPreferencesDonateViewController.xib in Resources */,
 				D557725F1D674E28001BA82D /* IHPreferencesWindowController.xib in Resources */,
+				4B3F4F181D6B0C1A00A0A6CE /* LICENSE in Resources */,
 				D55772611D674E28001BA82D /* IHUploadWindowController.xib in Resources */,
 				D557725C1D674E28001BA82D /* IHPreferencesAccountsViewController.xib in Resources */,
 				4BB4B2831D63164E0059CF02 /* Assets.xcassets in Resources */,
@@ -831,6 +882,7 @@
 				4BBACD6D1D670CF800746AD6 /* UIWebView+AFNetworking.m in Sources */,
 				4BBACD4E1D670CEF00746AD6 /* AFURLResponseSerialization.m in Sources */,
 				4BBACD651D670CF800746AD6 /* AFAutoPurgingImageCache.m in Sources */,
+				4B3F4F071D6AE63E00A0A6CE /* IHPreferencesDonateViewController.m in Sources */,
 				4BBACDA11D670D0D00746AD6 /* QNDes.m in Sources */,
 				D557725E1D674E28001BA82D /* IHPreferencesWindowController.m in Sources */,
 				4BBACC7A1D6708D600746AD6 /* IHAccount.m in Sources */,
@@ -840,6 +892,7 @@
 				D5863E6C1D67F46100B302DB /* NSString+IHAddition.m in Sources */,
 				4BBACD9F1D670D0D00746AD6 /* QNResolvUtil.m in Sources */,
 				4BBACD991D670D0D00746AD6 /* QNRecord.m in Sources */,
+				4B3F4F171D6B0C1A00A0A6CE /* GTMBase64.m in Sources */,
 				4BBACCBF1D670C1D00746AD6 /* QNUploadManager.m in Sources */,
 				4BBACD661D670CF800746AD6 /* AFImageDownloader.m in Sources */,
 				4BBACD9B1D670D0D00746AD6 /* QNDnspodFree.m in Sources */,
@@ -867,6 +920,7 @@
 				D557725D1D674E28001BA82D /* IHViewController.m in Sources */,
 				4BBACCBB1D670C1D00746AD6 /* QNFileRecorder.m in Sources */,
 				4BBACD981D670D0D00746AD6 /* QNNetworkInfo.m in Sources */,
+				4B3F4F1A1D6B0C1A00A0A6CE /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="IHPerferencesGeneralViewController">
@@ -16,49 +16,30 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="294"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="dd4-qv-PGK">
-                    <rect key="frame" x="57" y="82" width="156" height="140"/>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Cb6-Cb-hUp">
+                    <rect key="frame" x="122" y="238" width="69" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="wechat" id="ysX-Ge-Sz8"/>
-                </imageView>
-                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="myU-Ig-EHl">
-                    <rect key="frame" x="269" y="82" width="156" height="140"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="alipay" id="uEh-yV-02D"/>
-                </imageView>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="zr5-8Z-nHH">
-                    <rect key="frame" x="212" y="241" width="57" height="17"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="DONATE" id="uNx-Dr-wYG">
-                        <font key="font" metaFont="system"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="显示菜单栏" id="LnP-5c-KYe">
+                        <font key="font" size="13" name=".PingFangSC-Regular"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Uqc-oJ-obt">
-                    <rect key="frame" x="109" y="42" width="52" height="17"/>
+                <popUpButton verticalHuggingPriority="750" id="0Ve-ij-K64">
+                    <rect key="frame" x="218" y="231" width="141" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="WeChat" id="w6S-HL-ce6">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="JYn-mT-siU">
-                    <rect key="frame" x="327" y="42" width="41" height="17"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="AliPay" id="ijo-xm-JQR">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="cpp-dk-Y9a">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="6Q3-aY-QrU">
+                            <items>
+                                <menuItem title="在菜单栏中显示" id="sso-mK-iYz"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
             </subviews>
             <point key="canvasLocation" x="294" y="351"/>
         </customView>
     </objects>
-    <resources>
-        <image name="alipay" width="532" height="524"/>
-        <image name="wechat" width="428" height="421"/>
-    </resources>
 </document>

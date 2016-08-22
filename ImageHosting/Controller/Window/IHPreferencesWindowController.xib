@@ -35,10 +35,17 @@
                             <action selector="showPreferencesFor:" target="-2" id="IcH-eg-ki6"/>
                         </connections>
                     </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="9D213E09-74E3-4371-9C98-5F85028E766A" explicitItemIdentifier="IHPreferencesDonateViewController" label="Donate" paletteLabel="Donate" tag="-1" image="NSMobileMe" selectable="YES" id="Lyp-o7-OSp">
+                        <nil key="toolTip"/>
+                        <connections>
+                            <action selector="showPreferencesFor:" target="-2" id="rfC-MF-HZj"/>
+                        </connections>
+                    </toolbarItem>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
                     <toolbarItem reference="B7U-Of-TIp"/>
                     <toolbarItem reference="kb9-8A-m96"/>
+                    <toolbarItem reference="Lyp-o7-OSp"/>
                     <toolbarItem reference="Wpp-Uj-HlC"/>
                 </defaultToolbarItems>
             </toolbar>
@@ -48,6 +55,7 @@
         </window>
     </objects>
     <resources>
+        <image name="NSMobileMe" width="32" height="32"/>
         <image name="NSPreferencesGeneral" width="32" height="32"/>
         <image name="NSUserAccounts" width="32" height="32"/>
     </resources>
