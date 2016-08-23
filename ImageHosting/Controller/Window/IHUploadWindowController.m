@@ -51,7 +51,8 @@
     
     __block NSUInteger times = 0;
     for (NSString *path in self.paths) {
-        [self uploadFileWithPath:path complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
+        NSString *key = [path lastPathComponent];
+        [self uploadFileWithPath:path key:key complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
             times++;
             BOOL success = NO;
             if (resp) {
@@ -112,7 +113,7 @@
     }
 }
 
-- (void)uploadFileWithPath:(NSString *)path complete:(QNUpCompletionHandler)complete
+- (void)uploadFileWithPath:(NSString *)path key:(NSString *)key complete:(QNUpCompletionHandler)complete
 {
     IHAccount *account = [[IHAccountManager sharedManager] currentAccount];
     if (!account) {
@@ -120,7 +121,7 @@
         [alert runModal];
         return;
     }
-    [[IHQiniuUploadManager sharedManager] uploadQiniuForAccount:account filePath:path complete:complete];
+    [[IHQiniuUploadManager sharedManager] uploadQiniuForAccount:account key:key filePath:path complete:complete];
 }
 
 #pragma mark - Showing the Preferences Window

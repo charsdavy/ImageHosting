@@ -15,6 +15,6 @@
 
 + (instancetype) sharedManager;
 
-- (void)uploadQiniuForAccount:(IHAccount *)account filePath:(NSString *)path complete:(QNUpCompletionHandler)complete;
+- (void)uploadQiniuForAccount:(IHAccount *)account key:(NSString *)key filePath:(NSString *)path complete:(QNUpCompletionHandler)complete;
 
 @end
