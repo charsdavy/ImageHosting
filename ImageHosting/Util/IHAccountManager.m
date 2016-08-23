@@ -86,7 +86,7 @@
     for (NSMutableDictionary *cur in archive) {
         if ([cur[TYPE_KEY] integerValue] == account.accountType) {
             cur[AK_KEY] = account.ak;
-            cur[SK_KEY] = account.sk;
+            cur[SK_KEY] = [account.sk ih_encrypt];
             cur[BUCKET_KEY] = account.bucketName;
             replace = YES;
         }
@@ -96,7 +96,7 @@
         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
         [dict setObject:@(account.accountType) forKey:TYPE_KEY];
         [dict setObject:account.ak forKey:AK_KEY];
-        [dict setObject:account.sk forKey:SK_KEY];
+        [dict setObject:[account.sk ih_encrypt] forKey:SK_KEY];
         [dict setObject:account.bucketName forKey:BUCKET_KEY];
         [archive addObject:dict];
     }

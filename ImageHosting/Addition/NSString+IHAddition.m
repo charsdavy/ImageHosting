@@ -7,19 +7,20 @@
 //
 
 #import "NSString+IHAddition.h"
+#import "GTMBase64.h"
 
 @implementation NSString (IHAddition)
 
-- (NSString *)ih_encrypt:(NSString *)string
+- (NSString *)ih_encrypt
 {
-    NSString *encrypt = nil;
-    return encrypt;
+    NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];    
+    return [GTMBase64 stringByEncodingData:data];
 }
 
-- (NSString *)ih_decode:(NSString *)string
+- (NSString *)ih_decode
 {
-    NSString *decode = nil;
-    return decode;
+    NSData *data = [GTMBase64 decodeString:self];
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
 
 - (BOOL)ih_isValid

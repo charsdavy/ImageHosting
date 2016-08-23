@@ -11,10 +11,10 @@
 @interface NSString (IHAddition)
 
 /** 加密 */
-- (NSString *)ih_encrypt:(NSString *)string;
+- (NSString *)ih_encrypt;
 
 /** 解密 */
-- (NSString *)ih_decode:(NSString *)string;
+- (NSString *)ih_decode;
 
 /** 是否有效字符串 */
 - (BOOL)ih_isValid;

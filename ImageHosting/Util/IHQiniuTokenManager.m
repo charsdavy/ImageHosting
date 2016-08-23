@@ -36,7 +36,7 @@
 
 - (NSString *)generateUploadTokenForAccount:(IHAccount *)account
 {
-    const char *secretKeyStr = [account.sk UTF8String];
+    const char *secretKeyStr = [[account.sk ih_decode] UTF8String];
     NSString *policy = [self marshal:account.bucketName];
     NSData *policyData = [policy dataUsingEncoding:NSUTF8StringEncoding];
     NSString *encodedPolicy = [GTMBase64 stringByWebSafeEncodingData:policyData padded:TRUE];
