@@ -11,9 +11,9 @@
 #import "NSString+IHAddition.h"
 #import "IHCache.h"
 #import "const.h"
-#import "GTMBase64.h"
 #include <CommonCrypto/CommonCrypto.h>
 #import "JSONKit.h"
+#import "QN_GTM_Base64.h"
 
 @interface IHQiniuTokenManager ()
 
@@ -39,7 +39,7 @@
     const char *secretKeyStr = [[account.sk ih_decode] UTF8String];
     NSString *policy = [self marshal:account.bucketName];
     NSData *policyData = [policy dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *encodedPolicy = [GTMBase64 stringByWebSafeEncodingData:policyData padded:TRUE];
+    NSString *encodedPolicy = [QN_GTM_Base64 stringByWebSafeEncodingData:policyData padded:TRUE];
     const char *encodedPolicyStr = [encodedPolicy cStringUsingEncoding:NSUTF8StringEncoding];
     
     char digestStr[CC_SHA1_DIGEST_LENGTH];
@@ -47,7 +47,7 @@
     
     CCHmac(kCCHmacAlgSHA1, secretKeyStr, strlen(secretKeyStr), encodedPolicyStr, strlen(encodedPolicyStr), digestStr);
     
-    NSString *encodedDigest = [GTMBase64 stringByWebSafeEncodingBytes:digestStr length:CC_SHA1_DIGEST_LENGTH padded:TRUE];
+    NSString *encodedDigest = [QN_GTM_Base64 stringByWebSafeEncodingBytes:digestStr length:CC_SHA1_DIGEST_LENGTH padded:TRUE];
     
     NSString *token = [NSString stringWithFormat:@"%@:%@:%@",  account.ak, encodedDigest, encodedPolicy];
     

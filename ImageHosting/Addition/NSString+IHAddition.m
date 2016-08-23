@@ -7,19 +7,19 @@
 //
 
 #import "NSString+IHAddition.h"
-#import "GTMBase64.h"
+#import "QN_GTM_Base64.h"
 
 @implementation NSString (IHAddition)
 
 - (NSString *)ih_encrypt
 {
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];    
-    return [GTMBase64 stringByEncodingData:data];
+    return [QN_GTM_Base64 stringByEncodingData:data];
 }
 
 - (NSString *)ih_decode
 {
-    NSData *data = [GTMBase64 decodeString:self];
+    NSData *data = [QN_GTM_Base64 decodeString:self];
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
 
