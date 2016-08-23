@@ -17,23 +17,23 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Cb6-Cb-hUp">
-                    <rect key="frame" x="122" y="238" width="69" height="17"/>
+                    <rect key="frame" x="122" y="238" width="84" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="显示菜单栏" id="LnP-5c-KYe">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Status Style" id="LnP-5c-KYe">
                         <font key="font" size="13" name=".PingFangSC-Regular"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <popUpButton verticalHuggingPriority="750" id="0Ve-ij-K64">
-                    <rect key="frame" x="218" y="231" width="141" height="26"/>
+                    <rect key="frame" x="218" y="233" width="141" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="cpp-dk-Y9a">
+                    <popUpButtonCell key="cell" type="push" title="Show on Status" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="sso-mK-iYz" id="cpp-dk-Y9a">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" id="6Q3-aY-QrU">
                             <items>
-                                <menuItem title="在菜单栏中显示" id="sso-mK-iYz"/>
+                                <menuItem title="Show on Status" state="on" id="sso-mK-iYz"/>
                             </items>
                         </menu>
                     </popUpButtonCell>

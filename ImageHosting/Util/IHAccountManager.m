@@ -68,7 +68,7 @@
         currentAccount.bucketName = dict[BUCKET_KEY];
         [self.cache setObject:currentAccount forKey:CURRENT_ACCOUNT_KEY];
     }
-
+    NSLog(@"%s path of preferences file:%@", __FUNCTION__, [self pathOfPreferences]);
     return currentAccount;
 }
 
