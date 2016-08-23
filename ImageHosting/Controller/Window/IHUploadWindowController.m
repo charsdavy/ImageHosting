@@ -10,7 +10,7 @@
 #import "IHQiniuUploadManager.h"
 #import "IHAccountManager.h"
 
-@interface IHUploadWindowController ()
+@interface IHUploadWindowController ()<NSUserNotificationCenterDelegate>
 
 @property (copy) NSArray *paths;
 @property (assign) NSUInteger uploadFileCount;
@@ -18,6 +18,11 @@
 @end
 
 @implementation IHUploadWindowController
+
+- (void)dealloc
+{
+    [[NSUserNotificationCenter defaultUserNotificationCenter] removeAllDeliveredNotifications];
+}
 
 - (instancetype)init
 {
@@ -92,9 +97,13 @@
     
     if (times == self.paths.count) {
         if (0 == self.uploadFileCount) {
-            NSAlert *alert = [NSAlert alertWithMessageText:@"" defaultButton:@"Okay" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Upload file(s) success ! "];
-            [alert runModal];
             self.paths = nil;
+            NSUserNotification *notification = [[NSUserNotification alloc] init];
+            notification.title = @"Success";
+            notification.informativeText = @"Upload file(s) success !";
+            notification.soundName = @"NSUserNotificationDefaultSoundName";
+            [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:notification];
+            [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
         } else {
             NSAlert *alert = [NSAlert alertWithMessageText:@"" defaultButton:@"Okay" alternateButton:nil otherButton:nil informativeTextWithFormat:@"%zi files upload filed, please select again ! ", self.uploadFileCount];
             [alert runModal];
@@ -107,8 +116,9 @@
 {
     IHAccount *account = [[IHAccountManager sharedManager] currentAccount];
     if (!account) {
-        NSAlert *alert = [NSAlert alertWithMessageText:@"" defaultButton:@"Okay" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Please config account info by 'Preferences->Accounts' ! "];
+        NSAlert *alert = [NSAlert alertWithMessageText:@"" defaultButton:@"Okay" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Please config account info by 'Preferences->Accounts', and again upload. "];
         [alert runModal];
+        return;
     }
     [[IHQiniuUploadManager sharedManager] uploadQiniuForAccount:account filePath:path complete:complete];
 }
@@ -119,6 +129,14 @@
 {
     self.completionHandler = handler;
     [self showWindow:self];
+}
+
+#pragma mark - NSUserNotificationCenterDelegate
+
+- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center
+     shouldPresentNotification:(NSUserNotification *)notification
+{
+    return YES;
 }
 
 @end
