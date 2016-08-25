@@ -10,6 +10,7 @@
 #import "const.h"
 #import "IHAccount.h"
 #import "IHQiniuTokenManager.h"
+#import "QiniuSDK.h"
 
 @interface IHQiniuUploadManager ()
 
@@ -27,12 +28,21 @@
     return sharedManager;
 }
 
-- (void)uploadQiniuForAccount:(IHAccount *)account key:(NSString *)key filePath:(NSString *)path complete:(QNUpCompletionHandler)complete
+- (void)uploadQiniuForAccount:(IHAccount *)account key:(NSString *)key filePath:(NSString *)path completion:(IHQiniuCompletionHandler)completion progress:(IHQiniuProgressHandler)progress
 {
     NSString *token = [[IHQiniuTokenManager sharedManager] generateUploadTokenForAccount:account];
     QNUploadManager *manager = [[QNUploadManager alloc] init];
     
-    [manager putFile:path key:key token:token complete:complete option:nil];
+    QNUploadOption *option = [[QNUploadOption alloc] initWithProgressHandler:^(NSString *key, float percent) {
+        if (progress) {
+            progress(percent);
+        }
+    }];
+    [manager putFile:path key:key token:token complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
+        if (completion) {
+            completion(resp);
+        }
+    } option:option];
 }
 
 @end

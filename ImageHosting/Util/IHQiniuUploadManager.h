@@ -7,14 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "QiniuSDK.h"
 
 @class IHAccount;
+
+typedef void(^IHQiniuCompletionHandler)(NSDictionary *resp);
+typedef void(^IHQiniuProgressHandler)(CGFloat percent);
 
 @interface IHQiniuUploadManager : NSObject
 
 + (instancetype) sharedManager;
 
-- (void)uploadQiniuForAccount:(IHAccount *)account key:(NSString *)key filePath:(NSString *)path complete:(QNUpCompletionHandler)complete;
+- (void)uploadQiniuForAccount:(IHAccount *)account key:(NSString *)key filePath:(NSString *)path completion:(IHQiniuCompletionHandler)completion progress:(IHQiniuProgressHandler)progress;
 
 @end

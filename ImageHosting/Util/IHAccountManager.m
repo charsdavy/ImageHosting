@@ -30,28 +30,6 @@
     return sharedManager;
 }
 
-- (BOOL)isFileExistAtPath:(NSString *)fileFullPath
-{
-    BOOL isExist = NO;
-    isExist = [[NSFileManager defaultManager] fileExistsAtPath:fileFullPath];
-    return isExist;
-}
-
-- (NSString *)pathLibraryPreferences
-{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
-    NSString *libraryDirectory = paths[0];
-    libraryDirectory = [libraryDirectory stringByAppendingString:@"/Preferences"];
-    return libraryDirectory;
-}
-
-- (NSString *)pathOfPreferences
-{
-    NSString *path = [self pathLibraryPreferences];
-    path = [path stringByAppendingString:@"/IHAccount.json"];
-    return path;
-}
-
 - (IHAccount *)currentAccount
 {
     IHAccount *currentAccount = [[IHAccount alloc] init];
@@ -79,7 +57,7 @@
     BOOL success = NO;
     BOOL replace = NO;
 
-    if ([self isFileExistAtPath:path]) {
+    if ([self fileExistAtPath:path]) {
         archive = [NSMutableArray arrayWithContentsOfFile:path];
     }
 
@@ -109,9 +87,9 @@
 - (NSArray *)unarchive
 {
     NSString *path = [self pathOfPreferences];
-    NSArray *accounts = [NSArray arrayWithContentsOfFile:path];
+    NSArray *contents = [NSArray arrayWithContentsOfFile:path];
     NSMutableArray *unarchive = [NSMutableArray array];
-    for (NSDictionary *dict in accounts) {
+    for (NSDictionary *dict in contents) {
         IHAccount *account = [[IHAccount alloc] init];
         account.accountType = [dict[TYPE_KEY] integerValue];
         account.ak = dict[AK_KEY];

@@ -9,10 +9,12 @@
 #ifndef const_h
 #define const_h
 
-#define AK_KEY              @"ak"
-#define SK_KEY              @"sk"
-#define BUCKET_KEY          @"bucket"
-#define TYPE_KEY            @"type"
-#define CURRENT_ACCOUNT_KEY @"current_account"
+#define AK_KEY                  @"ak"
+#define SK_KEY                  @"sk"
+#define BUCKET_KEY              @"bucket"
+#define TYPE_KEY                @"type"
+#define CURRENT_ACCOUNT_KEY     @"current_account"
+
+#define SYSTEM_NOTIFICATION_KEY @"system_notification"
 
 #endif /* const_h */

@@ -9,11 +9,15 @@
 #import "IHUploadWindowController.h"
 #import "IHQiniuUploadManager.h"
 #import "IHAccountManager.h"
+#import "IHGeneralManager.h"
 
 @interface IHUploadWindowController ()<NSUserNotificationCenterDelegate>
 
 @property (copy) NSArray *paths;
 @property (assign) NSUInteger uploadFileCount;
+
+@property (weak) IBOutlet NSImageView *hintImageView;
+@property (weak) IBOutlet NSTextField *hintLabel;
 
 @end
 
@@ -38,6 +42,8 @@
     [super windowDidLoad];
     
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    
+    [self clearHintMessage];
 }
 
 #pragma mark - Button Action
@@ -45,26 +51,30 @@
 - (IBAction)clickedUpload:(id)sender
 {
     if (!self.paths) {
-        NSAlert *alert = [NSAlert alertWithMessageText:@"" defaultButton:@"Okay" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Please select you want to upload file(s) ! "];
-        [alert runModal];
+        NSString *alertMsg = @"Please select you want to upload file(s) ! ";
+        [self showAlertWithMessage:alertMsg];
     }
     
     __block NSUInteger times = 0;
     for (NSString *path in self.paths) {
         NSString *key = [path lastPathComponent];
-        [self uploadFileWithPath:path key:key complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
+        [self uploadFileWithPath:path key:key completion:^(NSDictionary *resp) {
             times++;
             BOOL success = NO;
             if (resp) {
                 success = YES;
             }
             [self uploadFileSuccess:success invoke:times];
+        } progress:^(CGFloat percent) {
+            NSLog(@"%s percent:%f", __FUNCTION__, percent);
         }];
     }
 }
 
 - (IBAction)clickedSelect:(id)sender
 {
+    [self clearHintMessage];
+    
     NSOpenPanel *selectPanel = [NSOpenPanel openPanel];
     [selectPanel setAllowsMultipleSelection:YES];
     [selectPanel setCanChooseDirectories:NO];
@@ -98,30 +108,69 @@
     
     if (times == self.paths.count) {
         if (0 == self.uploadFileCount) {
-            self.paths = nil;
-            NSUserNotification *notification = [[NSUserNotification alloc] init];
-            notification.title = @"Success";
-            notification.informativeText = @"Upload file(s) success !";
-            notification.soundName = @"NSUserNotificationDefaultSoundName";
-            [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:notification];
-            [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
+            [self didUploadFilesSuccess:YES];
         } else {
-            NSAlert *alert = [NSAlert alertWithMessageText:@"" defaultButton:@"Okay" alternateButton:nil otherButton:nil informativeTextWithFormat:@"%zi files upload filed, please select again ! ", self.uploadFileCount];
-            [alert runModal];
-            self.paths = nil;
+            [self didUploadFilesSuccess:NO];
         }
     }
 }
 
-- (void)uploadFileWithPath:(NSString *)path key:(NSString *)key complete:(QNUpCompletionHandler)complete
+- (void)uploadFileWithPath:(NSString *)path key:(NSString *)key completion:(IHQiniuCompletionHandler)completion progress:(IHQiniuProgressHandler)progress
 {
     IHAccount *account = [[IHAccountManager sharedManager] currentAccount];
     if (!account) {
-        NSAlert *alert = [NSAlert alertWithMessageText:@"" defaultButton:@"Okay" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Please config account info by 'Preferences->Accounts', and again upload. "];
-        [alert runModal];
+        NSString *alertMsg = @"Please configure account info by 'Preferences -> Accounts', and again upload. ";
+        [self showAlertWithMessage:alertMsg];
         return;
     }
-    [[IHQiniuUploadManager sharedManager] uploadQiniuForAccount:account key:key filePath:path complete:complete];
+    
+    [[IHQiniuUploadManager sharedManager] uploadQiniuForAccount:account key:key filePath:path completion:completion progress:progress];
+}
+
+- (void)didUploadFilesSuccess:(BOOL)success
+{
+    if ([[IHGeneralManager sharedManager] systemNotification]) {
+        NSUserNotification *notification = [[NSUserNotification alloc] init];
+        if (success) {
+            notification.title = @"Upload Success";
+            notification.informativeText = @"Upload file(s) success !";
+        } else {
+            notification.title = @"Upload Failed";
+            notification.informativeText = [NSString stringWithFormat:@"%zi files upload failed, please select again or reconfigure account info! ", self.uploadFileCount];
+        }
+        
+        notification.soundName = @"NSUserNotificationDefaultSoundName";
+        [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:notification];
+        [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
+    }
+    
+    [self showHintSuccessMessage:success];
+    self.paths = nil;
+}
+
+- (void)showAlertWithMessage:(NSString *)message
+{
+    NSAlert *alert = [NSAlert alertWithMessageText:@"" defaultButton:@"Okay" alternateButton:nil otherButton:nil informativeTextWithFormat:@"%@", message];
+    [alert runModal];
+}
+
+- (void)showHintSuccessMessage:(BOOL)success
+{
+    if (success) {
+        self.hintImageView.image = [NSImage imageNamed:@"success"];
+        self.hintLabel.textColor = [NSColor blackColor];
+        self.hintLabel.stringValue = @"Upload file(s) success !";
+    } else {
+        self.hintImageView.image = [NSImage imageNamed:@"fail"];
+        self.hintLabel.textColor = [NSColor redColor];
+        self.hintLabel.stringValue = [NSString stringWithFormat:@"%zi files upload failed ! ", self.uploadFileCount];
+    }
+}
+
+- (void)clearHintMessage
+{
+    self.hintImageView.image = nil;
+    self.hintLabel.stringValue = @"";
 }
 
 #pragma mark - Showing the Preferences Window

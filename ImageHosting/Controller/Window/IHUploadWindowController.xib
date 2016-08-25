@@ -7,6 +7,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="IHUploadWindowController">
             <connections>
+                <outlet property="hintImageView" destination="egf-Tc-3NJ" id="JUZ-Yf-lpf"/>
+                <outlet property="hintLabel" destination="wx8-cZ-sth" id="sm4-yp-wo9"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="9Cm-xX-cTc"/>
             </connections>
         </customObject>
@@ -40,8 +42,23 @@
                             <action selector="clickedUpload:" target="-2" id="Fli-pu-aB1"/>
                         </connections>
                     </button>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="egf-Tc-3NJ">
+                        <rect key="frame" x="167" y="122" width="128" height="128"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="success" id="rzQ-xh-MtQ"/>
+                    </imageView>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wx8-cZ-sth">
+                        <rect key="frame" x="46" y="84" width="389" height="22"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="success" id="rb9-Wj-Chw">
+                            <font key="font" metaFont="system" size="15"/>
+                            <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
             </view>
         </window>
     </objects>
+    <resources>
+        <image name="success" width="128" height="128"/>
+    </resources>
 </document>

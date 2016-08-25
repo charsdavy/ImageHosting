@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "IHPreferencesWindowController.h"
 #import "IHUploadWindowController.h"
+#import "IHGeneralManager.h"
 
 @interface AppDelegate ()
 
@@ -41,7 +42,7 @@
     if (!_statusMenu) {
         _statusMenu = [[NSMenu alloc] initWithTitle:@""];
         [_statusMenu addItemWithTitle:@"Upload" action:@selector(uploadMenuAction) keyEquivalent:@"u"];
-        [_statusMenu addItemWithTitle:@"Perferences" action:@selector(perferencesMenuAction) keyEquivalent:@","];
+        [_statusMenu addItemWithTitle:@"Preferences" action:@selector(preferencesMenuAction) keyEquivalent:@","];
         [_statusMenu addItemWithTitle:@"Instruction" action:@selector(instructionMenuAction) keyEquivalent:@""];
         [_statusMenu addItemWithTitle:@"Quit" action:@selector(quitMenuAction) keyEquivalent:@"q"];
     }
@@ -53,7 +54,7 @@
     [self.uploadWindowController showWithCompletionHandler:nil];
 }
 
-- (void)perferencesMenuAction
+- (void)preferencesMenuAction
 {
     [self showPreferences:nil];
 }
@@ -85,6 +86,8 @@
     if (!self.uploadWindowController) {
         self.uploadWindowController = [[IHUploadWindowController alloc] init];
     }
+    
+    [[IHGeneralManager sharedManager] archiveSystemNotification:@"YES"];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification

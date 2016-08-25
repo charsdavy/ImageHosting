@@ -1,5 +1,5 @@
 //
-//  IHPerferencesGeneralViewController.h
+//  IHPreferencesGeneralViewController.h
 //  ImageHosting
 //
 //  Created by chars on 16/8/19.
@@ -8,6 +8,6 @@
 
 #import "IHViewController.h"
 
-@interface IHPerferencesGeneralViewController : IHViewController
+@interface IHPreferencesGeneralViewController : IHViewController
 
 @end

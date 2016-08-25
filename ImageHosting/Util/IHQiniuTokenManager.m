@@ -36,6 +36,10 @@
 
 - (NSString *)generateUploadTokenForAccount:(IHAccount *)account
 {
+    if (account.accountType == IHAccountTypeNone) {
+        return nil;
+    }
+    
     const char *secretKeyStr = [[account.sk ih_decode] UTF8String];
     NSString *policy = [self marshal:account.bucketName];
     NSData *policyData = [policy dataUsingEncoding:NSUTF8StringEncoding];
@@ -56,6 +60,10 @@
 
 - (NSString *)marshal:(NSString *)bucketName
 {
+    if (!bucketName) {
+        return nil;
+    }
+    
     time_t deadline;
     time(&deadline);//返回当前系统时间
 
@@ -64,7 +72,6 @@
     NSNumber *deadlineNumber = [NSNumber numberWithLongLong:deadline];
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setObject:bucketName forKey:@"scope"];
-    
     [dict setObject:deadlineNumber forKey:@"deadline"];
     
     NSString *json = [dict JSONString];
