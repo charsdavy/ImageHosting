@@ -16,6 +16,9 @@
 @property (weak) IBOutlet NSTextField *akTextField;
 @property (weak) IBOutlet NSSecureTextField *skTextField;
 @property (weak) IBOutlet NSTextField *bucketNameTextField;
+@property (weak) IBOutlet NSButton *east;
+@property (weak) IBOutlet NSButton *north;
+@property (copy) NSString *region;
 
 @end
 
@@ -35,6 +38,16 @@
         _akTextField.stringValue = currentAccount.ak;
         _skTextField.stringValue = currentAccount.sk;
         _bucketNameTextField.stringValue = currentAccount.bucketName;
+        if ([currentAccount.region isEqualToString:REGION_EAST_CHINA]) {
+            _east.state = 1;
+            _north.state = 0;
+        } else if ([currentAccount.region isEqualToString:REGION_NORTH_CHINA]) {
+            _east.state = 0;
+            _north.state = 1;
+        }
+    } else {
+        _east.state = 1;
+        _north.state = 0;
     }
 }
 
@@ -45,6 +58,7 @@
     account.ak = _akTextField.stringValue;
     account.sk = _skTextField.stringValue;
     account.bucketName = _bucketNameTextField.stringValue;
+    account.region = self.region;
     
     BOOL success = [[IHAccountManager sharedManager] archiveAccount:account];
     if (success) {
@@ -60,9 +74,9 @@
 
 - (IBAction)clickedRegion:(NSButton *)sender {
     if (sender.tag == 1) {
-        [[IHAccountManager sharedManager] archive:REGION_EAST_CHINA key:REGION_KEY];
+        self.region = REGION_EAST_CHINA;
     } else if (sender.tag == 0) {
-        [[IHAccountManager sharedManager] archive:REGION_NORTH_CHINA key:REGION_KEY];
+        self.region = REGION_NORTH_CHINA;
     }
 }
 
@@ -71,6 +85,8 @@
     _akTextField.stringValue = @"";
     _skTextField.stringValue = @"";
     _bucketNameTextField.stringValue = @"";
+    _east.state = 1;
+    _north.state = 0;
 }
 
 @end

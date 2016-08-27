@@ -10,7 +10,6 @@
 #import "IHPreferencesWindowController.h"
 #import "IHUploadWindowController.h"
 #import "IHGeneralManager.h"
-#import "IHAccountManager.h"
 #import "const.h"
 
 @interface AppDelegate ()
@@ -89,8 +88,9 @@
         self.uploadWindowController = [[IHUploadWindowController alloc] init];
     }
     
-    [[IHGeneralManager sharedManager] archive:@"YES" key:SYSTEM_NOTIFICATION_KEY];
-    [[IHAccountManager sharedManager] archive:REGION_EAST_CHINA key:REGION_KEY];
+    if (![[IHGeneralManager sharedManager] unarchiveSystemNotification]) {
+        [[IHGeneralManager sharedManager] archive:@"YES" key:SYSTEM_NOTIFICATION_KEY];
+    }
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification

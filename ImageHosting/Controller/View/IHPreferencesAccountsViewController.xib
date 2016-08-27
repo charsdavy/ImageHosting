@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="IHPreferencesAccountsViewController">
             <connections>
                 <outlet property="akTextField" destination="7mf-kI-2Og" id="nlf-gO-AdQ"/>
                 <outlet property="bucketNameTextField" destination="L9A-58-cie" id="hXk-Dy-j8a"/>
+                <outlet property="east" destination="yPV-q8-xh2" id="tCQ-am-J4Y"/>
+                <outlet property="north" destination="ZLI-ym-dI9" id="Q26-Mb-Hbt"/>
                 <outlet property="skTextField" destination="v45-co-keJ" id="l6g-O8-Sxy"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>

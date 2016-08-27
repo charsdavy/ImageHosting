@@ -48,6 +48,7 @@
                 currentAccount.ak = cur[AK_KEY];
                 currentAccount.sk = cur[SK_KEY];
                 currentAccount.bucketName = cur[BUCKET_KEY];
+                currentAccount.region = cur[REGION_KEY];
                 [self.cache setObject:currentAccount forKey:CURRENT_ACCOUNT_KEY];
             }
         }
@@ -68,6 +69,7 @@
     [dict setObject:account.ak forKey:AK_KEY];
     [dict setObject:[account.sk ih_encrypt] forKey:SK_KEY];
     [dict setObject:account.bucketName forKey:BUCKET_KEY];
+    [dict setObject:account.region forKey:REGION_KEY];
 
     if ([self fileExistAtPath:path]) {
         archive = [NSMutableArray arrayWithContentsOfFile:path];
@@ -80,6 +82,7 @@
             cur[AK_KEY] = dict[AK_KEY];
             cur[SK_KEY] = dict[SK_KEY];
             cur[BUCKET_KEY] = dict[BUCKET_KEY];
+            cur[REGION_KEY] = dict[REGION_KEY];
             replace = YES;
         }
     }
@@ -106,6 +109,7 @@
             account.ak = dict[AK_KEY];
             account.sk = dict[SK_KEY];
             account.bucketName = dict[BUCKET_KEY];
+            account.region = dict[REGION_KEY];
             [unarchive addObject:account];
         }
     }
