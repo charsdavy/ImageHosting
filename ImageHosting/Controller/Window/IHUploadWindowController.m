@@ -136,7 +136,7 @@
             notification.informativeText = @"Upload file(s) success !";
         } else {
             notification.title = @"Upload Failed";
-            notification.informativeText = [NSString stringWithFormat:@"%zi files upload failed, please select again or reconfigure account info! ", self.uploadFileCount];
+            notification.informativeText = [NSString stringWithFormat:@"OOh, %zi files upload failed, please select again or reconfigure account information! ", self.uploadFileCount];
         }
         
         notification.soundName = @"NSUserNotificationDefaultSoundName";

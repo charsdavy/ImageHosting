@@ -14,7 +14,7 @@
 
 - (BOOL)systemNotification;
 
-- (BOOL)archiveSystemNotification:(NSString *)notificaion;
+- (BOOL)archive:(id)object key:(NSString *)key;
 
 - (NSString *)unarchiveSystemNotification;
 

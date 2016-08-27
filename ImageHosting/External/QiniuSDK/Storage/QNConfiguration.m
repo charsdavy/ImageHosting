@@ -9,6 +9,8 @@
 #import "QNConfiguration.h"
 #import "HappyDNS.h"
 #import "QNNetworkInfo.h"
+#import "const.h"
+#import "IHAccountManager.h"
 
 #import "QNSystem.h"
 
@@ -88,7 +90,12 @@ static QNDnsManager *initDns(QNConfigurationBuilder *builder) {
 
 - (instancetype)init {
     if (self = [super init]) {
-        _zone = [QNZone zone0];
+        NSString *region = [[IHAccountManager sharedManager] unarchiveForKey:REGION_KEY];
+        if ([region isEqualToString:REGION_EAST_CHINA]) {
+            _zone = [QNZone zone0];
+        } else if ([region isEqualToString:REGION_NORTH_CHINA]) {
+            _zone = [QNZone zone1];
+        }
         _chunkSize = 256 * 1024;
         _putThreshold = 512 * 1024;
         _retryMax = 2;

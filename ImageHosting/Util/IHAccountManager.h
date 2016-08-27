@@ -18,6 +18,10 @@
 
 - (BOOL)archiveAccount:(IHAccount *)account;
 
-- (NSArray *)unarchive;
+- (NSArray<IHAccount *> *)unarchive;
+
+- (BOOL)archive:(id)object key:(NSString *)key;
+
+- (NSString *)unarchiveForKey:(NSString *)key;
 
 @end

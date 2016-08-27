@@ -50,7 +50,7 @@
     return [systemNotification isEqualToString:@"YES"] ? YES : NO;
 }
 
-- (BOOL)archiveSystemNotification:(NSString *)notificaion
+- (BOOL)archive:(id)object key:(NSString *)key
 {
     NSMutableArray *archive = [NSMutableArray array];
     NSString *path = [self pathOfPreferences];
@@ -62,20 +62,20 @@
     }
     
     for (NSMutableDictionary *cur in archive) {
-        if (cur[SYSTEM_NOTIFICATION_KEY]) {
-            cur[SYSTEM_NOTIFICATION_KEY] = notificaion;
+        if (cur[key]) {
+            cur[key] = object;
             replace = YES;
         }
     }
     
     if (!replace) {
         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-        [dict setObject:notificaion forKey:SYSTEM_NOTIFICATION_KEY];
+        [dict setObject:object forKey:key];
         [archive addObject:dict];
     }
     
     if (self.cache) {
-        [self.cache setObject:notificaion forKey:SYSTEM_NOTIFICATION_KEY];
+        [self.cache setObject:object forKey:key];
     }
     
     success = [archive writeToFile:path atomically:YES];

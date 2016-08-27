@@ -9,6 +9,7 @@
 #import "IHPreferencesAccountsViewController.h"
 #import "IHAccountManager.h"
 #import "IHAccount.h"
+#import "const.h"
 
 @interface IHPreferencesAccountsViewController ()
 
@@ -47,12 +48,21 @@
     
     BOOL success = [[IHAccountManager sharedManager] archiveAccount:account];
     if (success) {
-        NSAlert *alert = [NSAlert alertWithMessageText:@"" defaultButton:@"Okay" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Config Account Info Success ! Please continue another operation "];
+        NSString *info = @"Config Account Info Success ! Please continue another operation ";
+        NSAlert *alert = [NSAlert alertWithMessageText:@"" defaultButton:@"Okay" alternateButton:nil otherButton:nil informativeTextWithFormat:@"%@", info];
         [alert runModal];
     } else {
         NSAlert *alert = [NSAlert alertWithMessageText:@"" defaultButton:@"Okay" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Config Account Info Failed ! Please again "];
         [alert runModal];
         [self clearAccountViewContent];
+    }
+}
+
+- (IBAction)clickedRegion:(NSButton *)sender {
+    if (sender.tag == 1) {
+        [[IHAccountManager sharedManager] archive:REGION_EAST_CHINA key:REGION_KEY];
+    } else if (sender.tag == 0) {
+        [[IHAccountManager sharedManager] archive:REGION_NORTH_CHINA key:REGION_KEY];
     }
 }
 

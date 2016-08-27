@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="RBd-zf-rEs">
-                    <rect key="frame" x="66" y="193" width="74" height="17"/>
+                    <rect key="frame" x="66" y="211" width="74" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Access Key" id="9am-sv-N8p">
                         <font key="font" metaFont="system"/>
@@ -29,7 +29,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Y0n-k1-1qq">
-                    <rect key="frame" x="203" y="247" width="95" height="17"/>
+                    <rect key="frame" x="203" y="258" width="95" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Qiniu Account" id="Urg-3b-gBn">
                         <font key="font" size="13" name=".PingFangSC-Regular"/>
@@ -38,7 +38,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="Lbz-hW-mvW">
-                    <rect key="frame" x="66" y="142" width="70" height="17"/>
+                    <rect key="frame" x="66" y="160" width="70" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Secret Key" id="UAj-hN-Ac1">
                         <font key="font" metaFont="system"/>
@@ -47,7 +47,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="ff5-44-eQc">
-                    <rect key="frame" x="66" y="88" width="89" height="17"/>
+                    <rect key="frame" x="66" y="106" width="89" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Bucket Name " id="gmh-dn-xqS">
                         <font key="font" metaFont="system"/>
@@ -56,7 +56,7 @@
                     </textFieldCell>
                 </textField>
                 <textField verticalHuggingPriority="750" id="7mf-kI-2Og">
-                    <rect key="frame" x="167" y="190" width="244" height="22"/>
+                    <rect key="frame" x="167" y="208" width="244" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="QGh-aE-2Wj">
                         <font key="font" metaFont="system"/>
@@ -65,7 +65,7 @@
                     </textFieldCell>
                 </textField>
                 <textField verticalHuggingPriority="750" id="L9A-58-cie">
-                    <rect key="frame" x="167" y="86" width="244" height="22"/>
+                    <rect key="frame" x="167" y="104" width="244" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="oD2-Fg-TJo">
                         <font key="font" metaFont="system"/>
@@ -74,7 +74,7 @@
                     </textFieldCell>
                 </textField>
                 <secureTextField verticalHuggingPriority="750" id="v45-co-keJ">
-                    <rect key="frame" x="167" y="140" width="244" height="22"/>
+                    <rect key="frame" x="167" y="158" width="244" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="0vs-Nf-Ydh">
                         <font key="font" metaFont="system"/>
@@ -85,8 +85,39 @@
                         </allowedInputSourceLocales>
                     </secureTextFieldCell>
                 </secureTextField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="gTT-Ow-IOO">
+                    <rect key="frame" x="66" y="61" width="46" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Region" id="SfG-ob-2eZ">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button tag="1" id="yPV-q8-xh2">
+                    <rect key="frame" x="166" y="60" width="87" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="radio" title="East China" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="ekb-uE-h1w">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="clickedRegion:" target="-2" id="egc-2s-s1R"/>
+                    </connections>
+                </button>
+                <button id="ZLI-ym-dI9">
+                    <rect key="frame" x="318" y="60" width="95" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="radio" title="North China" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="mFg-AC-3P8">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="clickedRegion:" target="-2" id="mh0-g7-0fZ"/>
+                    </connections>
+                </button>
                 <button verticalHuggingPriority="750" id="bb0-Xn-unD">
-                    <rect key="frame" x="344" y="21" width="73" height="32"/>
+                    <rect key="frame" x="344" y="12" width="73" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" title="Submit" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wZ2-so-Ncd">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>

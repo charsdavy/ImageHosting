@@ -14,7 +14,13 @@
 #define BUCKET_KEY              @"bucket"
 #define TYPE_KEY                @"type"
 #define CURRENT_ACCOUNT_KEY     @"current_account"
+#define ACCOUNTS_KEY            @"accounts"
+#define ACCOUNT_KEY             @"account"
 
 #define SYSTEM_NOTIFICATION_KEY @"system_notification"
+
+#define REGION_KEY              @"region"
+#define REGION_EAST_CHINA       @"east_china"
+#define REGION_NORTH_CHINA      @"north_china"
 
 #endif /* const_h */
