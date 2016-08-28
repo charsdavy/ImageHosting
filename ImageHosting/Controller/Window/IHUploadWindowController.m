@@ -55,6 +55,8 @@
         [self showAlertWithMessage:alertMsg];
     }
     
+    [self showHintUploadingMessage];
+    
     __block NSUInteger times = 0;
     for (NSString *path in self.paths) {
         NSString *key = [path lastPathComponent];
@@ -165,6 +167,12 @@
         self.hintLabel.textColor = [NSColor redColor];
         self.hintLabel.stringValue = [NSString stringWithFormat:@"%zi files upload failed ! ", self.uploadFileCount];
     }
+}
+
+- (void)showHintUploadingMessage
+{
+    self.hintLabel.textColor = [NSColor blackColor];
+    self.hintLabel.stringValue = @"Uploading ... ";
 }
 
 - (void)clearHintMessage
