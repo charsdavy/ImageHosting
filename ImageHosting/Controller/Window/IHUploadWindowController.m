@@ -173,6 +173,7 @@
 {
     self.hintLabel.textColor = [NSColor blackColor];
     self.hintLabel.stringValue = @"Uploading ... ";
+    self.hintImageView.image = [NSImage imageNamed:@"loading"];
 }
 
 - (void)clearHintMessage

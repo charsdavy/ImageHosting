@@ -39,6 +39,7 @@
         }
     }];
     [manager putFile:path key:key token:token complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
+        NSLog(@"%s info:%@", __FUNCTION__, info);
         if (completion) {
             completion(resp);
         }

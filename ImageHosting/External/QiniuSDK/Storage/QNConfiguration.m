@@ -10,6 +10,7 @@
 #import "HappyDNS.h"
 #import "QNNetworkInfo.h"
 #import "const.h"
+#import "IHAccount.h"
 #import "IHAccountManager.h"
 
 #import "QNSystem.h"
@@ -90,7 +91,8 @@ static QNDnsManager *initDns(QNConfigurationBuilder *builder) {
 
 - (instancetype)init {
     if (self = [super init]) {
-        NSString *region = [[IHAccountManager sharedManager] unarchiveForKey:REGION_KEY];
+        IHAccount *account = [[IHAccountManager sharedManager] currentAccount];
+        NSString *region = account.region;
         if ([region isEqualToString:REGION_EAST_CHINA]) {
             _zone = [QNZone zone0];
         } else if ([region isEqualToString:REGION_NORTH_CHINA]) {

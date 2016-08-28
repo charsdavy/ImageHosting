@@ -87,6 +87,8 @@
 		D5863E751D692F8E00B302DB /* IHQiniuUploadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D5863E741D692F8E00B302DB /* IHQiniuUploadManager.m */; };
 		D5F898E71D6DE3B8005A9A92 /* IHGeneralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F898E61D6DE3B8005A9A92 /* IHGeneralManager.m */; };
 		D5F898EA1D6DE46A005A9A92 /* IHPreferencesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F898E91D6DE46A005A9A92 /* IHPreferencesManager.m */; };
+		D5FF29531D731700005A16CF /* IHAboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5FF29511D731700005A16CF /* IHAboutWindowController.m */; };
+		D5FF29541D731700005A16CF /* IHAboutWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5FF29521D731700005A16CF /* IHAboutWindowController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -275,6 +277,9 @@
 		D5F898E61D6DE3B8005A9A92 /* IHGeneralManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHGeneralManager.m; sourceTree = "<group>"; };
 		D5F898E81D6DE46A005A9A92 /* IHPreferencesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPreferencesManager.h; sourceTree = "<group>"; };
 		D5F898E91D6DE46A005A9A92 /* IHPreferencesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPreferencesManager.m; sourceTree = "<group>"; };
+		D5FF29501D731700005A16CF /* IHAboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHAboutWindowController.h; sourceTree = "<group>"; };
+		D5FF29511D731700005A16CF /* IHAboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHAboutWindowController.m; sourceTree = "<group>"; };
+		D5FF29521D731700005A16CF /* IHAboutWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IHAboutWindowController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -655,6 +660,8 @@
 		D55772471D674E28001BA82D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D557724E1D674E28001BA82D /* IHViewController.h */,
+				D557724F1D674E28001BA82D /* IHViewController.m */,
 				D55772481D674E28001BA82D /* IHPreferencesGeneralViewController.h */,
 				D55772491D674E28001BA82D /* IHPreferencesGeneralViewController.m */,
 				D557724A1D674E28001BA82D /* IHPreferencesGeneralViewController.xib */,
@@ -664,8 +671,6 @@
 				4B3F4F041D6AE63E00A0A6CE /* IHPreferencesDonateViewController.h */,
 				4B3F4F051D6AE63E00A0A6CE /* IHPreferencesDonateViewController.m */,
 				4B3F4F061D6AE63E00A0A6CE /* IHPreferencesDonateViewController.xib */,
-				D557724E1D674E28001BA82D /* IHViewController.h */,
-				D557724F1D674E28001BA82D /* IHViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -673,14 +678,17 @@
 		D55772501D674E28001BA82D /* Window */ = {
 			isa = PBXGroup;
 			children = (
+				D55772571D674E28001BA82D /* IHWindowController.h */,
+				D55772581D674E28001BA82D /* IHWindowController.m */,
 				D55772511D674E28001BA82D /* IHPreferencesWindowController.h */,
 				D55772521D674E28001BA82D /* IHPreferencesWindowController.m */,
 				D55772531D674E28001BA82D /* IHPreferencesWindowController.xib */,
 				D55772541D674E28001BA82D /* IHUploadWindowController.h */,
 				D55772551D674E28001BA82D /* IHUploadWindowController.m */,
 				D55772561D674E28001BA82D /* IHUploadWindowController.xib */,
-				D55772571D674E28001BA82D /* IHWindowController.h */,
-				D55772581D674E28001BA82D /* IHWindowController.m */,
+				D5FF29501D731700005A16CF /* IHAboutWindowController.h */,
+				D5FF29511D731700005A16CF /* IHAboutWindowController.m */,
+				D5FF29521D731700005A16CF /* IHAboutWindowController.xib */,
 			);
 			path = Window;
 			sourceTree = "<group>";
@@ -807,6 +815,7 @@
 				D557725F1D674E28001BA82D /* IHPreferencesWindowController.xib in Resources */,
 				D55772611D674E28001BA82D /* IHUploadWindowController.xib in Resources */,
 				D557725C1D674E28001BA82D /* IHPreferencesAccountsViewController.xib in Resources */,
+				D5FF29541D731700005A16CF /* IHAboutWindowController.xib in Resources */,
 				4BB4B2831D63164E0059CF02 /* Assets.xcassets in Resources */,
 				4BB4B2861D63164E0059CF02 /* Main.storyboard in Resources */,
 				D557725A1D674E28001BA82D /* IHPreferencesGeneralViewController.xib in Resources */,
@@ -862,6 +871,7 @@
 				4BBACD971D670D0D00746AD6 /* QNLruCache.m in Sources */,
 				4BBACD6D1D670CF800746AD6 /* UIWebView+AFNetworking.m in Sources */,
 				4BBACD4E1D670CEF00746AD6 /* AFURLResponseSerialization.m in Sources */,
+				D5FF29531D731700005A16CF /* IHAboutWindowController.m in Sources */,
 				4BBACD651D670CF800746AD6 /* AFAutoPurgingImageCache.m in Sources */,
 				4B3F4F071D6AE63E00A0A6CE /* IHPreferencesDonateViewController.m in Sources */,
 				D5F898EA1D6DE46A005A9A92 /* IHPreferencesManager.m in Sources */,

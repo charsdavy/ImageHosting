@@ -11,6 +11,7 @@
 #import "IHUploadWindowController.h"
 #import "IHGeneralManager.h"
 #import "const.h"
+#import "IHAboutWindowController.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +19,7 @@
 @property (nonatomic, strong) NSMenu *statusMenu;
 @property (strong) IHPreferencesWindowController *preferencesWindowController;
 @property (strong) IHUploadWindowController *uploadWindowController;
+@property (strong) IHAboutWindowController *aboutWindowController;
 
 @end
 
@@ -42,6 +44,7 @@
 {
     if (!_statusMenu) {
         _statusMenu = [[NSMenu alloc] initWithTitle:@""];
+        [_statusMenu addItemWithTitle:@"About" action:@selector(aboutMenuAction) keyEquivalent:@""];
         [_statusMenu addItemWithTitle:@"Upload" action:@selector(uploadMenuAction) keyEquivalent:@"u"];
         [_statusMenu addItemWithTitle:@"Preferences" action:@selector(preferencesMenuAction) keyEquivalent:@","];
         [_statusMenu addItemWithTitle:@"Instruction" action:@selector(instructionMenuAction) keyEquivalent:@""];
@@ -76,6 +79,11 @@
     [NSApp terminate:self];
 }
 
+- (void)aboutMenuAction
+{
+    [self.aboutWindowController showWithCompletionHandler:nil];
+}
+
 - (IBAction)showPreferences:(id)sender
 {
     [self.preferencesWindowController showWithCompletionHandler:nil];
@@ -92,6 +100,10 @@
     
     if (!self.uploadWindowController) {
         self.uploadWindowController = [[IHUploadWindowController alloc] init];
+    }
+    
+    if (!self.aboutWindowController) {
+        self.aboutWindowController = [[IHAboutWindowController alloc] init];
     }
     
     if (![[IHGeneralManager sharedManager] unarchiveSystemNotification]) {
