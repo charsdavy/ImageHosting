@@ -45,6 +45,7 @@
         [_statusMenu addItemWithTitle:@"Upload" action:@selector(uploadMenuAction) keyEquivalent:@"u"];
         [_statusMenu addItemWithTitle:@"Preferences" action:@selector(preferencesMenuAction) keyEquivalent:@","];
         [_statusMenu addItemWithTitle:@"Instruction" action:@selector(instructionMenuAction) keyEquivalent:@""];
+        [_statusMenu addItemWithTitle:@"Update" action:@selector(updateMenuAction) keyEquivalent:@""];
         [_statusMenu addItemWithTitle:@"Quit" action:@selector(quitMenuAction) keyEquivalent:@"q"];
     }
     return _statusMenu;
@@ -63,6 +64,11 @@
 - (void)instructionMenuAction
 {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://charsdavy.github.io/2016/08/22/ImageHosting-use-introduction/"]];
+}
+
+- (void)updateMenuAction
+{
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/charsdavy/ImageHosting/releases"]];
 }
 
 - (void)quitMenuAction
