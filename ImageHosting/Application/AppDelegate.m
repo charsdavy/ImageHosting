@@ -57,6 +57,7 @@
 - (void)uploadMenuAction
 {
     [self.uploadWindowController showWithCompletionHandler:nil];
+    [[self.uploadWindowController window] setLevel:kCGStatusWindowLevel];
 }
 
 - (void)preferencesMenuAction
@@ -82,17 +83,21 @@
 - (void)aboutMenuAction
 {
     [self.aboutWindowController showWithCompletionHandler:nil];
+    [[self.aboutWindowController window] setLevel:kCGStatusWindowLevel];
 }
 
 - (IBAction)showPreferences:(id)sender
 {
     [self.preferencesWindowController showWithCompletionHandler:nil];
+    [[self.preferencesWindowController window] setLevel:kCGStatusWindowLevel];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
     [self.statusItem setMenu:self.statusMenu];
+    
+    [NSApp activateIgnoringOtherApps:YES]; 
     
     if (!self.preferencesWindowController) {
         self.preferencesWindowController = [[IHPreferencesWindowController alloc] init];
