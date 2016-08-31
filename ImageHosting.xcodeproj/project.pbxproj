@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4B3F4F071D6AE63E00A0A6CE /* IHPreferencesDonateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F4F051D6AE63E00A0A6CE /* IHPreferencesDonateViewController.m */; };
-		4B3F4F081D6AE63E00A0A6CE /* IHPreferencesDonateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B3F4F061D6AE63E00A0A6CE /* IHPreferencesDonateViewController.xib */; };
+		4B3F4F071D6AE63E00A0A6CE /* IHPreferencesFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F4F051D6AE63E00A0A6CE /* IHPreferencesFeedbackViewController.m */; };
+		4B3F4F081D6AE63E00A0A6CE /* IHPreferencesFeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B3F4F061D6AE63E00A0A6CE /* IHPreferencesFeedbackViewController.xib */; };
 		4B3F4F1A1D6B0C1A00A0A6CE /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F4F161D6B0C1A00A0A6CE /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BB4B27E1D63164E0059CF02 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4B27D1D63164E0059CF02 /* main.m */; };
 		4BB4B2831D63164E0059CF02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BB4B2821D63164E0059CF02 /* Assets.xcassets */; };
@@ -109,9 +109,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4B3F4F041D6AE63E00A0A6CE /* IHPreferencesDonateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPreferencesDonateViewController.h; sourceTree = "<group>"; };
-		4B3F4F051D6AE63E00A0A6CE /* IHPreferencesDonateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPreferencesDonateViewController.m; sourceTree = "<group>"; };
-		4B3F4F061D6AE63E00A0A6CE /* IHPreferencesDonateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IHPreferencesDonateViewController.xib; sourceTree = "<group>"; };
+		4B3F4F041D6AE63E00A0A6CE /* IHPreferencesFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPreferencesFeedbackViewController.h; sourceTree = "<group>"; };
+		4B3F4F051D6AE63E00A0A6CE /* IHPreferencesFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHPreferencesFeedbackViewController.m; sourceTree = "<group>"; };
+		4B3F4F061D6AE63E00A0A6CE /* IHPreferencesFeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IHPreferencesFeedbackViewController.xib; sourceTree = "<group>"; };
 		4B3F4F151D6B0C1A00A0A6CE /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		4B3F4F161D6B0C1A00A0A6CE /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		4BB4B2761D63164E0059CF02 /* ImageHosting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageHosting.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -668,9 +668,9 @@
 				D557724B1D674E28001BA82D /* IHPreferencesAccountsViewController.h */,
 				D557724C1D674E28001BA82D /* IHPreferencesAccountsViewController.m */,
 				D557724D1D674E28001BA82D /* IHPreferencesAccountsViewController.xib */,
-				4B3F4F041D6AE63E00A0A6CE /* IHPreferencesDonateViewController.h */,
-				4B3F4F051D6AE63E00A0A6CE /* IHPreferencesDonateViewController.m */,
-				4B3F4F061D6AE63E00A0A6CE /* IHPreferencesDonateViewController.xib */,
+				4B3F4F041D6AE63E00A0A6CE /* IHPreferencesFeedbackViewController.h */,
+				4B3F4F051D6AE63E00A0A6CE /* IHPreferencesFeedbackViewController.m */,
+				4B3F4F061D6AE63E00A0A6CE /* IHPreferencesFeedbackViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -811,7 +811,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B3F4F081D6AE63E00A0A6CE /* IHPreferencesDonateViewController.xib in Resources */,
+				4B3F4F081D6AE63E00A0A6CE /* IHPreferencesFeedbackViewController.xib in Resources */,
 				D557725F1D674E28001BA82D /* IHPreferencesWindowController.xib in Resources */,
 				D55772611D674E28001BA82D /* IHUploadWindowController.xib in Resources */,
 				D557725C1D674E28001BA82D /* IHPreferencesAccountsViewController.xib in Resources */,
@@ -873,7 +873,7 @@
 				4BBACD4E1D670CEF00746AD6 /* AFURLResponseSerialization.m in Sources */,
 				D5FF29531D731700005A16CF /* IHAboutWindowController.m in Sources */,
 				4BBACD651D670CF800746AD6 /* AFAutoPurgingImageCache.m in Sources */,
-				4B3F4F071D6AE63E00A0A6CE /* IHPreferencesDonateViewController.m in Sources */,
+				4B3F4F071D6AE63E00A0A6CE /* IHPreferencesFeedbackViewController.m in Sources */,
 				D5F898EA1D6DE46A005A9A92 /* IHPreferencesManager.m in Sources */,
 				4BBACDA11D670D0D00746AD6 /* QNDes.m in Sources */,
 				D557725E1D674E28001BA82D /* IHPreferencesWindowController.m in Sources */,

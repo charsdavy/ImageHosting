@@ -82,7 +82,7 @@
     [selectPanel setCanChooseDirectories:NO];
     [selectPanel setCanChooseFiles:YES];
     
-    [selectPanel beginWithCompletionHandler:^(NSInteger result) {
+    [selectPanel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result) {
         if (result == NSOKButton) {
             NSMutableArray *array = [NSMutableArray array];
             NSArray *urls = [selectPanel URLs];

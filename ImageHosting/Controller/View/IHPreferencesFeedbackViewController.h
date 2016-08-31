@@ -1,5 +1,5 @@
 //
-//  IHPreferencesDonateViewController.h
+//  IHPreferencesFeedbackViewController.h
 //  ImageHosting
 //
 //  Created by chars on 16/8/22.
@@ -8,6 +8,6 @@
 
 #import "IHViewController.h"
 
-@interface IHPreferencesDonateViewController : IHViewController
+@interface IHPreferencesFeedbackViewController : IHViewController
 
 @end

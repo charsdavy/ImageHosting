@@ -10,4 +10,6 @@
 
 @interface IHViewController : NSViewController
 
+@property (nullable, strong) NSWindow *preferencesWindow;
+
 @end

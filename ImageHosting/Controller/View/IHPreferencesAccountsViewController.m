@@ -28,6 +28,7 @@
 {
     [super viewDidLoad];
     // Do view setup here.
+    _region = REGION_EAST_CHINA;
     [self fillCurrentAccount];
 }
 
@@ -63,11 +64,13 @@
     BOOL success = [[IHAccountManager sharedManager] archiveAccount:account];
     if (success) {
         NSString *info = @"Config Account Info Success ! Please continue another operation ";
-        NSAlert *alert = [NSAlert alertWithMessageText:@"" defaultButton:@"Okay" alternateButton:nil otherButton:nil informativeTextWithFormat:@"%@", info];
-        [alert runModal];
+        NSAlert *alert = [NSAlert alertWithMessageText:@"Configure Success" defaultButton:@"Okay" alternateButton:nil otherButton:nil informativeTextWithFormat:@"%@", info];
+        alert.alertStyle = NSInformationalAlertStyle;
+        [alert beginSheetModalForWindow:self.preferencesWindow completionHandler:nil];
     } else {
-        NSAlert *alert = [NSAlert alertWithMessageText:@"" defaultButton:@"Okay" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Config Account Info Failed ! Please again "];
-        [alert runModal];
+        NSAlert *alert = [NSAlert alertWithMessageText:@"Configure Failed" defaultButton:@"Okay" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Config Account Info Failed ! Please again "];
+        alert.alertStyle = NSWarningAlertStyle;
+        [alert beginSheetModalForWindow:self.preferencesWindow completionHandler:nil];
         [self clearAccountViewContent];
     }
 }

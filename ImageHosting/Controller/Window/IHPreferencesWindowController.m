@@ -7,6 +7,7 @@
 //
 
 #import "IHPreferencesWindowController.h"
+#import "IHViewController.h"
 
 @interface IHPreferencesWindowController ()
 
@@ -61,7 +62,7 @@
         if (!visibleItem.isEnabled || visibleItem.target != self) {
             continue;
         }
-        NSViewController *controller = [self createViewControllerForToolbarItem:visibleItem];
+        IHViewController *controller = [self createViewControllerForToolbarItem:visibleItem];
         if (!controller) {
             continue;
         }
@@ -76,16 +77,17 @@
     }
 }
 
-- (NSViewController *)createViewControllerForToolbarItem:(NSToolbarItem *)item
+- (IHViewController *)createViewControllerForToolbarItem:(NSToolbarItem *)item
 {
     if (!item) {
         return nil;
     }
     NSString *identifier = item.itemIdentifier;
-    NSViewController *result = [[NSClassFromString(identifier) alloc] initWithNibName:identifier bundle:nil];
+    IHViewController *result = [[NSClassFromString(identifier) alloc] initWithNibName:identifier bundle:nil];
     if (!result) {
         return nil;
     }
+    result.preferencesWindow = self.window;
     [result view];
     return result;
 }

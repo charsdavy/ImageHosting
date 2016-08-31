@@ -1,18 +1,18 @@
 //
-//  IHPreferencesDonateViewController.m
+//  IHPreferencesFeedbackViewController.m
 //  ImageHosting
 //
 //  Created by chars on 16/8/22.
 //  Copyright © 2016年 chars. All rights reserved.
 //
 
-#import "IHPreferencesDonateViewController.h"
+#import "IHPreferencesFeedbackViewController.h"
 
-@interface IHPreferencesDonateViewController ()
+@interface IHPreferencesFeedbackViewController ()
 
 @end
 
-@implementation IHPreferencesDonateViewController
+@implementation IHPreferencesFeedbackViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
