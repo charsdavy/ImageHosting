@@ -8,8 +8,8 @@
 
 #import "IHAboutWindowController.h"
 
-#define VERSION @"1.0.3"
-#define BUILD   @"4"
+#define VERSION @"1.0.4"
+#define BUILD   @"5"
 
 @interface IHAboutWindowController ()
 
