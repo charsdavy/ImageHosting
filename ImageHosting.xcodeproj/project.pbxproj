@@ -70,6 +70,7 @@
 		4BBACDA81D67104800746AD6 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBACDA71D67104800746AD6 /* libresolv.tbd */; };
 		4BBACDAA1D67105C00746AD6 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBACDA91D67105C00746AD6 /* libz.tbd */; };
 		4BDBE1D81D65A75200B9BB0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BDBE1D21D65A75200B9BB0E /* AppDelegate.m */; };
+		4BFEAB251D76E74700DB2F65 /* BRLinkLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BFEAB241D76E74700DB2F65 /* BRLinkLabel.m */; };
 		D55772281D6735AB001BA82D /* IHAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D55772271D6735AB001BA82D /* IHAccountManager.m */; };
 		D55772591D674E28001BA82D /* IHPreferencesGeneralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D55772491D674E28001BA82D /* IHPreferencesGeneralViewController.m */; };
 		D557725A1D674E28001BA82D /* IHPreferencesGeneralViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D557724A1D674E28001BA82D /* IHPreferencesGeneralViewController.xib */; };
@@ -246,6 +247,8 @@
 		4BC12FCD1D64781C0008CEE0 /* ImageHosting.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ImageHosting.entitlements; sourceTree = "<group>"; };
 		4BDBE1D11D65A75200B9BB0E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4BDBE1D21D65A75200B9BB0E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4BFEAB231D76E74700DB2F65 /* BRLinkLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRLinkLabel.h; sourceTree = "<group>"; };
+		4BFEAB241D76E74700DB2F65 /* BRLinkLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRLinkLabel.m; sourceTree = "<group>"; };
 		D55772261D6735AB001BA82D /* IHAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHAccountManager.h; sourceTree = "<group>"; };
 		D55772271D6735AB001BA82D /* IHAccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHAccountManager.m; sourceTree = "<group>"; };
 		D55772481D674E28001BA82D /* IHPreferencesGeneralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHPreferencesGeneralViewController.h; sourceTree = "<group>"; };
@@ -344,6 +347,7 @@
 				4BDBE1D01D65A75200B9BB0E /* Application */,
 				D55772461D674E28001BA82D /* Controller */,
 				4BDBE1D61D65A75200B9BB0E /* Model */,
+				4BFEAB261D76ED4900DB2F65 /* View */,
 				D55772251D673582001BA82D /* Util */,
 				D5863E691D67F43800B302DB /* Addition */,
 				4BDBE1DA1D65A7E300B9BB0E /* External */,
@@ -621,6 +625,7 @@
 		4BDBE1DA1D65A7E300B9BB0E /* External */ = {
 			isa = PBXGroup;
 			children = (
+				4BFEAB221D76E74700DB2F65 /* BRLinkLabel */,
 				4B3F4F141D6B0C1A00A0A6CE /* JSONKit */,
 				4BBACDA51D670D6A00746AD6 /* AGAsyncTestHelper */,
 				4BBACD6E1D670D0D00746AD6 /* HappyDNS */,
@@ -629,6 +634,22 @@
 				4BBACC7B1D670C1D00746AD6 /* QiniuSDK */,
 			);
 			path = External;
+			sourceTree = "<group>";
+		};
+		4BFEAB221D76E74700DB2F65 /* BRLinkLabel */ = {
+			isa = PBXGroup;
+			children = (
+				4BFEAB231D76E74700DB2F65 /* BRLinkLabel.h */,
+				4BFEAB241D76E74700DB2F65 /* BRLinkLabel.m */,
+			);
+			path = BRLinkLabel;
+			sourceTree = "<group>";
+		};
+		4BFEAB261D76ED4900DB2F65 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D55772251D673582001BA82D /* Util */ = {
@@ -868,6 +889,7 @@
 				4BBACD951D670D0D00746AD6 /* QNDnsManager.m in Sources */,
 				4BBACD681D670CF800746AD6 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				4BBACCB51D670C1D00746AD6 /* QNPHAssetResource.m in Sources */,
+				4BFEAB251D76E74700DB2F65 /* BRLinkLabel.m in Sources */,
 				4BBACD971D670D0D00746AD6 /* QNLruCache.m in Sources */,
 				4BBACD6D1D670CF800746AD6 /* UIWebView+AFNetworking.m in Sources */,
 				4BBACD4E1D670CEF00746AD6 /* AFURLResponseSerialization.m in Sources */,

@@ -7,6 +7,9 @@
 //
 
 #import "IHPreferencesFeedbackViewController.h"
+#import "BRLinkLabel.h"
+
+#define FONT_FEED_BACK 14.0f
 
 @interface IHPreferencesFeedbackViewController ()
 
@@ -14,9 +17,52 @@
 
 @implementation IHPreferencesFeedbackViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do view setup here.
+
+    [self githubLabel];
+    [self weiboLabel];
+    [self tiwtterLabel];
+}
+
+- (void)githubLabel
+{
+    NSString *title = @"@charsdavy";
+    CGSize size = [title sizeWithAttributes:@{ NSFontAttributeName: [NSFont systemFontOfSize:FONT_FEED_BACK] }];
+    NSRect frame = NSMakeRect(144, 167, size.width, 20);
+    NSString *link = @"https://github.com/charsdavy";
+    BRLinkLabel *linkLabel = [self linkLabel:title link:link frame:frame];
+    [self.view addSubview:linkLabel];
+}
+
+- (void)weiboLabel
+{
+    NSString *title = @"@Chars-D";
+    CGSize size = [title sizeWithAttributes:@{ NSFontAttributeName: [NSFont systemFontOfSize:FONT_FEED_BACK] }];
+    NSRect frame = NSMakeRect(144, 115, size.width, 20);
+    NSString *link = @"http://weibo.com/u/3875245858";
+    BRLinkLabel *linkLabel = [self linkLabel:title link:link frame:frame];
+    [self.view addSubview:linkLabel];
+}
+
+- (void)tiwtterLabel
+{
+    NSString *title = @"@charsdavy";
+    CGSize size = [title sizeWithAttributes:@{ NSFontAttributeName: [NSFont systemFontOfSize:FONT_FEED_BACK] }];
+    NSRect frame = NSMakeRect(144, 65, size.width, 20);
+    NSString *link = @"https://twitter.com/charsdavy";
+    BRLinkLabel *linkLabel = [self linkLabel:title link:link frame:frame];
+    [self.view addSubview:linkLabel];
+}
+
+- (BRLinkLabel *)linkLabel:(NSString *)title link:(NSString *)link frame:(CGRect)frame
+{
+    NSAttributedString *attString = [[NSAttributedString alloc] initWithString:title attributes:@{ NSLinkAttributeName:link, NSForegroundColorAttributeName: [NSColor colorWithRed:16 / 255.0 green:64 / 255.0 blue:251 / 255.0 alpha:1.0f] }];
+    BRLinkLabel *linkLabel = [[BRLinkLabel alloc] initWithFrame:frame attibutedString:attString];
+    linkLabel.showBackground = NO;
+    return linkLabel;
 }
 
 @end
