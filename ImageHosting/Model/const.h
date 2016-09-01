@@ -9,6 +9,13 @@
 #ifndef const_h
 #define const_h
 
+typedef NS_ENUM(NSUInteger, IHAlertStyle) {
+    IHAlertStyleNone,
+    IHAlertStyleWarning,
+    IHAlertStyleInformational,
+    IHAlertStyleCritical
+};
+
 #define AK_KEY                  @"ak"
 #define SK_KEY                  @"sk"
 #define BUCKET_KEY              @"bucket"

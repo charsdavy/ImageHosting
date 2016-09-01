@@ -10,6 +10,7 @@
 #import "IHQiniuUploadManager.h"
 #import "IHAccountManager.h"
 #import "IHGeneralManager.h"
+#import "const.h"
 
 @interface IHUploadWindowController ()<NSUserNotificationCenterDelegate>
 
@@ -53,10 +54,11 @@
 {
     if (!self.paths) {
         NSString *alertMsg = @"Please select you want to upload file(s) ! ";
-        [self showAlertWithMessage:alertMsg];
+        NSString *title = @"Warning";
+        [self showAlertTitle:title message:alertMsg style:IHAlertStyleWarning];
+    } else {
+        [self showHintUploadingMessage];
     }
-    
-    [self showHintUploadingMessage];
     
     __block NSUInteger times = 0;
     for (NSString *path in self.paths) {
@@ -123,7 +125,8 @@
     IHAccount *account = [[IHAccountManager sharedManager] currentAccount];
     if (!account) {
         NSString *alertMsg = @"Please configure account info by 'Preferences -> Accounts', and again upload. ";
-        [self showAlertWithMessage:alertMsg];
+        NSString *title = @"Configure Guide";
+        [self showAlertTitle:title message:alertMsg style:IHAlertStyleInformational];
         return;
     }
     
@@ -151,10 +154,22 @@
     self.paths = nil;
 }
 
-- (void)showAlertWithMessage:(NSString *)message
+- (void)showAlertTitle:(NSString *)title message:(NSString *)message style:(IHAlertStyle)style
 {
-    NSAlert *alert = [NSAlert alertWithMessageText:@"" defaultButton:@"Okay" alternateButton:nil otherButton:nil informativeTextWithFormat:@"%@", message];
-    [alert runModal];
+    NSAlertStyle alertStyle = NSInformationalAlertStyle;
+    if (style == IHAlertStyleWarning) {
+        alertStyle = NSWarningAlertStyle;
+    } else if (style == IHAlertStyleCritical) {
+        alertStyle = NSCriticalAlertStyle;
+    } else if (style == IHAlertStyleInformational) {
+        alertStyle = NSInformationalAlertStyle;
+    } else {
+        alertStyle = NSInformationalAlertStyle;
+    }
+    
+    NSAlert *alert = [NSAlert alertWithMessageText:title defaultButton:@"Okay" alternateButton:nil otherButton:nil informativeTextWithFormat:@"%@", message];
+    alert.alertStyle = alertStyle;
+    [alert beginSheetModalForWindow:self.window completionHandler:nil];
 }
 
 - (void)showHintSuccessMessage:(BOOL)success

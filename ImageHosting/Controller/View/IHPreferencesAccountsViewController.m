@@ -63,14 +63,13 @@
     
     BOOL success = [[IHAccountManager sharedManager] archiveAccount:account];
     if (success) {
-        NSString *info = @"Config Account Info Success ! Please continue another operation ";
-        NSAlert *alert = [NSAlert alertWithMessageText:@"Configure Success" defaultButton:@"Okay" alternateButton:nil otherButton:nil informativeTextWithFormat:@"%@", info];
-        alert.alertStyle = NSInformationalAlertStyle;
-        [alert beginSheetModalForWindow:self.preferencesWindow completionHandler:nil];
+        NSString *title = @"Configure Success";
+        NSString *msg = @"Config Account Info Success ! Please continue another operation ";
+        [self showAlertTitle:title message:msg style:IHAlertStyleInformational];
     } else {
-        NSAlert *alert = [NSAlert alertWithMessageText:@"Configure Failed" defaultButton:@"Okay" alternateButton:nil otherButton:nil informativeTextWithFormat:@"Config Account Info Failed ! Please again "];
-        alert.alertStyle = NSWarningAlertStyle;
-        [alert beginSheetModalForWindow:self.preferencesWindow completionHandler:nil];
+        NSString *title = @"Configure Failed";
+        NSString *msg = @"Config Account Info Failed ! Please again ";
+        [self showAlertTitle:title message:msg style:IHAlertStyleWarning];
         [self clearAccountViewContent];
     }
 }
@@ -81,6 +80,24 @@
     } else if (sender.tag == 0) {
         self.region = REGION_NORTH_CHINA;
     }
+}
+
+- (void)showAlertTitle:(NSString *)title message:(NSString *)message style:(IHAlertStyle)style
+{
+    NSAlertStyle alertStyle = NSInformationalAlertStyle;
+    if (style == IHAlertStyleWarning) {
+        alertStyle = NSWarningAlertStyle;
+    } else if (style == IHAlertStyleCritical) {
+        alertStyle = NSCriticalAlertStyle;
+    } else if (style == IHAlertStyleInformational) {
+        alertStyle = NSInformationalAlertStyle;
+    } else {
+        alertStyle = NSInformationalAlertStyle;
+    }
+    
+    NSAlert *alert = [NSAlert alertWithMessageText:title defaultButton:@"Okay" alternateButton:nil otherButton:nil informativeTextWithFormat:@"%@", message];
+    alert.alertStyle = alertStyle;
+    [alert beginSheetModalForWindow:self.preferencesWindow completionHandler:nil];
 }
 
 - (void)clearAccountViewContent
