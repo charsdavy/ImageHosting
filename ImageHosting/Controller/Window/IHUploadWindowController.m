@@ -18,8 +18,9 @@
 @property (assign) NSUInteger uploadFileCount;
 
 @property (weak) IBOutlet NSImageView *hintImageView;
-@property (weak) IBOutlet NSTextField *hintLabel;
 @property (weak) IBOutlet NSProgressIndicator *progress;
+@property (weak) IBOutlet NSTextField *keyTextField;
+@property (weak) IBOutlet NSLevelIndicator *progressBar;
 
 @end
 
@@ -70,8 +71,11 @@
                 success = YES;
             }
             [self uploadFileSuccess:success invoke:times];
-        } progress:^(CGFloat percent) {
-            NSLog(@"%s percent:%f", __FUNCTION__, percent);
+        } progress:^(NSString *key, CGFloat percent) {
+            NSLog(@"%s key:%@, progress:%f", __FUNCTION__, key, percent);
+            self.keyTextField.stringValue = key;
+            [self.progressBar setIntValue:percent * 100];
+            [self.progressBar displayIfNeeded];
         }];
     }
 }
@@ -175,31 +179,29 @@
 - (void)showHintSuccessMessage:(BOOL)success
 {
     [self.progress stopAnimation:self];
+//    self.keyTextField.hidden = YES;
+//    self.progressBar.hidden = YES;
     
     if (success) {
         self.hintImageView.image = [NSImage imageNamed:@"success"];
-        self.hintLabel.textColor = [NSColor blackColor];
-        self.hintLabel.stringValue = @"Upload file(s) success !";
     } else {
         self.hintImageView.image = [NSImage imageNamed:@"fail"];
-        self.hintLabel.textColor = [NSColor redColor];
-        self.hintLabel.stringValue = [NSString stringWithFormat:@"%zi files upload failed ! ", self.uploadFileCount];
     }
 }
 
 - (void)showHintUploadingMessage
 {
-    self.hintLabel.textColor = [NSColor blackColor];
-    self.hintLabel.stringValue = @"Uploading ... ";
     self.hintImageView.image = nil;
+    self.keyTextField.hidden = NO;
     [self.progress startAnimation:self];
+    self.progressBar.hidden = NO;
 }
 
 - (void)clearHintMessage
 {
     self.hintImageView.image = nil;
-    self.hintLabel.stringValue = @"";
     [self.progress stopAnimation:self];
+    self.progressBar.hidden = YES;
 }
 
 #pragma mark - Showing the Preferences Window

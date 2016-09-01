@@ -35,7 +35,7 @@
     
     QNUploadOption *option = [[QNUploadOption alloc] initWithProgressHandler:^(NSString *key, float percent) {
         if (progress) {
-            progress(percent);
+            progress(key, percent);
         }
     }];
     [manager putFile:path key:key token:token complete:^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {

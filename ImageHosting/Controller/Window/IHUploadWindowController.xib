@@ -8,8 +8,9 @@
         <customObject id="-2" userLabel="File's Owner" customClass="IHUploadWindowController">
             <connections>
                 <outlet property="hintImageView" destination="egf-Tc-3NJ" id="JUZ-Yf-lpf"/>
-                <outlet property="hintLabel" destination="wx8-cZ-sth" id="sm4-yp-wo9"/>
+                <outlet property="keyTextField" destination="j9W-0D-xwC" id="QG0-bb-54P"/>
                 <outlet property="progress" destination="sIj-hA-heY" id="m33-ms-gwa"/>
+                <outlet property="progressBar" destination="7ke-1T-coI" id="8IN-if-GXZ"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="9Cm-xX-cTc"/>
             </connections>
         </customObject>
@@ -17,14 +18,14 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window title="Upload" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
-            <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+            <rect key="contentRect" x="196" y="240" width="480" height="247"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <rect key="frame" x="0.0" y="0.0" width="480" height="247"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="53I-YW-CO8">
-                        <rect key="frame" x="267" y="13" width="81" height="32"/>
+                        <rect key="frame" x="267" y="31" width="81" height="32"/>
                         <buttonCell key="cell" type="push" title="Select" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="l2p-iR-Se5">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -34,7 +35,7 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="67v-lA-bZh">
-                        <rect key="frame" x="366" y="13" width="81" height="32"/>
+                        <rect key="frame" x="366" y="31" width="81" height="32"/>
                         <buttonCell key="cell" type="push" title="Upload" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WCl-PD-W5O">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -43,23 +44,28 @@
                             <action selector="clickedUpload:" target="-2" id="Fli-pu-aB1"/>
                         </connections>
                     </button>
+                    <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="sIj-hA-heY">
+                        <rect key="frame" x="73" y="138" width="32" height="32"/>
+                    </progressIndicator>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="egf-Tc-3NJ">
-                        <rect key="frame" x="167" y="122" width="128" height="128"/>
+                        <rect key="frame" x="50" y="137" width="64" height="64"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="success" id="rzQ-xh-MtQ"/>
                     </imageView>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wx8-cZ-sth">
-                        <rect key="frame" x="46" y="84" width="389" height="22"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="success" id="rb9-Wj-Chw">
-                            <font key="font" metaFont="system" size="15"/>
-                            <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                    <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j9W-0D-xwC">
+                        <rect key="frame" x="144" y="158" width="260" height="17"/>
+                        <textFieldCell key="cell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="left" title="file name" id="osI-rn-yAV">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="sIj-hA-heY">
-                        <rect key="frame" x="215" y="170" width="32" height="32"/>
-                    </progressIndicator>
+                    <levelIndicator hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7ke-1T-coI">
+                        <rect key="frame" x="146" y="140" width="260" height="16"/>
+                        <levelIndicatorCell key="cell" scrollable="YES" lineBreakMode="clipping" continuous="YES" alignment="left" maxValue="100" levelIndicatorStyle="continuousCapacity" id="lyg-fL-cT6"/>
+                    </levelIndicator>
                 </subviews>
             </view>
+            <point key="canvasLocation" x="307" y="323.5"/>
         </window>
         <drawer trailingOffset="15" id="D13-PZ-deL">
             <size key="contentSize" width="100" height="100"/>
