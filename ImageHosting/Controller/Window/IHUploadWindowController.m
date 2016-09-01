@@ -18,6 +18,7 @@
 
 @property (weak) IBOutlet NSImageView *hintImageView;
 @property (weak) IBOutlet NSTextField *hintLabel;
+@property (weak) IBOutlet NSProgressIndicator *progress;
 
 @end
 
@@ -158,6 +159,8 @@
 
 - (void)showHintSuccessMessage:(BOOL)success
 {
+    [self.progress stopAnimation:self];
+    
     if (success) {
         self.hintImageView.image = [NSImage imageNamed:@"success"];
         self.hintLabel.textColor = [NSColor blackColor];
@@ -173,13 +176,15 @@
 {
     self.hintLabel.textColor = [NSColor blackColor];
     self.hintLabel.stringValue = @"Uploading ... ";
-    self.hintImageView.image = [NSImage imageNamed:@"loading"];
+    self.hintImageView.image = nil;
+    [self.progress startAnimation:self];
 }
 
 - (void)clearHintMessage
 {
     self.hintImageView.image = nil;
     self.hintLabel.stringValue = @"";
+    [self.progress stopAnimation:self];
 }
 
 #pragma mark - Showing the Preferences Window
