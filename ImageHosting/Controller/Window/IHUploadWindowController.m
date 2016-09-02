@@ -11,16 +11,17 @@
 #import "IHAccountManager.h"
 #import "IHGeneralManager.h"
 #import "const.h"
+#import "IHUploadFileCell.h"
 
-@interface IHUploadWindowController ()<NSUserNotificationCenterDelegate>
+#define CELL_HEIGHT 36.0f
+
+@interface IHUploadWindowController ()<NSUserNotificationCenterDelegate, NSTableViewDelegate, NSTableViewDataSource>
 
 @property (copy) NSArray *paths;
+@property (copy) NSMutableArray<IHUploadFileCell *> *cells;
 @property (assign) NSUInteger uploadFileCount;
 
-@property (weak) IBOutlet NSImageView *hintImageView;
-@property (weak) IBOutlet NSProgressIndicator *progress;
-@property (weak) IBOutlet NSTextField *keyTextField;
-@property (weak) IBOutlet NSLevelIndicator *progressBar;
+@property (weak) IBOutlet NSTableView *tableView;
 
 @end
 
@@ -36,6 +37,7 @@
     self = [super initWithWindowNibName:@"IHUploadWindowController"];
     if (self) {
         _uploadFileCount = 0;
+        _cells = [NSMutableArray array];
     }
     return self;
 }
@@ -45,8 +47,6 @@
     [super windowDidLoad];
     
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
-    
-    [self clearHintMessage];
 }
 
 #pragma mark - Button Action
@@ -57,33 +57,39 @@
         NSString *alertMsg = @"Please select you want to upload file(s) ! ";
         NSString *title = @"Warning";
         [self showAlertTitle:title message:alertMsg style:IHAlertStyleWarning];
-    } else {
-        [self showHintUploadingMessage];
     }
     
     __block NSUInteger times = 0;
+    __weak typeof(self) weakSelf = self;
     for (NSString *path in self.paths) {
         NSString *key = [path lastPathComponent];
-        [self uploadFileWithPath:path key:key completion:^(NSDictionary *resp) {
+        [self uploadFileWithPath:path key:key completion:^(NSString *key, NSDictionary *resp) {
             times++;
             BOOL success = NO;
+            IHUploadFileCell *cell = [weakSelf cellForKey:key];
             if (resp) {
                 success = YES;
+                if (cell) {
+                    cell.image = [NSImage imageNamed:@"success"];
+                }
+            } else {
+                if (cell) {
+                    cell.image = [NSImage imageNamed:@"fail"];
+                }
             }
             [self uploadFileSuccess:success invoke:times];
         } progress:^(NSString *key, CGFloat percent) {
             NSLog(@"%s key:%@, progress:%f", __FUNCTION__, key, percent);
-            self.keyTextField.stringValue = key;
-            [self.progressBar setIntValue:percent * 100];
-            [self.progressBar displayIfNeeded];
+            IHUploadFileCell *cell = [weakSelf cellForKey:key];
+            if (cell) {
+                cell.progress = [NSString stringWithFormat:@"%f", percent * 100];
+            }
         }];
     }
 }
 
 - (IBAction)clickedSelect:(id)sender
 {
-    [self clearHintMessage];
-    
     NSOpenPanel *selectPanel = [NSOpenPanel openPanel];
     [selectPanel setAllowsMultipleSelection:YES];
     [selectPanel setCanChooseDirectories:NO];
@@ -101,6 +107,7 @@
             }
             self.paths = array;
             self.uploadFileCount = array.count;
+            [self.tableView reloadData];
         }
     }];
 }
@@ -154,8 +161,8 @@
         [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
     }
     
-    [self showHintSuccessMessage:success];
-    self.paths = nil;
+    _paths = nil;
+    [_cells removeAllObjects];
 }
 
 - (void)showAlertTitle:(NSString *)title message:(NSString *)message style:(IHAlertStyle)style
@@ -176,32 +183,14 @@
     [alert beginSheetModalForWindow:self.window completionHandler:nil];
 }
 
-- (void)showHintSuccessMessage:(BOOL)success
+- (IHUploadFileCell *)cellForKey:(NSString *)key
 {
-    [self.progress stopAnimation:self];
-//    self.keyTextField.hidden = YES;
-//    self.progressBar.hidden = YES;
-    
-    if (success) {
-        self.hintImageView.image = [NSImage imageNamed:@"success"];
-    } else {
-        self.hintImageView.image = [NSImage imageNamed:@"fail"];
+    for (IHUploadFileCell *cell in self.cells) {
+        if ([cell.title isEqualToString:key]) {
+            return cell;
+        }
     }
-}
-
-- (void)showHintUploadingMessage
-{
-    self.hintImageView.image = nil;
-    self.keyTextField.hidden = NO;
-    [self.progress startAnimation:self];
-    self.progressBar.hidden = NO;
-}
-
-- (void)clearHintMessage
-{
-    self.hintImageView.image = nil;
-    [self.progress stopAnimation:self];
-    self.progressBar.hidden = YES;
+    return nil;
 }
 
 #pragma mark - Showing the Preferences Window
@@ -218,6 +207,38 @@
      shouldPresentNotification:(NSUserNotification *)notification
 {
     return YES;
+}
+
+#pragma mark - NSTableViewDelegate
+
+-(NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+{
+    static NSString *identifier = @"IHUploadFileCellId";
+    IHUploadFileCell *cell = [tableView makeViewWithIdentifier:identifier owner:self];
+    cell.progress = [NSString stringWithFormat:@"%f", 0.0f];
+    cell.title = [self.paths[row] lastPathComponent];
+    cell.image = nil;
+    if (cell) {
+        [self.cells addObject:cell];
+    }
+    return cell;
+}
+
+- (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row
+{
+    return CELL_HEIGHT;
+}
+
+#pragma mark - NSTableViewDataSource
+
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
+{
+    return self.paths.count;
+}
+
+- (nullable id)tableView:(NSTableView *)tableView objectValueForTableColumn:(nullable NSTableColumn *)tableColumn row:(NSInteger)row
+{
+    return nil;
 }
 
 @end

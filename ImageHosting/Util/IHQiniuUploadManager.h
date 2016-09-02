@@ -10,7 +10,7 @@
 
 @class IHAccount;
 
-typedef void(^IHQiniuCompletionHandler)(NSDictionary *resp);
+typedef void(^IHQiniuCompletionHandler)(NSString *key, NSDictionary *resp);
 typedef void(^IHQiniuProgressHandler)(NSString *key, CGFloat percent);
 
 @interface IHQiniuUploadManager : NSObject
