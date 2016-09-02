@@ -11,6 +11,7 @@
 @interface IHUploadFileCell : NSTableCellView
 
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *key;
 @property (nonatomic, strong) NSImage *image;
 @property (nonatomic, copy) NSString *progress;
 

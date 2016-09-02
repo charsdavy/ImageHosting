@@ -12,6 +12,7 @@
 #import "IHGeneralManager.h"
 #import "const.h"
 #import "IHUploadFileCell.h"
+#import "NSString+IHURL.h"
 
 #define CELL_HEIGHT 36.0f
 
@@ -186,7 +187,7 @@
 - (IHUploadFileCell *)cellForKey:(NSString *)key
 {
     for (IHUploadFileCell *cell in self.cells) {
-        if ([cell.title isEqualToString:key]) {
+        if ([cell.key isEqualToString:key]) {
             return cell;
         }
     }
@@ -211,13 +212,14 @@
 
 #pragma mark - NSTableViewDelegate
 
--(NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
     static NSString *identifier = @"IHUploadFileCellId";
     IHUploadFileCell *cell = [tableView makeViewWithIdentifier:identifier owner:self];
     cell.progress = [NSString stringWithFormat:@"%f", 0.0f];
-    cell.title = [self.paths[row] lastPathComponent];
+    cell.title = [[self.paths[row] lastPathComponent] URLDecodedString];
     cell.image = nil;
+    cell.key = [self.paths[row] lastPathComponent];
     if (cell) {
         [self.cells addObject:cell];
     }

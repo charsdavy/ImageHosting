@@ -14,6 +14,7 @@
 		4B3F4F1A1D6B0C1A00A0A6CE /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F4F161D6B0C1A00A0A6CE /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BB2BFEC1D79504600EE0734 /* NSColor+IHAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2BFEB1D79504600EE0734 /* NSColor+IHAddition.m */; };
 		4BB2BFEF1D795F8E00EE0734 /* IHProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2BFEE1D795F8E00EE0734 /* IHProgressIndicator.m */; };
+		4BB2BFF21D79666300EE0734 /* NSString+IHURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2BFF11D79666300EE0734 /* NSString+IHURL.m */; };
 		4BB4B27E1D63164E0059CF02 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4B27D1D63164E0059CF02 /* main.m */; };
 		4BB4B2831D63164E0059CF02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BB4B2821D63164E0059CF02 /* Assets.xcassets */; };
 		4BB4B2861D63164E0059CF02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BB4B2841D63164E0059CF02 /* Main.storyboard */; };
@@ -126,6 +127,8 @@
 		4BB2BFEB1D79504600EE0734 /* NSColor+IHAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+IHAddition.m"; sourceTree = "<group>"; };
 		4BB2BFED1D795F8E00EE0734 /* IHProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHProgressIndicator.h; sourceTree = "<group>"; };
 		4BB2BFEE1D795F8E00EE0734 /* IHProgressIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHProgressIndicator.m; sourceTree = "<group>"; };
+		4BB2BFF01D79666300EE0734 /* NSString+IHURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IHURL.h"; sourceTree = "<group>"; };
+		4BB2BFF11D79666300EE0734 /* NSString+IHURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IHURL.m"; sourceTree = "<group>"; };
 		4BB4B2761D63164E0059CF02 /* ImageHosting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageHosting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BB4B27D1D63164E0059CF02 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4BB4B2821D63164E0059CF02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -737,6 +740,8 @@
 				D5863E6B1D67F46100B302DB /* NSString+IHAddition.m */,
 				4BB2BFEA1D79504600EE0734 /* NSColor+IHAddition.h */,
 				4BB2BFEB1D79504600EE0734 /* NSColor+IHAddition.m */,
+				4BB2BFF01D79666300EE0734 /* NSString+IHURL.h */,
+				4BB2BFF11D79666300EE0734 /* NSString+IHURL.m */,
 			);
 			path = Addition;
 			sourceTree = "<group>";
@@ -927,6 +932,7 @@
 				4BBACD9F1D670D0D00746AD6 /* QNResolvUtil.m in Sources */,
 				4BB2BFEF1D795F8E00EE0734 /* IHProgressIndicator.m in Sources */,
 				4BBACD991D670D0D00746AD6 /* QNRecord.m in Sources */,
+				4BB2BFF21D79666300EE0734 /* NSString+IHURL.m in Sources */,
 				4BBACCBF1D670C1D00746AD6 /* QNUploadManager.m in Sources */,
 				4BBACD661D670CF800746AD6 /* AFImageDownloader.m in Sources */,
 				4BBACD9B1D670D0D00746AD6 /* QNDnspodFree.m in Sources */,
