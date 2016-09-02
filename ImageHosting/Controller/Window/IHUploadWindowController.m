@@ -104,6 +104,7 @@
             for (NSString *url in urls) {
                 NSString *path = [NSString stringWithFormat:@"%@", url];
                 path = [path stringByReplacingOccurrencesOfString:@"file://" withString:@""];
+                path = [path URLDecodedString];
                 [array addObject:path];
             }
             self.paths = array;
