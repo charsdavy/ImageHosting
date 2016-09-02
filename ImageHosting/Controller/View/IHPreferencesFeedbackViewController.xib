@@ -33,7 +33,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ata-d5-5G2">
-                    <rect key="frame" x="78" y="65" width="46" height="20"/>
+                    <rect key="frame" x="78" y="65" width="54" height="20"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Twitter" id="PYX-mc-zFt">
                         <font key="font" metaFont="system" size="14"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>

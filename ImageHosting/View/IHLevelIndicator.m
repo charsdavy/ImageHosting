@@ -7,6 +7,7 @@
 //
 
 #import "IHLevelIndicator.h"
+#import "NSColor+IHAddition.h"
 
 @implementation IHLevelIndicator
 
@@ -19,20 +20,14 @@
     NSColor *indicatorColor;
     
     if (_percent >= 99) {
-        indicatorColor = [self colorRed:36 green:160 blue:97];
+        indicatorColor = [NSColor ih_colorWithRGBString:@"#24A061"];
     } else if (_percent > 60) {
-        indicatorColor = [self colorRed:194 green:143 blue:48];
+        indicatorColor = [NSColor ih_colorWithRGBString:@"#C28F30"];
     } else {
-        indicatorColor = [self colorRed:40 green:158 blue:206];
+        indicatorColor = [NSColor ih_colorWithRGBString:@"#289ECE"];
     }
     [indicatorColor set];
     NSRectFill(fillingRect);
-}
-
-- (NSColor *)colorRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue
-{
-    NSColor *color = [NSColor colorWithRed:red / 255.0 green:green / 255.0 blue:blue / 255.0 alpha:1.0f];
-    return color;
 }
 
 - (void)setPercent:(NSInteger)percent

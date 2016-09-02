@@ -13,6 +13,7 @@
 		4B3F4F081D6AE63E00A0A6CE /* IHPreferencesFeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B3F4F061D6AE63E00A0A6CE /* IHPreferencesFeedbackViewController.xib */; };
 		4B3F4F1A1D6B0C1A00A0A6CE /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F4F161D6B0C1A00A0A6CE /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4BB2BFE91D79488900EE0734 /* IHLevelIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2BFE81D79488900EE0734 /* IHLevelIndicator.m */; };
+		4BB2BFEC1D79504600EE0734 /* NSColor+IHAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2BFEB1D79504600EE0734 /* NSColor+IHAddition.m */; };
 		4BB4B27E1D63164E0059CF02 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB4B27D1D63164E0059CF02 /* main.m */; };
 		4BB4B2831D63164E0059CF02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BB4B2821D63164E0059CF02 /* Assets.xcassets */; };
 		4BB4B2861D63164E0059CF02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BB4B2841D63164E0059CF02 /* Main.storyboard */; };
@@ -123,6 +124,8 @@
 		4B3F4F161D6B0C1A00A0A6CE /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		4BB2BFE71D79488900EE0734 /* IHLevelIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHLevelIndicator.h; sourceTree = "<group>"; };
 		4BB2BFE81D79488900EE0734 /* IHLevelIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHLevelIndicator.m; sourceTree = "<group>"; };
+		4BB2BFEA1D79504600EE0734 /* NSColor+IHAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+IHAddition.h"; sourceTree = "<group>"; };
+		4BB2BFEB1D79504600EE0734 /* NSColor+IHAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+IHAddition.m"; sourceTree = "<group>"; };
 		4BB4B2761D63164E0059CF02 /* ImageHosting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageHosting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BB4B27D1D63164E0059CF02 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4BB4B2821D63164E0059CF02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -732,6 +735,8 @@
 			children = (
 				D5863E6A1D67F46100B302DB /* NSString+IHAddition.h */,
 				D5863E6B1D67F46100B302DB /* NSString+IHAddition.m */,
+				4BB2BFEA1D79504600EE0734 /* NSColor+IHAddition.h */,
+				4BB2BFEB1D79504600EE0734 /* NSColor+IHAddition.m */,
 			);
 			path = Addition;
 			sourceTree = "<group>";
@@ -927,6 +932,7 @@
 				4BBACD9B1D670D0D00746AD6 /* QNDnspodFree.m in Sources */,
 				4BBACD4D1D670CEF00746AD6 /* AFURLRequestSerialization.m in Sources */,
 				D557725B1D674E28001BA82D /* IHPreferencesAccountsViewController.m in Sources */,
+				4BB2BFEC1D79504600EE0734 /* NSColor+IHAddition.m in Sources */,
 				D55772281D6735AB001BA82D /* IHAccountManager.m in Sources */,
 				4BBACDA01D670D0D00746AD6 /* QNTxtResolver.m in Sources */,
 				4BBACD6A1D670CF800746AD6 /* UIImageView+AFNetworking.m in Sources */,
@@ -1086,7 +1092,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ImageHosting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.zaker.chars.ImageHosting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1100,7 +1106,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ImageHosting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = cn.zaker.chars.ImageHosting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
