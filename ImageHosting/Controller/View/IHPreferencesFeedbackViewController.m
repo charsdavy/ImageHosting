@@ -22,9 +22,22 @@
     [super viewDidLoad];
     // Do view setup here.
 
+    [self emailLabel];
     [self githubLabel];
     [self weiboLabel];
     [self tiwtterLabel];
+}
+
+- (void)emailLabel
+{
+    NSString *title = @"chars.davy@gmail.com";
+    CGSize size = [title sizeWithAttributes:@{ NSFontAttributeName: [NSFont systemFontOfSize:FONT_FEED_BACK] }];
+    NSRect frame = NSMakeRect(144, 220, size.width, 20);
+    NSString *email = @"mailto:chars.davy@gmail.com";;
+    email = [email stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
+    BRLinkLabel *linkLabel = [self linkLabel:title link:email frame:frame];
+    linkLabel.accessibilitySelected = YES;
+    [self.view addSubview:linkLabel];
 }
 
 - (void)githubLabel
