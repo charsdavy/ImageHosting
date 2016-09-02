@@ -9,10 +9,8 @@
 #import <Cocoa/Cocoa.h>
 
 IB_DESIGNABLE
-@interface BRLinkLabel : NSView
 
-- (instancetype)initWithFrame:(NSRect)frameRect attibutedString:(NSAttributedString *)displayString;
-//也可以用- (instancetype)initWithFrame:(NSRect)frameRect来创建
+@interface BRLinkLabel : NSView
 
 @property (nonatomic, copy) NSAttributedString *displayString;
 
@@ -24,5 +22,8 @@ IB_DESIGNABLE
 //背景相关
 @property (nonatomic) BOOL IBInspectable showBackground;
 @property (nonatomic, retain) IBInspectable NSColor *backgroundColor;
+
+- (instancetype)initWithFrame:(NSRect)frameRect attibutedString:(NSAttributedString *)displayString;
+//也可以用- (instancetype)initWithFrame:(NSRect)frameRect来创建
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "IHUploadFileCell.h"
+#import "IHLevelIndicator.h"
 
 #define PERCENT_THROSHED          100
 
@@ -16,7 +17,7 @@
 #define TITLE_HEIGHT              20
 
 #define LEVEL_INDICATOR_WIDTH     300
-#define LEVEL_INDICATOR_HEIGHT    16
+#define LEVEL_INDICATOR_HEIGHT    3
 
 #define IMAGE_WIDTH               20
 #define IMAGE_HEIGHT              20
@@ -27,7 +28,7 @@
 @interface IHUploadFileCell ()
 
 @property (strong) NSTextField *titleTextField;
-@property (strong) NSLevelIndicator *levelIndicator;
+@property (strong) IHLevelIndicator *levelIndicator;
 @property (strong) NSImageView *hintImageView;
 @property (strong) NSProgressIndicator *progressIndicator;
 
@@ -42,7 +43,7 @@
 
 - (void)initSubViews
 {
-    _levelIndicator = [[NSLevelIndicator alloc] initWithFrame:NSMakeRect(57, 10, LEVEL_INDICATOR_WIDTH, LEVEL_INDICATOR_HEIGHT)];
+    _levelIndicator = [[IHLevelIndicator alloc] initWithFrame:NSMakeRect(57, 5, LEVEL_INDICATOR_WIDTH, LEVEL_INDICATOR_HEIGHT)];
     _levelIndicator.levelIndicatorStyle = NSContinuousCapacityLevelIndicatorStyle;
     _levelIndicator.controlSize = NSRegularControlSize;
     _levelIndicator.minValue = 0;
@@ -89,7 +90,7 @@
     }
     NSInteger percent = [progress integerValue];
     
-    [self.levelIndicator setIntValue:(int)percent];
+    self.levelIndicator.percent = percent;
     
     if (percent < PERCENT_THROSHED && percent != 0) {
         [self.progressIndicator startAnimation:self];

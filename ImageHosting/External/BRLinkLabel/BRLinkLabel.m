@@ -18,6 +18,7 @@
 @end
 
 @implementation BRLinkLabel
+
 @dynamic displayString;
 
 - (void)initialProperties

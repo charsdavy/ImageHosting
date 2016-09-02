@@ -24,7 +24,7 @@
                     <levelIndicatorCell key="cell" alignment="left" doubleValue="2" maxValue="2" warningValue="2" criticalValue="2" levelIndicatorStyle="continuousCapacity" id="QUD-01-sA4"/>
                 </levelIndicator>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MdH-7V-7b3">
-                    <rect key="frame" x="57" y="8" width="300" height="20"/>
+                    <rect key="frame" x="57" y="7" width="300" height="20"/>
                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" usesSingleLineMode="YES" id="Z7R-MC-Xqi">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
