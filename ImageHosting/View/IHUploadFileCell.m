@@ -22,15 +22,11 @@
 #define IMAGE_WIDTH                   20
 #define IMAGE_HEIGHT                  20
 
-#define PROGRESS_INDICATOR_WIDTH      16
-#define PROGRESS_INDICATOR_HEIGHT     16
-
 @interface IHUploadFileCell ()
 
 @property (strong) NSTextField *titleTextField;
 @property (strong) IHProgressIndicator *progressBarIndicator;
 @property (strong) NSImageView *hintImageView;
-@property (strong) NSProgressIndicator *progressIndicator;
 
 @end
 
@@ -43,14 +39,14 @@
 
 - (void)initSubViews
 {
-    _progressBarIndicator = [[IHProgressIndicator alloc] initWithFrame:NSMakeRect(57, 5, PROGRESS_BAR_INDICATOR_WIDTH, PROGRESS_BAR_INDICATOR_HEIGHT)];
+    _progressBarIndicator = [[IHProgressIndicator alloc] initWithFrame:NSMakeRect(25, 3, PROGRESS_BAR_INDICATOR_WIDTH, PROGRESS_BAR_INDICATOR_HEIGHT)];
     _progressBarIndicator.style = NSProgressIndicatorBarStyle;
     _progressBarIndicator.indeterminate = NO;
     _progressBarIndicator.minValue = 0;
     _progressBarIndicator.maxValue = 100;
     [self addSubview:_progressBarIndicator];
     
-    _titleTextField = [[NSTextField alloc] initWithFrame:NSMakeRect(57, 8, TITLE_WIDTH, TITLE_HEIGHT)];
+    _titleTextField = [[NSTextField alloc] initWithFrame:NSMakeRect(27, 6, TITLE_WIDTH, TITLE_HEIGHT)];
     _titleTextField.editable = NO;
     _titleTextField.lineBreakMode = NSLineBreakByTruncatingTail;
     _titleTextField.bordered = NO;
@@ -59,15 +55,9 @@
     _titleTextField.textColor = [NSColor darkGrayColor];
     [self addSubview:_titleTextField];
     
-    _hintImageView = [[NSImageView alloc] initWithFrame:NSMakeRect(21, 8, IMAGE_WIDTH, IMAGE_HEIGHT)];
+    _hintImageView = [[NSImageView alloc] initWithFrame:NSMakeRect(334, 6, IMAGE_WIDTH, IMAGE_HEIGHT)];
     _hintImageView.image = [NSImage imageNamed:@"success"];
     [self addSubview:_hintImageView];
-    
-    _progressIndicator = [[NSProgressIndicator alloc] initWithFrame:NSMakeRect(23, 10, PROGRESS_INDICATOR_WIDTH, PROGRESS_INDICATOR_HEIGHT)];
-    _progressIndicator.style = NSProgressIndicatorSpinningStyle;
-    _progressIndicator.controlSize = NSRegularControlSize;
-    _progressIndicator.displayedWhenStopped = NO;
-    [self addSubview:_progressIndicator];
 }
 
 - (void)setTitle:(NSString *)title
@@ -91,12 +81,6 @@
     NSInteger percent = [progress integerValue];
     
     self.progressBarIndicator.percent = percent;
-    
-    if (percent < PERCENT_THROSHED && percent != 0) {
-        [self.progressIndicator startAnimation:self];
-    } else {
-        [self.progressIndicator stopAnimation:self];
-    }
 }
 
 - (void)setImage:(NSImage *)image
