@@ -1,5 +1,5 @@
 //
-//  IHLevelIndicator.h
+//  IHProgressIndicator.h
 //  ImageHosting
 //
 //  Created by chars on 16/9/2.
@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface IHLevelIndicator : NSLevelIndicator
+@interface IHProgressIndicator : NSProgressIndicator
 
 @property (nonatomic, assign) NSInteger percent;
 

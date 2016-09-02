@@ -7,28 +7,28 @@
 //
 
 #import "IHUploadFileCell.h"
-#import "IHLevelIndicator.h"
+#import "IHProgressIndicator.h"
 
-#define PERCENT_THROSHED          100
+#define PERCENT_THROSHED              100
 
-#define WIDTH                     380
+#define WIDTH                         380
 
-#define TITLE_WIDTH               300
-#define TITLE_HEIGHT              20
+#define TITLE_WIDTH                   300
+#define TITLE_HEIGHT                  20
 
-#define LEVEL_INDICATOR_WIDTH     300
-#define LEVEL_INDICATOR_HEIGHT    3
+#define PROGRESS_BAR_INDICATOR_WIDTH  300
+#define PROGRESS_BAR_INDICATOR_HEIGHT 3
 
-#define IMAGE_WIDTH               20
-#define IMAGE_HEIGHT              20
+#define IMAGE_WIDTH                   20
+#define IMAGE_HEIGHT                  20
 
-#define PROGRESS_INDICATOR_WIDTH  16
-#define PROGRESS_INDICATOR_HEIGHT 16
+#define PROGRESS_INDICATOR_WIDTH      16
+#define PROGRESS_INDICATOR_HEIGHT     16
 
 @interface IHUploadFileCell ()
 
 @property (strong) NSTextField *titleTextField;
-@property (strong) IHLevelIndicator *levelIndicator;
+@property (strong) IHProgressIndicator *progressBarIndicator;
 @property (strong) NSImageView *hintImageView;
 @property (strong) NSProgressIndicator *progressIndicator;
 
@@ -43,12 +43,12 @@
 
 - (void)initSubViews
 {
-    _levelIndicator = [[IHLevelIndicator alloc] initWithFrame:NSMakeRect(57, 5, LEVEL_INDICATOR_WIDTH, LEVEL_INDICATOR_HEIGHT)];
-    _levelIndicator.levelIndicatorStyle = NSContinuousCapacityLevelIndicatorStyle;
-    _levelIndicator.controlSize = NSRegularControlSize;
-    _levelIndicator.minValue = 0;
-    _levelIndicator.maxValue = 100;
-    [self addSubview:_levelIndicator];
+    _progressBarIndicator = [[IHProgressIndicator alloc] initWithFrame:NSMakeRect(57, 5, PROGRESS_BAR_INDICATOR_WIDTH, PROGRESS_BAR_INDICATOR_HEIGHT)];
+    _progressBarIndicator.style = NSProgressIndicatorBarStyle;
+    _progressBarIndicator.indeterminate = NO;
+    _progressBarIndicator.minValue = 0;
+    _progressBarIndicator.maxValue = 100;
+    [self addSubview:_progressBarIndicator];
     
     _titleTextField = [[NSTextField alloc] initWithFrame:NSMakeRect(57, 8, TITLE_WIDTH, TITLE_HEIGHT)];
     _titleTextField.editable = NO;
@@ -90,7 +90,7 @@
     }
     NSInteger percent = [progress integerValue];
     
-    self.levelIndicator.percent = percent;
+    self.progressBarIndicator.percent = percent;
     
     if (percent < PERCENT_THROSHED && percent != 0) {
         [self.progressIndicator startAnimation:self];
@@ -113,7 +113,7 @@
     [super drawRect:dirtyRect];
     
     CGContextRef ctx = [[NSGraphicsContext currentContext] graphicsPort];
-        
+    
     NSColor *lineColor = [NSColor grayColor];
     
     CGRect lineRect = CGRectMake(21, 0, WIDTH - 21 * 2, 1);

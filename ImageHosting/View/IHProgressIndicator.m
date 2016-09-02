@@ -1,18 +1,26 @@
 //
-//  IHLevelIndicator.m
+//  IHProgressIndicator.m
 //  ImageHosting
 //
 //  Created by chars on 16/9/2.
 //  Copyright © 2016年 chars. All rights reserved.
 //
 
-#import "IHLevelIndicator.h"
+#import "IHProgressIndicator.h"
 #import "NSColor+IHAddition.h"
 
-@implementation IHLevelIndicator
+@implementation IHProgressIndicator
 
-- (void)drawRect:(NSRect)dirtyRect
+- (void)setPercent:(NSInteger)percent
 {
+    if (_percent != percent) {
+        _percent = percent;
+    }
+
+    [self setNeedsDisplay:YES];
+}
+
+- (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
     
     NSRect fillingRect = dirtyRect;
@@ -28,14 +36,6 @@
     }
     [indicatorColor set];
     NSRectFill(fillingRect);
-}
-
-- (void)setPercent:(NSInteger)percent
-{
-    if (_percent != percent) {
-        _percent = percent;
-    }
-    [self setNeedsDisplay:YES];
 }
 
 @end
