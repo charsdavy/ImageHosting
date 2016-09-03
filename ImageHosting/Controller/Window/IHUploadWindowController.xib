@@ -7,14 +7,16 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="IHUploadWindowController">
             <connections>
+                <outlet property="selectButton" destination="53I-YW-CO8" id="s07-rN-hZH"/>
                 <outlet property="tableView" destination="zd1-lI-WbG" id="q0e-db-Sde"/>
+                <outlet property="uploadButton" destination="67v-lA-bZh" id="nlT-EC-BFk"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="9Cm-xX-cTc"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window title="Upload" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" topStrut="YES"/>
             <rect key="contentRect" x="196" y="486" width="480" height="235"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
