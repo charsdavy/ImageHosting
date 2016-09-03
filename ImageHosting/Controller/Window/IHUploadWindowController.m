@@ -14,15 +14,19 @@
 #import "IHUploadFileCell.h"
 #import "NSString+IHURL.h"
 
-#define CELL_HEIGHT 36.0f
+#define CELL_HEIGHT  36.0f
+#define AGAIN_TITLE  @"Again"
+#define UPLOAD_TITLE @"Upload"
 
 @interface IHUploadWindowController ()<NSUserNotificationCenterDelegate, NSTableViewDelegate, NSTableViewDataSource>
 
-@property (copy) NSArray *paths;
+@property (copy) NSMutableArray *paths;
 @property (copy) NSMutableArray<IHUploadFileCell *> *cells;
 @property (assign) NSUInteger uploadFileCount;
 
 @property (weak) IBOutlet NSTableView *tableView;
+@property (weak) IBOutlet NSButton *selectButton;
+@property (weak) IBOutlet NSButton *uploadButton;
 
 @end
 
@@ -39,6 +43,7 @@
     if (self) {
         _uploadFileCount = 0;
         _cells = [NSMutableArray array];
+        _paths = [NSMutableArray array];
     }
     return self;
 }
@@ -46,7 +51,7 @@
 - (void)windowDidLoad
 {
     [super windowDidLoad];
-    
+
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
 }
 
@@ -54,12 +59,25 @@
 
 - (IBAction)clickedUpload:(id)sender
 {
-    if (!self.paths) {
+    if (!self.paths.count || !self.paths) {
         NSString *alertMsg = @"Please select you want to upload file(s) ! ";
         NSString *title = @"Warning";
         [self showAlertTitle:title message:alertMsg style:IHAlertStyleWarning];
+    } else {
+        self.selectButton.enabled = NO;
     }
     
+    if ([self.uploadButton.title isEqualToString:AGAIN_TITLE]) {
+        for (NSString *path in self.paths) {
+            NSString *key = [path lastPathComponent];
+            IHUploadFileCell *cell = [self cellForKey:key];
+            if (cell) {
+                cell.image = nil;
+                cell.progress = @"0";
+            }
+        }
+    }
+
     __block NSUInteger times = 0;
     __weak typeof(self) weakSelf = self;
     for (NSString *path in self.paths) {
@@ -73,6 +91,8 @@
                 if (cell) {
                     cell.image = [NSImage imageNamed:@"success"];
                 }
+                [self removePathForKey:key];
+                [self removeCellForKey:key];
             } else {
                 if (cell) {
                     cell.image = [NSImage imageNamed:@"fail"];
@@ -95,40 +115,37 @@
     [selectPanel setAllowsMultipleSelection:YES];
     [selectPanel setCanChooseDirectories:NO];
     [selectPanel setCanChooseFiles:YES];
-    
+
     [selectPanel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result) {
         if (result == NSOKButton) {
-            NSMutableArray *array = [NSMutableArray array];
             NSArray *urls = [selectPanel URLs];
             NSLog(@"%s urls:%@", __FUNCTION__, urls);
             for (NSString *url in urls) {
                 NSString *path = [NSString stringWithFormat:@"%@", url];
                 path = [path stringByReplacingOccurrencesOfString:@"file://" withString:@""];
                 path = [path URLDecodedString];
-                [array addObject:path];
+                [_paths addObject:path];
             }
-            self.paths = array;
-            self.uploadFileCount = array.count;
+
+            self.uploadFileCount = _paths.count;
             [self.tableView reloadData];
         }
     }];
+
+    self.uploadButton.title = UPLOAD_TITLE;
 }
 
 #pragma mark - Private Methods
 
 - (void)uploadFileSuccess:(BOOL)success invoke:(NSUInteger)times
 {
-    if (success) {
-        if (self.uploadFileCount) {
-            self.uploadFileCount--;
-        }
-    }
-    
-    if (times == self.paths.count) {
-        if (0 == self.uploadFileCount) {
+    if (times == self.uploadFileCount) {
+        if (0 == self.paths.count) {
             [self didUploadFilesSuccess:YES];
+            self.uploadButton.title = UPLOAD_TITLE;
         } else {
             [self didUploadFilesSuccess:NO];
+            self.uploadButton.title = AGAIN_TITLE;
         }
     }
 }
@@ -142,7 +159,7 @@
         [self showAlertTitle:title message:alertMsg style:IHAlertStyleInformational];
         return;
     }
-    
+
     [[IHQiniuUploadManager sharedManager] uploadQiniuForAccount:account key:key filePath:path completion:completion progress:progress];
 }
 
@@ -155,16 +172,15 @@
             notification.informativeText = @"Upload file(s) success !";
         } else {
             notification.title = @"Upload Failed";
-            notification.informativeText = [NSString stringWithFormat:@"OOh, %zi files upload failed, please select again or reconfigure account information! ", self.uploadFileCount];
+            notification.informativeText = [NSString stringWithFormat:@"OOh, %zi files upload failed, please select again or reconfigure account information! ", self.paths.count];
         }
-        
+
         notification.soundName = @"NSUserNotificationDefaultSoundName";
         [[NSUserNotificationCenter defaultUserNotificationCenter] scheduleNotification:notification];
         [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
     }
-    
-    _paths = nil;
-    [_cells removeAllObjects];
+
+    self.selectButton.enabled = YES;
 }
 
 - (void)showAlertTitle:(NSString *)title message:(NSString *)message style:(IHAlertStyle)style
@@ -179,7 +195,7 @@
     } else {
         alertStyle = NSInformationalAlertStyle;
     }
-    
+
     NSAlert *alert = [NSAlert alertWithMessageText:title defaultButton:@"Okay" alternateButton:nil otherButton:nil informativeTextWithFormat:@"%@", message];
     alert.alertStyle = alertStyle;
     [alert beginSheetModalForWindow:self.window completionHandler:nil];
@@ -193,6 +209,26 @@
         }
     }
     return nil;
+}
+
+- (void)removeCellForKey:(NSString *)key
+{
+    for (IHUploadFileCell *cell in self.cells) {
+        if ([cell.key isEqualToString:key]) {
+            [self.cells removeObject:cell];
+            break;
+        }
+    }
+}
+
+- (void)removePathForKey:(NSString *)key
+{
+    for (NSString *path in self.paths) {
+        if ([[path lastPathComponent] isEqualToString:key]) {
+            [self.paths removeObject:path];
+            break;
+        }
+    }
 }
 
 #pragma mark - Showing the Preferences Window
