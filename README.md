@@ -1,6 +1,6 @@
 # ImageHosting for Mac Usage
 
-博主在转战iOS开发以来，一直坚持撰写自己的技术博客。使用Github Pages + Hexo 搭建了属于自己的空间。具体搭建方法可以参考[《手把手教 GitHub + Hexo 搭建博客》](https://charsdavy.github.io/2016/05/31/build-blog-by-hexo/) 。 然而，博客中有很多时候需要使用图片说明，俗话说“一图胜千言”，博主使用 七牛云 做图床，然每次编写博客时需要打开Web版上传图片，甚是繁琐。故此，博主自己编写了一个自己的图片上传软件。
+博主在转战iOS开发以来，一直坚持撰写自己的技术博客。使用Github Pages + Hexo 搭建了属于自己的空间。具体搭建方法可以参考[《手把手教 GitHub + Hexo 搭建博客》](http://charsdavy.github.io/2016/05/31/build-blog-by-hexo/) 。 然而，博客中有很多时候需要使用图片说明，俗话说“一图胜千言”，博主使用 七牛云 做图床，然每次编写博客时需要打开Web版上传图片，甚是繁琐。故此，博主自己编写了一个自己的图片上传软件。
 
 ![](http://o88e8any8.bkt.clouddn.com/ImageHosting-use-introduction-launchpad.png)
 
@@ -57,4 +57,4 @@
 ![](http://o88e8any8.bkt.clouddn.com/ImageHosting-use-introduction-upload-success.png)
 
 
-[博客传送门](https://charsdavy.github.io)
+[博客传送门](http://charsdavy.github.io)
