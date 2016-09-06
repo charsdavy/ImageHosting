@@ -7,6 +7,7 @@
 //
 
 #import "IHDragTableView.h"
+#import "NSColor+IHAddition.h"
 
 @interface IHDragTableView ()<NSDraggingDestination>
 
@@ -38,6 +39,18 @@
     // Drawing code here.
 }
 
+- (void)dragAreaFadeIn
+{
+    self.backgroundColor = [NSColor ih_colorWithRGBString:@"#A26DCA"];
+    [self setAlphaValue:0.2];
+}
+
+- (void)dragAreaFadeOut
+{
+    self.backgroundColor = [NSColor clearColor];
+    [self setAlphaValue:1.0];
+}
+
 #pragma mark - NSDraggingDestination Protocol
 
 - (NSDragOperation)draggingUpdated:(id <NSDraggingInfo>)sender
@@ -60,9 +73,37 @@
     return NSDragOperationNone;
 }
 
+- (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender
+{
+    NSLog(@"%s drag operation entered", __FUNCTION__);
+    NSPasteboard *pasteBoard = nil;
+    NSDragOperation sourceDragMask;
+    
+    sourceDragMask = [sender draggingSourceOperationMask];
+    pasteBoard = [sender draggingPasteboard];
+    
+    [self dragAreaFadeIn];
+    
+    if ([[pasteBoard types] containsObject:NSFilenamesPboardType]) {
+        if (sourceDragMask & NSDragOperationLink) {
+            return NSDragOperationLink;
+        } else if (sourceDragMask & NSDragOperationCopy) {
+            return NSDragOperationCopy;
+        }
+    }
+    return NSDragOperationNone;
+}
+
 - (void)draggingExited:(id<NSDraggingInfo>)sender
 {
     NSLog(@"%s drag operation finished", __FUNCTION__);
+    [self dragAreaFadeOut];
+}
+
+- (void)draggingEnded:(nullable id <NSDraggingInfo>)sender
+{
+    NSLog(@"%s drag operation ended", __FUNCTION__);
+    [self dragAreaFadeOut];
 }
 
 - (BOOL)prepareForDragOperation:(id<NSDraggingInfo>)sender
