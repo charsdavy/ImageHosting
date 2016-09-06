@@ -100,7 +100,7 @@
     
     NSColor *lineColor = [NSColor grayColor];
     
-    CGRect lineRect = CGRectMake(21, 0, WIDTH - 21 * 2, 1);
+    CGRect lineRect = CGRectMake(5, 0, WIDTH - 5 * 2, 1);
     CGContextSaveGState(ctx);
     CGContextSetFillColorWithColor(ctx, lineColor.CGColor);
     CGContextFillRect(ctx, lineRect);
