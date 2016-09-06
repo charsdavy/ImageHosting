@@ -35,7 +35,7 @@
 - (void)fillCurrentAccount
 {
     IHAccount *currentAccount = [[IHAccountManager sharedManager] currentAccount];
-    if (currentAccount && currentAccount.accountType != IHAccountTypeNone) {
+    if (currentAccount) {
         _akTextField.stringValue = currentAccount.ak;
         _skTextField.stringValue = currentAccount.sk;
         _bucketNameTextField.stringValue = currentAccount.bucketName;
@@ -61,7 +61,7 @@
     account.bucketName = _bucketNameTextField.stringValue;
     account.region = self.region;
     
-    BOOL success = [[IHAccountManager sharedManager] archiveAccount:account];
+    BOOL success = [[IHAccountManager sharedManager] archive:account key:ACCOUNTS_KEY];
     if (success) {
         NSString *title = @"Configure Success";
         NSString *msg = @"Config Account Info Success ! Please continue another operation ";

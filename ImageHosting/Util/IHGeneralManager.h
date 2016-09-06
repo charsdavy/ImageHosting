@@ -12,10 +12,8 @@
 
 + (instancetype)sharedManager;
 
-- (BOOL)systemNotification;
-
 - (BOOL)archive:(id)object key:(NSString *)key;
 
-- (NSString *)unarchiveSystemNotification;
+- (id)unarchiveForKey:(NSString *)key;
 
 @end

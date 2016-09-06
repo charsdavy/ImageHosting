@@ -8,6 +8,7 @@
 
 #import "IHPreferencesGeneralViewController.h"
 #import "IHGeneralManager.h"
+#import "IHGeneral.h"
 #import "const.h"
 
 @interface IHPreferencesGeneralViewController ()
@@ -27,6 +28,8 @@
 - (IBAction)systemNotification:(NSButton *)sender {
     NSLog(@"%s %zi", __FUNCTION__, sender.state);
     NSString *noti = sender.state ? @"YES" : @"NO";
-    [[IHGeneralManager sharedManager] archive:noti key:SYSTEM_NOTIFICATION_KEY];
+    IHGeneral *general = [[IHGeneral alloc] init];
+    general.userNotification = noti;
+    [[IHGeneralManager sharedManager] archive:general key:SYSTEM_NOTIFICATION_KEY];
 }
 @end

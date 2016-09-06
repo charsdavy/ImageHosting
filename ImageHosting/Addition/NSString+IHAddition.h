@@ -11,7 +11,7 @@
 @interface NSString (IHAddition)
 
 /** 加密 */
-- (NSString *)ih_encrypt;
+- (NSString *)ih_encode;
 
 /** 解密 */
 - (NSString *)ih_decode;

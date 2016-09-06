@@ -11,7 +11,7 @@
 
 @implementation NSString (IHAddition)
 
-- (NSString *)ih_encrypt
+- (NSString *)ih_encode
 {
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];    
     return [QN_GTM_Base64 stringByEncodingData:data];

@@ -12,6 +12,7 @@
 #import "IHGeneralManager.h"
 #import "const.h"
 #import "IHAboutWindowController.h"
+#import "IHGeneral.h"
 
 @interface AppDelegate ()
 
@@ -111,8 +112,10 @@
         self.aboutWindowController = [[IHAboutWindowController alloc] init];
     }
     
-    if (![[IHGeneralManager sharedManager] unarchiveSystemNotification]) {
-        [[IHGeneralManager sharedManager] archive:@"YES" key:SYSTEM_NOTIFICATION_KEY];
+    if (![[IHGeneralManager sharedManager] unarchiveForKey:SYSTEM_NOTIFICATION_KEY]) {
+        IHGeneral *general = [[IHGeneral alloc] init];
+        general.userNotification = @"YES";
+        [[IHGeneralManager sharedManager] archive:general key:SYSTEM_NOTIFICATION_KEY];
     }
 }
 

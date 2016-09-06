@@ -13,6 +13,7 @@
 		4B3F4F081D6AE63E00A0A6CE /* IHPreferencesFeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B3F4F061D6AE63E00A0A6CE /* IHPreferencesFeedbackViewController.xib */; };
 		4B3F4F1A1D6B0C1A00A0A6CE /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F4F161D6B0C1A00A0A6CE /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4B8F40491D7E908600A56E18 /* IHDragTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8F40481D7E908600A56E18 /* IHDragTableView.m */; };
+		4B8F40911D7EAE8900A56E18 /* IHGeneral.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8F40901D7EAE8900A56E18 /* IHGeneral.m */; };
 		4BB2BFEC1D79504600EE0734 /* NSColor+IHAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2BFEB1D79504600EE0734 /* NSColor+IHAddition.m */; };
 		4BB2BFEF1D795F8E00EE0734 /* IHProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2BFEE1D795F8E00EE0734 /* IHProgressIndicator.m */; };
 		4BB2BFF21D79666300EE0734 /* NSString+IHURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2BFF11D79666300EE0734 /* NSString+IHURL.m */; };
@@ -126,6 +127,8 @@
 		4B3F4F161D6B0C1A00A0A6CE /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		4B8F40471D7E908600A56E18 /* IHDragTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHDragTableView.h; sourceTree = "<group>"; };
 		4B8F40481D7E908600A56E18 /* IHDragTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHDragTableView.m; sourceTree = "<group>"; };
+		4B8F408F1D7EAE8900A56E18 /* IHGeneral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHGeneral.h; sourceTree = "<group>"; };
+		4B8F40901D7EAE8900A56E18 /* IHGeneral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHGeneral.m; sourceTree = "<group>"; };
 		4BB2BFEA1D79504600EE0734 /* NSColor+IHAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+IHAddition.h"; sourceTree = "<group>"; };
 		4BB2BFEB1D79504600EE0734 /* NSColor+IHAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+IHAddition.m"; sourceTree = "<group>"; };
 		4BB2BFED1D795F8E00EE0734 /* IHProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHProgressIndicator.h; sourceTree = "<group>"; };
@@ -632,6 +635,8 @@
 			children = (
 				4BBACC781D6708D600746AD6 /* IHAccount.h */,
 				4BBACC791D6708D600746AD6 /* IHAccount.m */,
+				4B8F408F1D7EAE8900A56E18 /* IHGeneral.h */,
+				4B8F40901D7EAE8900A56E18 /* IHGeneral.m */,
 				D5863E6F1D67F5D200B302DB /* IHCache.h */,
 				D5863E701D67F5D200B302DB /* IHCache.m */,
 				D5863E721D68311400B302DB /* const.h */,
@@ -928,6 +933,7 @@
 				D5F898EA1D6DE46A005A9A92 /* IHPreferencesManager.m in Sources */,
 				4BBACDA11D670D0D00746AD6 /* QNDes.m in Sources */,
 				D557725E1D674E28001BA82D /* IHPreferencesWindowController.m in Sources */,
+				4B8F40911D7EAE8900A56E18 /* IHGeneral.m in Sources */,
 				4B17AF471D78158000430705 /* IHUploadFileCell.m in Sources */,
 				4BBACC7A1D6708D600746AD6 /* IHAccount.m in Sources */,
 				4BBACCBC1D670C1D00746AD6 /* QNConfiguration.m in Sources */,

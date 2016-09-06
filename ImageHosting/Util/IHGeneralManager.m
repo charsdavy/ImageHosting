@@ -7,12 +7,11 @@
 //
 
 #import "IHGeneralManager.h"
-#import "IHCache.h"
 #import "const.h"
 
-@interface IHGeneralManager ()
+#define GENERAL_FILE_NAME @"IHGeneral.db"
 
-@property (strong) IHCache *cache;
+@interface IHGeneralManager ()
 
 @end
 
@@ -32,73 +31,35 @@
 {
     self = [super init];
     if (self) {
-        _cache = [[IHCache alloc] init];
     }
     return self;
 }
 
-- (BOOL)systemNotification
-{
-    NSString *systemNotification = nil;
-    
-    if (self.cache) {
-        systemNotification = [self.cache objectForKey:SYSTEM_NOTIFICATION_KEY];
-    } else {
-        systemNotification = [self unarchiveSystemNotification];
-    }
-    
-    return [systemNotification isEqualToString:@"YES"] ? YES : NO;
-}
-
 - (BOOL)archive:(id)object key:(NSString *)key
 {
-    NSMutableArray *archive = [NSMutableArray array];
-    NSString *path = [self pathOfPreferences];
-    BOOL success = NO;
-    BOOL replace = NO;
-    
-    if ([self fileExistAtPath:path]) {
-        archive = [NSMutableArray arrayWithContentsOfFile:path];
+    if (!object || !key) {
+        return NO;
     }
     
-    for (NSMutableDictionary *cur in archive) {
-        if (cur[key]) {
-            cur[key] = object;
-            replace = YES;
-        }
-    }
+    NSString *filePath = [self pathOfPreferences:GENERAL_FILE_NAME];
+    NSMutableData *archiverData = [NSMutableData data];
+    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:archiverData];
     
-    if (!replace) {
-        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-        [dict setObject:object forKey:key];
-        [archive addObject:dict];
-    }
+    [archiver encodeObject:object forKey:key];
     
-    if (self.cache) {
-        [self.cache setObject:object forKey:key];
-    }
+    [archiver finishEncoding];
     
-    success = [archive writeToFile:path atomically:YES];
+    return [archiverData writeToFile:filePath atomically:YES];
     
-    return success;
 }
 
-- (NSString *)unarchiveSystemNotification
+- (id)unarchiveForKey:(NSString *)key
 {
-    NSString *path = [self pathOfPreferences];
-    NSArray *contents = [NSArray arrayWithContentsOfFile:path];
-
-    for (NSDictionary *dict in contents) {
-        if (dict[SYSTEM_NOTIFICATION_KEY]) {
-            NSString *noti = dict[SYSTEM_NOTIFICATION_KEY];
-            if (self.cache) {
-                [self.cache setObject:noti forKey:SYSTEM_NOTIFICATION_KEY];
-            }
-            return noti;
-        }
-    }
+    NSString *filePath = [self pathOfPreferences:GENERAL_FILE_NAME];
+    NSData *unarchiverData = [NSData dataWithContentsOfFile:filePath];
+    NSKeyedUnarchiver *unachiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:unarchiverData];
     
-    return nil;
+    return [unachiver decodeObjectForKey:key];
 }
 
 @end

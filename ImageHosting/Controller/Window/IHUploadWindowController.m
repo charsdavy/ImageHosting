@@ -168,7 +168,7 @@
 
 - (void)didUploadFilesSuccess:(BOOL)success
 {
-    if ([[IHGeneralManager sharedManager] systemNotification]) {
+    if ([[IHGeneralManager sharedManager] unarchiveForKey:SYSTEM_NOTIFICATION_KEY]) {
         NSUserNotification *notification = [[NSUserNotification alloc] init];
         if (success) {
             notification.title = @"Upload Success";

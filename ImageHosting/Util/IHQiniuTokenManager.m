@@ -8,7 +8,6 @@
 
 #import "IHQiniuTokenManager.h"
 #import "IHAccount.h"
-#import "NSString+IHAddition.h"
 #import "IHCache.h"
 #import "const.h"
 #include <CommonCrypto/CommonCrypto.h>
@@ -36,11 +35,11 @@
 
 - (NSString *)generateUploadTokenForAccount:(IHAccount *)account
 {
-    if (account.accountType == IHAccountTypeNone) {
+    if (!account) {
         return nil;
     }
     
-    const char *secretKeyStr = [[account.sk ih_decode] UTF8String];
+    const char *secretKeyStr = [account.sk UTF8String];
     NSString *policy = [self marshal:account.bucketName];
     NSData *policyData = [policy dataUsingEncoding:NSUTF8StringEncoding];
     NSString *encodedPolicy = [QN_GTM_Base64 stringByWebSafeEncodingData:policyData padded:TRUE];

@@ -13,7 +13,7 @@ typedef NS_ENUM(NSUInteger, IHAccountType) {
     IHAccountTypeQiniu
 };
 
-@interface IHAccount : NSObject
+@interface IHAccount : NSObject<NSCoding>
 
 @property (assign) IHAccountType accountType;
 

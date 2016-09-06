@@ -10,7 +10,7 @@
 
 @interface IHPreferencesManager : NSObject
 
-- (NSString *)pathOfPreferences;
+- (NSString *)pathOfPreferences:(NSString *)fileName;
 
 - (BOOL)fileExistAtPath:(NSString *)path;
 
