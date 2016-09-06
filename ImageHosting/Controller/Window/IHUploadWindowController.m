@@ -13,18 +13,19 @@
 #import "const.h"
 #import "IHUploadFileCell.h"
 #import "NSString+IHURL.h"
+#import "IHDragTableView.h"
 
 #define CELL_HEIGHT  36.0f
 #define AGAIN_TITLE  @"Again"
 #define UPLOAD_TITLE @"Upload"
 
-@interface IHUploadWindowController ()<NSUserNotificationCenterDelegate, NSTableViewDelegate, NSTableViewDataSource>
+@interface IHUploadWindowController ()<NSUserNotificationCenterDelegate, NSTableViewDelegate, NSTableViewDataSource, IHDragFileDelegate>
 
 @property (copy) NSMutableArray *paths;
 @property (copy) NSMutableArray<IHUploadFileCell *> *cells;
 @property (assign) NSUInteger uploadFileCount;
 
-@property (weak) IBOutlet NSTableView *tableView;
+@property (weak) IBOutlet IHDragTableView *tableView;
 @property (weak) IBOutlet NSButton *selectButton;
 @property (weak) IBOutlet NSButton *uploadButton;
 
@@ -51,6 +52,8 @@
 - (void)windowDidLoad
 {
     [super windowDidLoad];
+    
+    self.tableView.dragDelegate = self;
 
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
 }
@@ -237,6 +240,15 @@
 {
     self.completionHandler = handler;
     [self showWindow:self];
+}
+
+#pragma mark - IHDragFileDelegate
+
+- (void)didFinishedDragWithFile:(NSString *)path
+{
+    [self.paths addObject:path];
+    self.uploadFileCount = _paths.count;
+    [self.tableView reloadData];
 }
 
 #pragma mark - NSUserNotificationCenterDelegate
