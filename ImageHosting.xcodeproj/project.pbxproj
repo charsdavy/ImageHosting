@@ -12,6 +12,15 @@
 		4B3F4F071D6AE63E00A0A6CE /* IHPreferencesFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F4F051D6AE63E00A0A6CE /* IHPreferencesFeedbackViewController.m */; };
 		4B3F4F081D6AE63E00A0A6CE /* IHPreferencesFeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B3F4F061D6AE63E00A0A6CE /* IHPreferencesFeedbackViewController.xib */; };
 		4B3F4F1A1D6B0C1A00A0A6CE /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F4F161D6B0C1A00A0A6CE /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4B77F3C31D7FBE3B00395695 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B77F3C21D7FBE3B00395695 /* AppDelegate.m */; };
+		4B77F3C61D7FBE3B00395695 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B77F3C51D7FBE3B00395695 /* main.m */; };
+		4B77F3C91D7FBE3B00395695 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B77F3C81D7FBE3B00395695 /* ViewController.m */; };
+		4B77F3CB1D7FBE3B00395695 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B77F3CA1D7FBE3B00395695 /* Assets.xcassets */; };
+		4B77F3CE1D7FBE3B00395695 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B77F3CC1D7FBE3B00395695 /* Main.storyboard */; };
+		4B77F3D91D7FBE3B00395695 /* ImageHostingHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B77F3D81D7FBE3B00395695 /* ImageHostingHelperTests.m */; };
+		4B77F3E41D7FBE3B00395695 /* ImageHostingHelperUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B77F3E31D7FBE3B00395695 /* ImageHostingHelperUITests.m */; };
+		4B77F3F01D7FBF0900395695 /* ImageHostingHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4B77F3BF1D7FBE3B00395695 /* ImageHostingHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4B77F3F31D7FC15500395695 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B77F3F21D7FC15500395695 /* ServiceManagement.framework */; };
 		4B8F40491D7E908600A56E18 /* IHTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8F40481D7E908600A56E18 /* IHTableView.m */; };
 		4B8F40911D7EAE8900A56E18 /* IHGeneral.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8F40901D7EAE8900A56E18 /* IHGeneral.m */; };
 		4BB2BFEC1D79504600EE0734 /* NSColor+IHAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2BFEB1D79504600EE0734 /* NSColor+IHAddition.m */; };
@@ -100,6 +109,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4B77F3D51D7FBE3B00395695 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4BB4B26E1D63164E0059CF02 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4B77F3BE1D7FBE3B00395695;
+			remoteInfo = ImageHostingHelper;
+		};
+		4B77F3E01D7FBE3B00395695 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4BB4B26E1D63164E0059CF02 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4B77F3BE1D7FBE3B00395695;
+			remoteInfo = ImageHostingHelper;
+		};
 		4BB4B28D1D63164E0059CF02 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4BB4B26E1D63164E0059CF02 /* Project object */;
@@ -116,6 +139,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4B77F3EF1D7FBECC00395695 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				4B77F3F01D7FBF0900395695 /* ImageHostingHelper.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4B17AF451D78158000430705 /* IHUploadFileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHUploadFileCell.h; sourceTree = "<group>"; };
 		4B17AF461D78158000430705 /* IHUploadFileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHUploadFileCell.m; sourceTree = "<group>"; };
@@ -127,6 +163,23 @@
 		4B3F4F161D6B0C1A00A0A6CE /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		4B77F3B91D7FB46500395695 /* IHCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHCommon.h; sourceTree = "<group>"; };
 		4B77F3BA1D7FB5D500395695 /* ImageHosting-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ImageHosting-Prefix.pch"; sourceTree = "<group>"; };
+		4B77F3BF1D7FBE3B00395695 /* ImageHostingHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageHostingHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B77F3C11D7FBE3B00395695 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4B77F3C21D7FBE3B00395695 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4B77F3C51D7FBE3B00395695 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4B77F3C71D7FBE3B00395695 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4B77F3C81D7FBE3B00395695 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4B77F3CA1D7FBE3B00395695 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4B77F3CD1D7FBE3B00395695 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4B77F3CF1D7FBE3B00395695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B77F3D41D7FBE3B00395695 /* ImageHostingHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageHostingHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B77F3D81D7FBE3B00395695 /* ImageHostingHelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageHostingHelperTests.m; sourceTree = "<group>"; };
+		4B77F3DA1D7FBE3B00395695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B77F3DF1D7FBE3B00395695 /* ImageHostingHelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageHostingHelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B77F3E31D7FBE3B00395695 /* ImageHostingHelperUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageHostingHelperUITests.m; sourceTree = "<group>"; };
+		4B77F3E51D7FBE3B00395695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B77F3F11D7FBF1500395695 /* ImageHostingHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ImageHostingHelper.entitlements; sourceTree = "<group>"; };
+		4B77F3F21D7FC15500395695 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		4B8F40471D7E908600A56E18 /* IHTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHTableView.h; sourceTree = "<group>"; };
 		4B8F40481D7E908600A56E18 /* IHTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHTableView.m; sourceTree = "<group>"; };
 		4B8F408F1D7EAE8900A56E18 /* IHGeneral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHGeneral.h; sourceTree = "<group>"; };
@@ -308,10 +361,32 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4B77F3BC1D7FBE3B00395695 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B77F3D11D7FBE3B00395695 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B77F3DC1D7FBE3B00395695 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4BB4B2731D63164E0059CF02 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B77F3F31D7FC15500395695 /* ServiceManagement.framework in Frameworks */,
 				4BBACDAA1D67105C00746AD6 /* libz.tbd in Frameworks */,
 				4BBACDA81D67104800746AD6 /* libresolv.tbd in Frameworks */,
 			);
@@ -343,12 +418,57 @@
 			path = JSONKit;
 			sourceTree = "<group>";
 		};
+		4B77F3C01D7FBE3B00395695 /* ImageHostingHelper */ = {
+			isa = PBXGroup;
+			children = (
+				4B77F3C11D7FBE3B00395695 /* AppDelegate.h */,
+				4B77F3C21D7FBE3B00395695 /* AppDelegate.m */,
+				4B77F3C71D7FBE3B00395695 /* ViewController.h */,
+				4B77F3C81D7FBE3B00395695 /* ViewController.m */,
+				4B77F3C41D7FBE3B00395695 /* Supporting Files */,
+			);
+			path = ImageHostingHelper;
+			sourceTree = "<group>";
+		};
+		4B77F3C41D7FBE3B00395695 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4B77F3F11D7FBF1500395695 /* ImageHostingHelper.entitlements */,
+				4B77F3CA1D7FBE3B00395695 /* Assets.xcassets */,
+				4B77F3CC1D7FBE3B00395695 /* Main.storyboard */,
+				4B77F3CF1D7FBE3B00395695 /* Info.plist */,
+				4B77F3C51D7FBE3B00395695 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4B77F3D71D7FBE3B00395695 /* ImageHostingHelperTests */ = {
+			isa = PBXGroup;
+			children = (
+				4B77F3D81D7FBE3B00395695 /* ImageHostingHelperTests.m */,
+				4B77F3DA1D7FBE3B00395695 /* Info.plist */,
+			);
+			path = ImageHostingHelperTests;
+			sourceTree = "<group>";
+		};
+		4B77F3E21D7FBE3B00395695 /* ImageHostingHelperUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4B77F3E31D7FBE3B00395695 /* ImageHostingHelperUITests.m */,
+				4B77F3E51D7FBE3B00395695 /* Info.plist */,
+			);
+			path = ImageHostingHelperUITests;
+			sourceTree = "<group>";
+		};
 		4BB4B26D1D63164E0059CF02 = {
 			isa = PBXGroup;
 			children = (
 				4BB4B2781D63164E0059CF02 /* ImageHosting */,
 				4BB4B28F1D63164E0059CF02 /* ImageHostingTests */,
 				4BB4B29A1D63164E0059CF02 /* ImageHostingUITests */,
+				4B77F3C01D7FBE3B00395695 /* ImageHostingHelper */,
+				4B77F3D71D7FBE3B00395695 /* ImageHostingHelperTests */,
+				4B77F3E21D7FBE3B00395695 /* ImageHostingHelperUITests */,
 				4BB4B2771D63164E0059CF02 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -359,6 +479,9 @@
 				4BB4B2761D63164E0059CF02 /* ImageHosting.app */,
 				4BB4B28C1D63164E0059CF02 /* ImageHostingTests.xctest */,
 				4BB4B2971D63164E0059CF02 /* ImageHostingUITests.xctest */,
+				4B77F3BF1D7FBE3B00395695 /* ImageHostingHelper.app */,
+				4B77F3D41D7FBE3B00395695 /* ImageHostingHelperTests.xctest */,
+				4B77F3DF1D7FBE3B00395695 /* ImageHostingHelperUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -381,6 +504,7 @@
 		4BB4B27C1D63164E0059CF02 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4B77F3F21D7FC15500395695 /* ServiceManagement.framework */,
 				4BBACDA91D67105C00746AD6 /* libz.tbd */,
 				4BBACDA71D67104800746AD6 /* libresolv.tbd */,
 				4BC12FCD1D64781C0008CEE0 /* ImageHosting.entitlements */,
@@ -763,6 +887,59 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4B77F3BE1D7FBE3B00395695 /* ImageHostingHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B77F3E61D7FBE3B00395695 /* Build configuration list for PBXNativeTarget "ImageHostingHelper" */;
+			buildPhases = (
+				4B77F3BB1D7FBE3B00395695 /* Sources */,
+				4B77F3BC1D7FBE3B00395695 /* Frameworks */,
+				4B77F3BD1D7FBE3B00395695 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ImageHostingHelper;
+			productName = ImageHostingHelper;
+			productReference = 4B77F3BF1D7FBE3B00395695 /* ImageHostingHelper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4B77F3D31D7FBE3B00395695 /* ImageHostingHelperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B77F3E91D7FBE3B00395695 /* Build configuration list for PBXNativeTarget "ImageHostingHelperTests" */;
+			buildPhases = (
+				4B77F3D01D7FBE3B00395695 /* Sources */,
+				4B77F3D11D7FBE3B00395695 /* Frameworks */,
+				4B77F3D21D7FBE3B00395695 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4B77F3D61D7FBE3B00395695 /* PBXTargetDependency */,
+			);
+			name = ImageHostingHelperTests;
+			productName = ImageHostingHelperTests;
+			productReference = 4B77F3D41D7FBE3B00395695 /* ImageHostingHelperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4B77F3DE1D7FBE3B00395695 /* ImageHostingHelperUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B77F3EC1D7FBE3B00395695 /* Build configuration list for PBXNativeTarget "ImageHostingHelperUITests" */;
+			buildPhases = (
+				4B77F3DB1D7FBE3B00395695 /* Sources */,
+				4B77F3DC1D7FBE3B00395695 /* Frameworks */,
+				4B77F3DD1D7FBE3B00395695 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4B77F3E11D7FBE3B00395695 /* PBXTargetDependency */,
+			);
+			name = ImageHostingHelperUITests;
+			productName = ImageHostingHelperUITests;
+			productReference = 4B77F3DF1D7FBE3B00395695 /* ImageHostingHelperUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		4BB4B2751D63164E0059CF02 /* ImageHosting */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4BB4B2A01D63164E0059CF02 /* Build configuration list for PBXNativeTarget "ImageHosting" */;
@@ -770,6 +947,7 @@
 				4BB4B2721D63164E0059CF02 /* Sources */,
 				4BB4B2731D63164E0059CF02 /* Frameworks */,
 				4BB4B2741D63164E0059CF02 /* Resources */,
+				4B77F3EF1D7FBECC00395695 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -826,6 +1004,22 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = chars;
 				TargetAttributes = {
+					4B77F3BE1D7FBE3B00395695 = {
+						CreatedOnToolsVersion = 7.3.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+					4B77F3D31D7FBE3B00395695 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 4B77F3BE1D7FBE3B00395695;
+					};
+					4B77F3DE1D7FBE3B00395695 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 4B77F3BE1D7FBE3B00395695;
+					};
 					4BB4B2751D63164E0059CF02 = {
 						CreatedOnToolsVersion = 7.3.1;
 						SystemCapabilities = {
@@ -860,11 +1054,37 @@
 				4BB4B2751D63164E0059CF02 /* ImageHosting */,
 				4BB4B28B1D63164E0059CF02 /* ImageHostingTests */,
 				4BB4B2961D63164E0059CF02 /* ImageHostingUITests */,
+				4B77F3BE1D7FBE3B00395695 /* ImageHostingHelper */,
+				4B77F3D31D7FBE3B00395695 /* ImageHostingHelperTests */,
+				4B77F3DE1D7FBE3B00395695 /* ImageHostingHelperUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4B77F3BD1D7FBE3B00395695 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B77F3CB1D7FBE3B00395695 /* Assets.xcassets in Resources */,
+				4B77F3CE1D7FBE3B00395695 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B77F3D21D7FBE3B00395695 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B77F3DD1D7FBE3B00395695 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4BB4B2741D63164E0059CF02 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -898,6 +1118,32 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4B77F3BB1D7FBE3B00395695 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B77F3C91D7FBE3B00395695 /* ViewController.m in Sources */,
+				4B77F3C61D7FBE3B00395695 /* main.m in Sources */,
+				4B77F3C31D7FBE3B00395695 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B77F3D01D7FBE3B00395695 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B77F3D91D7FBE3B00395695 /* ImageHostingHelperTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B77F3DB1D7FBE3B00395695 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B77F3E41D7FBE3B00395695 /* ImageHostingHelperUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4BB4B2721D63164E0059CF02 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1001,6 +1247,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4B77F3D61D7FBE3B00395695 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4B77F3BE1D7FBE3B00395695 /* ImageHostingHelper */;
+			targetProxy = 4B77F3D51D7FBE3B00395695 /* PBXContainerItemProxy */;
+		};
+		4B77F3E11D7FBE3B00395695 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4B77F3BE1D7FBE3B00395695 /* ImageHostingHelper */;
+			targetProxy = 4B77F3E01D7FBE3B00395695 /* PBXContainerItemProxy */;
+		};
 		4BB4B28E1D63164E0059CF02 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4BB4B2751D63164E0059CF02 /* ImageHosting */;
@@ -1014,6 +1270,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		4B77F3CC1D7FBE3B00395695 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B77F3CD1D7FBE3B00395695 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		4BB4B2841D63164E0059CF02 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1025,6 +1289,84 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4B77F3E71D7FBE3B00395695 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ImageHostingHelper/ImageHostingHelper.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ImageHostingHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.zaker.chars.ImageHostingHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4B77F3E81D7FBE3B00395695 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ImageHostingHelper/ImageHostingHelper.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ImageHostingHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.zaker.chars.ImageHostingHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		4B77F3EA1D7FBE3B00395695 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ImageHostingHelperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.zaker.chars.ImageHostingHelperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImageHostingHelper.app/Contents/MacOS/ImageHostingHelper";
+			};
+			name = Debug;
+		};
+		4B77F3EB1D7FBE3B00395695 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ImageHostingHelperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.zaker.chars.ImageHostingHelperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImageHostingHelper.app/Contents/MacOS/ImageHostingHelper";
+			};
+			name = Release;
+		};
+		4B77F3ED1D7FBE3B00395695 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ImageHostingHelperUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.zaker.chars.ImageHostingHelperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ImageHostingHelper;
+			};
+			name = Debug;
+		};
+		4B77F3EE1D7FBE3B00395695 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ImageHostingHelperUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.zaker.chars.ImageHostingHelperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ImageHostingHelper;
+			};
+			name = Release;
+		};
 		4BB4B29E1D63164E0059CF02 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1189,6 +1531,30 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4B77F3E61D7FBE3B00395695 /* Build configuration list for PBXNativeTarget "ImageHostingHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B77F3E71D7FBE3B00395695 /* Debug */,
+				4B77F3E81D7FBE3B00395695 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4B77F3E91D7FBE3B00395695 /* Build configuration list for PBXNativeTarget "ImageHostingHelperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B77F3EA1D7FBE3B00395695 /* Debug */,
+				4B77F3EB1D7FBE3B00395695 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4B77F3EC1D7FBE3B00395695 /* Build configuration list for PBXNativeTarget "ImageHostingHelperUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B77F3ED1D7FBE3B00395695 /* Debug */,
+				4B77F3EE1D7FBE3B00395695 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		4BB4B2711D63164E0059CF02 /* Build configuration list for PBXProject "ImageHosting" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

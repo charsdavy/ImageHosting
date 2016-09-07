@@ -8,6 +8,8 @@
 
 #import "IHGeneralManager.h"
 #import "const.h"
+#import <Cocoa/Cocoa.h>
+#import <ServiceManagement/ServiceManagement.h>
 
 #define GENERAL_FILE_NAME @"IHGeneral.db"
 
@@ -60,6 +62,22 @@
     NSKeyedUnarchiver *unachiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:unarchiverData];
     
     return [unachiver decodeObjectForKey:key];
+}
+
+- (void)startupAppWhenLogin:(BOOL)startup
+{
+    SMLoginItemSetEnabled((CFStringRef)@"cn.zaker.chars.ImageHostingHelper", startup);
+    BOOL startedAtLogin = NO;
+    NSArray *apps = [NSWorkspace sharedWorkspace].runningApplications;
+    for (NSRunningApplication *app in apps) {
+        if ([app.bundleIdentifier isEqualToString:@"cn.zaker.chars.ImageHostingHelper"]) {
+            startedAtLogin = YES;
+            break;
+        }
+    }
+    if (startedAtLogin) {
+        [[NSDistributedNotificationCenter defaultCenter] postNotificationName:@"killIHhelper" object:[NSBundle mainBundle].bundleIdentifier];
+    }
 }
 
 @end

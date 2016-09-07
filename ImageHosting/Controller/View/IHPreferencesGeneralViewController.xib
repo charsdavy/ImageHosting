@@ -7,6 +7,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="IHPreferencesGeneralViewController">
             <connections>
+                <outlet property="launch" destination="OXA-wX-H1n" id="PEd-Xy-XYJ"/>
+                <outlet property="systemNotification" destination="qre-pt-rXc" id="SBV-sI-Fel"/>
                 <outlet property="view" destination="c22-O7-iKe" id="ttT-ZZ-09f"/>
             </connections>
         </customObject>
@@ -39,14 +41,25 @@
                     </popUpButtonCell>
                 </popUpButton>
                 <button id="qre-pt-rXc">
-                    <rect key="frame" x="56" y="192" width="179" height="18"/>
+                    <rect key="frame" x="56" y="192" width="203" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="check" title="    System Notification" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="bf1-9c-Sp9">
+                    <buttonCell key="cell" type="check" title="    System Notification Style" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="bf1-9c-Sp9">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
                         <action selector="systemNotification:" target="-2" id="J4Z-D1-4dK"/>
+                    </connections>
+                </button>
+                <button id="OXA-wX-H1n">
+                    <rect key="frame" x="56" y="156" width="164" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="    Launch on Start Up" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="rxM-Uh-lW2">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="launchStartUp:" target="-2" id="m3i-oL-3gc"/>
                     </connections>
                 </button>
             </subviews>

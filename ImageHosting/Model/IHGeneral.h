@@ -11,5 +11,6 @@
 @interface IHGeneral : NSObject<NSCoding>
 
 @property (copy) NSString *userNotification;
+@property (copy) NSString *launchStartUp;
 
 @end

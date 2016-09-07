@@ -112,11 +112,19 @@
         self.aboutWindowController = [[IHAboutWindowController alloc] init];
     }
     
-    if (![[IHGeneralManager sharedManager] unarchiveForKey:SYSTEM_NOTIFICATION_KEY]) {
-        IHGeneral *general = [[IHGeneral alloc] init];
+    IHGeneral *general = [[IHGeneral alloc] init];
+    general = [[IHGeneralManager sharedManager] unarchiveForKey:SYSTEM_NOTIFICATION_KEY];
+    
+    if (!general.userNotification) {
         general.userNotification = @"YES";
-        [[IHGeneralManager sharedManager] archive:general key:SYSTEM_NOTIFICATION_KEY];
     }
+    
+    if (!general.launchStartUp) {
+        general.launchStartUp = @"NO";
+        [[IHGeneralManager sharedManager] startupAppWhenLogin:NO];
+    }
+    
+    [[IHGeneralManager sharedManager] archive:general key:SYSTEM_NOTIFICATION_KEY];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification

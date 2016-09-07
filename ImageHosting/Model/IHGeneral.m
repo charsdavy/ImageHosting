@@ -9,6 +9,7 @@
 #import "IHGeneral.h"
 
 #define USER_NOTIFICATION_KEY @"user_notification"
+#define LAUNCH_START_UP_KEY   @"launch_startup"
 
 @implementation IHGeneral
 
@@ -17,6 +18,7 @@
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:_userNotification forKey:USER_NOTIFICATION_KEY];
+    [aCoder encodeObject:_launchStartUp forKey:LAUNCH_START_UP_KEY];
 }
 
 #pragma mark - 解码 解码归档数据来初始化对象
@@ -25,6 +27,7 @@
 {
     if (self = [super init]) {
         _userNotification = [aDecoder decodeObjectForKey:USER_NOTIFICATION_KEY];
+        _launchStartUp = [aDecoder decodeObjectForKey:LAUNCH_START_UP_KEY];
     }
     return self;
 }

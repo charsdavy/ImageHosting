@@ -16,4 +16,6 @@
 
 - (id)unarchiveForKey:(NSString *)key;
 
+- (void)startupAppWhenLogin:(BOOL)startup;
+
 @end
