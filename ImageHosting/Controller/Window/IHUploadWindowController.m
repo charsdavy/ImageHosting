@@ -13,19 +13,20 @@
 #import "const.h"
 #import "IHUploadFileCell.h"
 #import "NSString+IHURL.h"
-#import "IHDragTableView.h"
+#import "IHTableView.h"
 
 #define CELL_HEIGHT  36.0f
 #define AGAIN_TITLE  @"Again"
 #define UPLOAD_TITLE @"Upload"
 
-@interface IHUploadWindowController ()<NSUserNotificationCenterDelegate, NSTableViewDelegate, NSTableViewDataSource, IHDragFileDelegate>
+@interface IHUploadWindowController ()<NSUserNotificationCenterDelegate, NSTableViewDelegate, NSTableViewDataSource, IHTableViewDelegate>
 
 @property (copy) NSMutableArray *paths;
 @property (copy) NSMutableArray<IHUploadFileCell *> *cells;
 @property (assign) NSUInteger uploadFileCount;
+@property (assign) BOOL uploading;
 
-@property (weak) IBOutlet IHDragTableView *tableView;
+@property (weak) IBOutlet IHTableView *tableView;
 @property (weak) IBOutlet NSButton *selectButton;
 @property (weak) IBOutlet NSButton *uploadButton;
 
@@ -45,6 +46,7 @@
         _uploadFileCount = 0;
         _cells = [NSMutableArray array];
         _paths = [NSMutableArray array];
+        _uploading = NO;
     }
     return self;
 }
@@ -53,7 +55,7 @@
 {
     [super windowDidLoad];
     
-    self.tableView.dragDelegate = self;
+    self.tableView.ihDelegate = self;
 
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
 }
@@ -68,6 +70,7 @@
         [self showAlertTitle:title message:alertMsg style:IHAlertStyleWarning];
     } else {
         self.selectButton.enabled = NO;
+        _uploading = YES;
     }
     
     if ([self.uploadButton.title isEqualToString:AGAIN_TITLE]) {
@@ -184,6 +187,7 @@
     }
 
     self.selectButton.enabled = YES;
+    _uploading = NO;
 }
 
 - (void)showAlertTitle:(NSString *)title message:(NSString *)message style:(IHAlertStyle)style
@@ -242,9 +246,22 @@
     [self showWindow:self];
 }
 
-#pragma mark - IHDragFileDelegate
+#pragma mark - IHTableViewDelegate
 
-- (void)didFinishedDragWithFile:(NSString *)path
+- (void)ihTableView:(IHTableView *)tableView didClickedClearAllUpload:(NSMenuItem *)item
+{
+    if (!_uploading) {
+        [_paths removeAllObjects];
+        self.uploadFileCount = _paths.count;
+        [self.tableView reloadData];
+    } else {
+        NSString *alertMsg = @"You don't clear uploading file(s) !";
+        NSString *title = @"Warning";
+        [self showAlertTitle:title message:alertMsg style:IHAlertStyleWarning];
+    }
+}
+
+- (void)ihTableView:(IHTableView *)tableView didFinishedDragWithFile:(NSString *)path
 {
     [self.paths addObject:path];
     self.uploadFileCount = _paths.count;

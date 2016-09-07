@@ -12,7 +12,7 @@
 		4B3F4F071D6AE63E00A0A6CE /* IHPreferencesFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F4F051D6AE63E00A0A6CE /* IHPreferencesFeedbackViewController.m */; };
 		4B3F4F081D6AE63E00A0A6CE /* IHPreferencesFeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B3F4F061D6AE63E00A0A6CE /* IHPreferencesFeedbackViewController.xib */; };
 		4B3F4F1A1D6B0C1A00A0A6CE /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B3F4F161D6B0C1A00A0A6CE /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		4B8F40491D7E908600A56E18 /* IHDragTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8F40481D7E908600A56E18 /* IHDragTableView.m */; };
+		4B8F40491D7E908600A56E18 /* IHTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8F40481D7E908600A56E18 /* IHTableView.m */; };
 		4B8F40911D7EAE8900A56E18 /* IHGeneral.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8F40901D7EAE8900A56E18 /* IHGeneral.m */; };
 		4BB2BFEC1D79504600EE0734 /* NSColor+IHAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2BFEB1D79504600EE0734 /* NSColor+IHAddition.m */; };
 		4BB2BFEF1D795F8E00EE0734 /* IHProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BB2BFEE1D795F8E00EE0734 /* IHProgressIndicator.m */; };
@@ -125,8 +125,8 @@
 		4B3F4F061D6AE63E00A0A6CE /* IHPreferencesFeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IHPreferencesFeedbackViewController.xib; sourceTree = "<group>"; };
 		4B3F4F151D6B0C1A00A0A6CE /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		4B3F4F161D6B0C1A00A0A6CE /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
-		4B8F40471D7E908600A56E18 /* IHDragTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHDragTableView.h; sourceTree = "<group>"; };
-		4B8F40481D7E908600A56E18 /* IHDragTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHDragTableView.m; sourceTree = "<group>"; };
+		4B8F40471D7E908600A56E18 /* IHTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHTableView.h; sourceTree = "<group>"; };
+		4B8F40481D7E908600A56E18 /* IHTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHTableView.m; sourceTree = "<group>"; };
 		4B8F408F1D7EAE8900A56E18 /* IHGeneral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHGeneral.h; sourceTree = "<group>"; };
 		4B8F40901D7EAE8900A56E18 /* IHGeneral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHGeneral.m; sourceTree = "<group>"; };
 		4BB2BFEA1D79504600EE0734 /* NSColor+IHAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+IHAddition.h"; sourceTree = "<group>"; };
@@ -675,8 +675,8 @@
 				4B17AF481D78159300430705 /* IHUploadFileCell.xib */,
 				4BB2BFED1D795F8E00EE0734 /* IHProgressIndicator.h */,
 				4BB2BFEE1D795F8E00EE0734 /* IHProgressIndicator.m */,
-				4B8F40471D7E908600A56E18 /* IHDragTableView.h */,
-				4B8F40481D7E908600A56E18 /* IHDragTableView.m */,
+				4B8F40471D7E908600A56E18 /* IHTableView.h */,
+				4B8F40481D7E908600A56E18 /* IHTableView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -949,7 +949,7 @@
 				4BBACD9B1D670D0D00746AD6 /* QNDnspodFree.m in Sources */,
 				4BBACD4D1D670CEF00746AD6 /* AFURLRequestSerialization.m in Sources */,
 				D557725B1D674E28001BA82D /* IHPreferencesAccountsViewController.m in Sources */,
-				4B8F40491D7E908600A56E18 /* IHDragTableView.m in Sources */,
+				4B8F40491D7E908600A56E18 /* IHTableView.m in Sources */,
 				4BB2BFEC1D79504600EE0734 /* NSColor+IHAddition.m in Sources */,
 				D55772281D6735AB001BA82D /* IHAccountManager.m in Sources */,
 				4BBACDA01D670D0D00746AD6 /* QNTxtResolver.m in Sources */,

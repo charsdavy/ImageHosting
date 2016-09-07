@@ -1,19 +1,19 @@
 //
-//  IHDragTableView.m
+//  IHTableView.m
 //  ImageHosting
 //
 //  Created by chars on 16/9/6.
 //  Copyright © 2016年 chars. All rights reserved.
 //
 
-#import "IHDragTableView.h"
+#import "IHTableView.h"
 #import "NSColor+IHAddition.h"
 
-@interface IHDragTableView ()<NSDraggingDestination>
+@interface IHTableView ()<NSDraggingDestination, NSMenuDelegate>
 
 @end
 
-@implementation IHDragTableView
+@implementation IHTableView
 
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
@@ -49,6 +49,25 @@
 {
     self.backgroundColor = [NSColor clearColor];
     [self setAlphaValue:1.0];
+}
+
+- (void)clearAllUpload:(NSMenuItem *)sender
+{
+    if ([_ihDelegate respondsToSelector:@selector(ihTableView:didClickedClearAllUpload:)]) {
+        [_ihDelegate ihTableView:self didClickedClearAllUpload:sender];
+    }
+}
+
+#pragma mark - Overwrite
+
+- (void)rightMouseDown:(NSEvent *)theEvent
+{
+    NSMenu *popupMenu = [[NSMenu alloc] init];
+    popupMenu.delegate = self;
+    
+    [popupMenu addItemWithTitle:@"Clear All Upload" action:@selector(clearAllUpload:) keyEquivalent:@"c"];
+    
+    [NSMenu popUpContextMenu:popupMenu withEvent:theEvent forView:self];
 }
 
 #pragma mark - NSDraggingDestination Protocol
@@ -121,8 +140,8 @@
         NSUInteger numberOfFiles = files.count;
         if (numberOfFiles > 0) {
             for (NSString *filePath in files) {
-                if ([_dragDelegate respondsToSelector:@selector(didFinishedDragWithFile:)]) {
-                    [_dragDelegate didFinishedDragWithFile:filePath];
+                if ([_ihDelegate respondsToSelector:@selector(ihTableView:didFinishedDragWithFile:)]) {
+                    [_ihDelegate ihTableView:self didFinishedDragWithFile:filePath];
                 }
             }
             return YES;
