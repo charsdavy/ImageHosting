@@ -125,6 +125,8 @@
 		4B3F4F061D6AE63E00A0A6CE /* IHPreferencesFeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IHPreferencesFeedbackViewController.xib; sourceTree = "<group>"; };
 		4B3F4F151D6B0C1A00A0A6CE /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		4B3F4F161D6B0C1A00A0A6CE /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		4B77F3B91D7FB46500395695 /* IHCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHCommon.h; sourceTree = "<group>"; };
+		4B77F3BA1D7FB5D500395695 /* ImageHosting-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ImageHosting-Prefix.pch"; sourceTree = "<group>"; };
 		4B8F40471D7E908600A56E18 /* IHTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHTableView.h; sourceTree = "<group>"; };
 		4B8F40481D7E908600A56E18 /* IHTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IHTableView.m; sourceTree = "<group>"; };
 		4B8F408F1D7EAE8900A56E18 /* IHGeneral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IHGeneral.h; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 				4BB4B2841D63164E0059CF02 /* Main.storyboard */,
 				4BB4B2871D63164E0059CF02 /* Info.plist */,
 				4BB4B27D1D63164E0059CF02 /* main.m */,
+				4B77F3BA1D7FB5D500395695 /* ImageHosting-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -626,6 +629,7 @@
 			children = (
 				4BDBE1D11D65A75200B9BB0E /* AppDelegate.h */,
 				4BDBE1D21D65A75200B9BB0E /* AppDelegate.m */,
+				4B77F3B91D7FB46500395695 /* IHCommon.h */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -1108,6 +1112,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ImageHosting/ImageHosting.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREFIX_HEADER = "ImageHosting/ImageHosting-Prefix.pch";
 				INFOPLIST_FILE = ImageHosting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
@@ -1122,6 +1127,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ImageHosting/ImageHosting.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREFIX_HEADER = "ImageHosting/ImageHosting-Prefix.pch";
 				INFOPLIST_FILE = ImageHosting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;

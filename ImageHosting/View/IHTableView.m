@@ -80,7 +80,7 @@
     sourceDragMask = [sender draggingSourceOperationMask];
     pasteBoard = [sender draggingPasteboard];
     
-    NSLog(@"%s drag operation updated",__FUNCTION__);
+    IHLog(@"drag operation updated");
     
     if ([[pasteBoard types] containsObject:NSFilenamesPboardType]) {
         if (sourceDragMask & NSDragOperationLink) {
@@ -94,7 +94,7 @@
 
 - (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender
 {
-    NSLog(@"%s drag operation entered", __FUNCTION__);
+    IHLog(@"drag operation entered");
     NSPasteboard *pasteBoard = nil;
     NSDragOperation sourceDragMask;
     
@@ -115,13 +115,13 @@
 
 - (void)draggingExited:(id<NSDraggingInfo>)sender
 {
-    NSLog(@"%s drag operation finished", __FUNCTION__);
+    IHLog(@"drag operation finished");
     [self dragAreaFadeOut];
 }
 
 - (void)draggingEnded:(nullable id <NSDraggingInfo>)sender
 {
-    NSLog(@"%s drag operation ended", __FUNCTION__);
+    IHLog(@"drag operation ended");
     [self dragAreaFadeOut];
 }
 
@@ -134,7 +134,7 @@
 {
     NSPasteboard *pasteBoard = [sender draggingPasteboard];
     
-    NSLog(@"%s drag now", __FUNCTION__);
+    IHLog(@"drag now");
     if ([[pasteBoard types] containsObject:NSFilenamesPboardType]) {
         NSArray *files = [pasteBoard propertyListForType:NSFilenamesPboardType];
         NSUInteger numberOfFiles = files.count;
@@ -146,10 +146,10 @@
             }
             return YES;
         } else {
-            NSLog(@"%s not drag file", __FUNCTION__);
+            IHLog(@"not drag file");
         }
     } else {
-        NSLog(@"%s pasteBoard types(%@) not register",__FUNCTION__, [pasteBoard types]);
+        IHLog(@"pasteBoard types(%@) not register", [pasteBoard types]);
     }
     return YES;
 }

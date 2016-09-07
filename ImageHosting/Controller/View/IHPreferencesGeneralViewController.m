@@ -26,7 +26,7 @@
 }
 
 - (IBAction)systemNotification:(NSButton *)sender {
-    NSLog(@"%s %zi", __FUNCTION__, sender.state);
+    IHLog(@"state:%zi", sender.state);
     NSString *noti = sender.state ? @"YES" : @"NO";
     IHGeneral *general = [[IHGeneral alloc] init];
     general.userNotification = noti;

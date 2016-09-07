@@ -106,7 +106,7 @@
             }
             [self uploadFileSuccess:success invoke:times];
         } progress:^(NSString *key, CGFloat percent) {
-            NSLog(@"%s key:%@, progress:%f", __FUNCTION__, key, percent);
+            IHLog(@"key:%@, progress:%f", key, percent);
             IHUploadFileCell *cell = [weakSelf cellForKey:key];
             if (cell) {
                 cell.progress = [NSString stringWithFormat:@"%f", percent * 100];
@@ -125,7 +125,7 @@
     [selectPanel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result) {
         if (result == NSOKButton) {
             NSArray *urls = [selectPanel URLs];
-            NSLog(@"%s urls:%@", __FUNCTION__, urls);
+            IHLog(@"urls:%@", urls);
             for (NSString *url in urls) {
                 NSString *path = [NSString stringWithFormat:@"%@", url];
                 path = [path stringByReplacingOccurrencesOfString:@"file://" withString:@""];

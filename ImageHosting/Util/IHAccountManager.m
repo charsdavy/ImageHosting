@@ -99,7 +99,7 @@
         
         [self.cache setObject:currentAccount forKey:CURRENT_ACCOUNT_KEY];
     }
-    NSLog(@"%s path of preferences file:%@ currentAccount:%@", __FUNCTION__, [self pathOfPreferences:ACCOUNT_FILE_NAME], currentAccount);
+    IHLog(@"path of preferences file:%@ currentAccount:%@", [self pathOfPreferences:ACCOUNT_FILE_NAME], currentAccount);
     return currentAccount;
 }
 

@@ -49,11 +49,11 @@
     self.viewControllers = @[];
     
     if (!self.window) {
-        NSLog(@"A preferences controller cannot work without a window. Connect the window outlet to your preferences window.");
+        IHLog(@"A preferences controller cannot work without a window. Connect the window outlet to your preferences window.");
         return;
     }
     if (!self.window.toolbar) {
-        NSLog(@"A preferences controller cannot work without a toolbar.");
+        IHLog(@"A preferences controller cannot work without a toolbar.");
         return;
     }
     
